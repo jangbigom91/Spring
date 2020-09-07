@@ -5,7 +5,7 @@
 <mapper namespace="mapper.user">
 
 	<insert id="INSERT_USER">
-		INSERT INTO `USER3` VALUES (#{uid}, #{name}, #{hp}, #{age});		
+		INSERT INTO `USER3` VALUES (#{uid}, #{name}, #{hp}, #{age});	
 	</insert>
 	
 	<select id="SELECT_USER" resultType="kr.co.ch08.vo.UserVO">

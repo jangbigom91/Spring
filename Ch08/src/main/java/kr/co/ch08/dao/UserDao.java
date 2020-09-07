@@ -21,12 +21,12 @@ public class UserDao {
 	
 	public void insertUser(UserVO vo) {
 		
-		// Spring jdbc ¹æ½Ä
+		// Spring jdbc 방식
 		//String sql = "INSERT INTO `USER3` VALUES (?,?,?,?)";
 		//Object[] values = {vo.getUid(), vo.getName(), vo.getHp(), vo.getAge()};
 		//jdbc.update(sql, values);
 		
-		// Mybatis ¹æ½Ä
+		// Mybatis 방식
 		mybatis.insert("mapper.user.INSERT_USER", vo);
 	}
 	
@@ -36,11 +36,11 @@ public class UserDao {
 	
 	public List<UserVO> selectUsers() {
 		
-		// Spring jdbc ¹æ½Ä
+		// Spring jdbc 방식
 		//String sql = "SELECT * FROM `USER3`";		
 		//List<UserVO> users = jdbc.query(sql, new UserRowMapper());
 		
-		// Mybatis ¹æ½Ä
+		// Mybatis 방식
 		List<UserVO> users = mybatis.selectList("mapper.user.SELECT_USERS");
 		
 		return users;

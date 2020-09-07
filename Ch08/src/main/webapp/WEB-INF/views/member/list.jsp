@@ -18,18 +18,20 @@
 			<th>입사일</th>
 			<th>관리</th>
 		</tr>
-		<tr>
-			<td>ab123</td>
-			<td>홍길동</td>
-			<td>010-1548-7878</td>
-			<td>사원</td>
-			<td>101</td>
-			<td>2020-09-07</td>
-			<td>
-				<a href="#">수정</a>
-				<a href="#">삭제</a>
-			</td>
-		</tr>
+		<c:forEach var="member" items="${members}">
+			<tr>
+				<td>${member.uid}</td>
+				<td>${member.name}</td>
+				<td>${member.hp}</td>
+				<td>${member.pos}</td>
+				<td>${member.dep}</td>
+				<td>${member.rdate.substring(2, 10)}</td>
+				<td>
+					<a href="/ch08/member/modify?uid=${member.uid}">수정</a>
+					<a href="/ch08/member/delete?uid=${member.uid}">삭제</a>
+				</td>
+			</tr>
+		</c:forEach>
 	</table>
 </body>
 </html>
