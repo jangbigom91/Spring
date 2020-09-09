@@ -53,6 +53,11 @@
 		WHERE `hp`=#{hp};
 	</select>
 	
+	<select id="SELECT_USER" resultType="kr.co.sboard.vo.UserVO">
+		SELECT * FROM `JBOARD_MEMBER` 
+		WHERE `uid`=#{uid} AND `pass`=PASSWORD(#{pass});
+	</select>
+	
 	<!--
 	<insert id="INSERT_USER">
 		INSERT INTO `USER3` VALUES (#{uid}, #{name}, #{hp}, #{age});	
