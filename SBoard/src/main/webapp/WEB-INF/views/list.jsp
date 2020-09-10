@@ -26,8 +26,8 @@
                     </tr>
                     <c:forEach var="article" items="${articles}">
 	                    <tr>
-	                        <td>${count=count-1}</td>
-	                        <td><a href="#">${article.title}</a>&nbsp;[${article.comment}]</td>
+	                        <td>${count = count - 1}</td>
+	                        <td><a href="/sboard/view?seq=${article.seq}">${article.title}</a>&nbsp;[${article.comment}]</td>
 	                        <td>${article.nick}</td>
 	                        <td>${article.rdate.substring(2, 10)}</td>
 	                        <td>${article.hit}</td>
@@ -38,15 +38,15 @@
 
             <!-- 페이지 네비게이션 -->
             <div class="paging">
-                <a href="#" class="prev">이전</a>
-                <c:forEach var="i" begin="1" end="${pageEnd}">
+                <a href="/sboard/list?pg=${groupStart - 1}" class="prev">이전</a>
+                <c:forEach var="i" begin="1" end="${groupEnd}">
                 	<a href="/sboard/list?pg=${i}" class="num ${currentPg == i ? 'current':''}">${i}</a>
 				</c:forEach>     
-                <a href="#" class="next">다음</a>
+                <a href="/sboard/list?pg=${groupEnd + 1}" class="next">다음</a>
             </div>
 
             <!-- 글쓰기 버튼 -->
-            <a href="./write.html" class="btnWrite">글쓰기</a>
+            <a href="/sboard/write" class="btnWrite">글쓰기</a>
 
         </section>
     </div>    
