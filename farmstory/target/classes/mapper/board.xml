@@ -37,7 +37,7 @@
 			`rdate`=NOW();
 	</insert>
 	
-	<insert id="INSERT_BOARD">
+	<insert id="INSERT_BOARD" useGeneratedKeys="true" keyProperty="seq">
 		INSERT INTO `JBOARD_ARTICLE` SET
 			`title`=#{title},
 			`content`=#{content},
