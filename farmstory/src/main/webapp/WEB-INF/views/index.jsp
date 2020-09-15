@@ -1,5 +1,34 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="./_header.jsp" %>
+<script>
+	$(function(){
+		getLatest(0, '/farmstory/index/latest?cate=grow');
+		getLatest(1, '/farmstory/index/latest?cate=school');
+		getLatest(2, '/farmstory/index/latest?cate=croptalk');
+	});
+	function getLatest(count, url){
+		var tables = $('.latest table');
+		
+		$.get(url, function(result){
+			
+			$.each(result, function(idx, item){
+				var strTr = "<tr>"
+								+"<td>></td>"
+								+"<td></td>"
+								+"<td></td>"
+							+"</tr>";
+					
+				var htmlTr = $.parseHTML(strTr);
+				var dom = $(htmlTr);
+				dom.children().eq(1).text(item.title);
+				dom.children().eq(2).text(item.rdate.substring(2, 10));
+				
+				tables.eq(count).append(dom);			
+			});
+		});	
+	}
+</script>
 <main>
     <div class="slider">
         
@@ -26,95 +55,17 @@
         <div>
             <img src="./img/main_latest1_tit.png" alt="텃밭가꾸기"/>
             <img src="./img/main_latest1_img.jpg" alt="이미지1">
-            <table border="0">
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-            </table>
+            <table border="0"></table>
         </div>
         <div>
             <img src="./img/main_latest2_tit.png" alt="귀농학교"/>
             <img src="./img/main_latest2_img.jpg" alt="이미지2">
-            <table border="0">
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-            </table>
+            <table border="0"></table>
         </div>
         <div>
             <img src="./img/main_latest3_tit.png" alt="농작물이야기"/>
             <img src="./img/main_latest3_img.jpg" alt="이미지3">
-            <table border="0">
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td>안녕하세요. 반갑습니다.</td>
-                    <td>20-05-14</td>
-                </tr>
-            </table>
+            <table border="0"></table>
         </div>                
     </div>
 
@@ -150,4 +101,3 @@
     </div>
 </main>
 <%@ include file="./_footer.jsp" %>
-        
