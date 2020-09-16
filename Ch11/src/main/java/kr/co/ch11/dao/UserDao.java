@@ -10,7 +10,7 @@ import kr.co.ch11.vo.UserVO;
 public interface UserDao {
 	
 	public void insertUser(UserVO vo);
-	public UserVO selectUser();
+	public UserVO selectUser(String uid);
 	public List<UserVO> selectUsers();
 	public void updateUser(UserVO vo);
 	public void deleteUser(String uid);

@@ -17,8 +17,8 @@ public class UserService {
 	public void insertUser(UserVO vo) {
 		dao.insertUser(vo);
 	}
-	public UserVO selectUser() {
-		return dao.selectUser();
+	public UserVO selectUser(String uid) {
+		return dao.selectUser(uid);
 	}
 	public List<UserVO> selectUsers() {
 		return dao.selectUsers();

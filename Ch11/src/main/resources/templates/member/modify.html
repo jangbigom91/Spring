@@ -7,19 +7,19 @@
 <body>
 	<h3>직원 수정하기</h3>
 	
-	<form action="@{/member/modify}" method="post">
+	<form th:action="@{/member/modify}" method="post">
 		<table border="1">
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="uid" readonly value="${memberVO.uid}" /></td>
+				<td><input type="text" name="uid" readonly th:value="${memberVO.uid}" /></td>
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><input type="text" name="name" value="${memberVO.name}" /></td>
+				<td><input type="text" name="name" th:value="${memberVO.name}" /></td>
 			</tr>
 			<tr>
 				<td>휴대폰</td>
-				<td><input type="text" name="hp" value="${memberVO.hp}" /></td>
+				<td><input type="text" name="hp" th:value="${memberVO.hp}" /></td>
 			</tr>
 			<tr>
 				<td>직급</td>

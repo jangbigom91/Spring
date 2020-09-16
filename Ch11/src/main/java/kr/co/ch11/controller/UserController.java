@@ -42,7 +42,7 @@ public class UserController {
 	@GetMapping("/user/modify")
 	public String modify(String uid, Model model) {
 		
-		UserVO user = service.selectUser();
+		UserVO user = service.selectUser(uid);
 		
 		model.addAttribute("user", user);
 		
