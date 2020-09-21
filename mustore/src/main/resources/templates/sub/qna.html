@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>맨유::qna</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="../js/top.js"></script>
+    <script src="../js/category.js"></script>
+    <script src="../js/faqlist.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/sub.css"/>
+    <style>
+
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="top">
+                <div>
+                    <a href="#"><i class="far fa-user"></i>&nbsp;LOGIN</a>
+                    <a href="#">SIGN UP</a>
+                    <a href="#">MYPAGE</a>
+                    <a href="#">HELP</a>
+                    <a href="#"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
+                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;</a>
+                </div>
+            </div>
+            <div class="logo">
+                <div>
+                    <a href="#"><img src="../img/mu_header_logo.png" alt="로고"></a>
+                    <form action="#">
+                        <input type="text" name="search" />
+                        <button><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="menu">
+                    <ul class="category">
+                        <li>
+                            <a href="#"><i class="fas fa-futbol"></i>KITS</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="#">&nbsp;Home</a></li>
+                                <li><a href="#">&nbsp;Away</a></li>
+                                <li><a href="#">&nbsp;Third</a></li>
+                                <li><a href="#">&nbsp;GoalKeeper</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-running"></i>&nbsp;TRAINING</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="">&nbsp;MAN</a></li>
+                                <li><a href="">&nbsp;WOMAN</a></li>
+                                <li><a href="">&nbsp;KID</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-tshirt"></i>&nbsp;RETRO</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="">&nbsp;Shirt</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-gift"></i>&nbsp;GIFT</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="">&nbsp;Accessory</a></li>
+                                <li><a href="">&nbsp;Bag</a></li>
+                                <li><a href="">&nbsp;Cap</a></li>
+                                <li><a href="">&nbsp;Flag</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-percentage"></i>&nbsp;SALE</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <ul>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">주문조회</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">1:1문의</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </header>
+        <main>
+           <!-- QNA -->
+           <div class="normal">
+                <div class="subBanner">
+                    <h2>1:1 문의</h2>
+                </div>
+                <div class="customer">
+                    <div class="tabs four">
+                        <ul>
+                            <li><a href="#"><span>FAQ</span></a></li>
+                            <li class="on"><a href="#"><span>1:1문의</span></a></li>
+                            <li><a href="#"><span>공지사항</span></a></li>
+                            <li><a href="#"><span>주문조회</span></a></li>
+                            </ul>
+                    </div>
+                    <div class="subHeadTxt">
+                        <p class="tit">쇼핑몰 이용 및 회원, 결제사항에 문의가 필요하신가요?</p>
+                        <p class="txt">
+                            문의사항을 선택 후 문의내용을 보내주시면 신속하고 친철하게 답변 드리겠습니다.
+                            <br>
+                            문의에 대한 답변은 
+                            <span>이메일과 마이페이지 내에 문의 답변 내역</span>
+                            을 확인해 주십시오.
+                            <br>
+                            <span>제품문의</span>
+                            는 제품 상세페이지에서 문의해 주시고,
+                            <span>배송관련 문의</span>
+                            는 마이페이지 주문/배송에서 주문건별로 문의가 가능하십니다.
+                        </p>
+                    </div>
+                    <div class="inquireH">1:1 문의</div>
+                    <div class="inquireDiv">
+                        <table class="inquireTable" border="1" cellspacing="0">
+                            <caption>문의 내용입력</caption>
+                            <colgroup>
+                                <col width="190px" class="thWide">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <span>
+                                            문의 유형
+                                            <u>선택</u>
+                                        </span>
+                                    </th>
+                                    <td>
+                                        <ul class="pta selection">
+                                            <li class="pr">
+                                                <div class="custom-radio">
+                                                    <input type="radio" name="typeOfInquiry" id="type01">
+                                                    <label for="type01">회원문의</label>
+                                                </div>
+                                            </li>
+                                            <li class="pr">
+                                                <div class="custom-radio">
+                                                    <input type="radio" name="typeOfInquiry" id="type02">
+                                                    <label for="type02">결제문의</label>
+                                                </div>
+                                            </li>
+                                            <li class="pr">
+                                                <div class="custom-radio">
+                                                    <input type="radio" name="typeOfInquiry" id="type03">
+                                                    <label for="type03">기타문의</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <span>이름</span>
+                                    </th>
+                                    <td>
+                                        <input type="text" class="w387">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <span>휴대폰</span>
+                                    </th>
+                                    <td>
+                                        <ul class="pta">
+                                            <li>
+                                                <select class="select" style="position: absolute; opacity: 0; font-size: 14px; width: 109px; height: 40px;">
+                                                    <option value="010" selected="selected">010</option>
+                                                    <option value="011">011</option>
+                                                </select>
+                                                <span class="searchStyleSelectBox" style="display: inline-block;">
+                                                    <span class="searchStyleSelectBoxInner" style="width: 49px; display: inline;">010</span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="unit">-</span>
+                                            </li>
+                                            <li>
+                                                <input type="text" class="w118c" maxlength="4">
+                                            </li>
+                                            <li>
+                                                <span class="unit">-</span>
+                                            </li>
+                                            <li class="pr mq580 mq380">
+                                                <input type="text" class="w118c" maxlength="4">
+                                            </li>
+                                            <li class="mq900">
+                                                <span class="valign">
+                                                    <div class="custom-checkbox">
+                                                        <input type="checkbox" id="phoneAgree">
+                                                        <label for="phoneAgree" class="checked">정보 수신에 동의합니다.</label>
+                                                    </div>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <span>이메일</span>
+                                    </th>
+                                    <td>
+                                        <input type="text" class="w387">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <span>제목</span>
+                                    </th>
+                                    <td>
+                                        <input type="text" class="w100b" placeholder="문의 제목을 입력해 주세요.">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="border-bottom: 0px;">
+                                        <span>내용</span>
+                                    </th>
+                                    <td style="border-bottom: 0px;">
+                                        <textarea class="tta" placeholder="문의 내용을 입력해 주세요."></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="btnArea">
+                        <a href="#" class="okbtn">
+                            <span>문의하기</span>
+                        </a>
+                    </div>
+                </div>
+           </div>
+            <div class="paging">
+                <span class="prev">
+                    <a href="#"><&nbsp;이전</a>
+                </span>
+                <span class="num">
+                    <a href="#" class="on">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                </span>
+                <span class="next">
+                    <a href="#">다음&nbsp;></a>
+                </span>
+            </div>
+        </main>
+        <footer>
+            <ul>
+                <li><a href="#">개인정보 보호 정책</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">더 알아보기</a></li>
+            </ul>
+
+            <div>
+                <p class="footer1">
+                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
+                </p>
+                <p class="footer2">
+                    <strong>MANCHESTER UNITED</strong><br />
+                    영국 스트렛포드 올드 트래포드<br />
+                    대표이사 : 김우드워드<br />
+                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
+                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
+                </p>
+                <p class="footer3">
+                    <strong>고객센터</strong><br />
+                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
+                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
+                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
+                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
+                </p>
+            </div>
+        </footer>
+        <button type="button" id="top" style="display: inline-block;">상단이동</button>
+    </div>
+</body>
+</html>

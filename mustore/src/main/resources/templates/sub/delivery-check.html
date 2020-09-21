@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>맨유::delivery-check</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="../js/top.js"></script>
+    <script src="../js/category.js"></script>
+    <script src="../js/faqlist.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/sub.css"/>
+    <style>
+
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="top">
+                <div>
+                    <a href="#"><i class="far fa-user"></i>&nbsp;LOGIN</a>
+                    <a href="#">SIGN UP</a>
+                    <a href="#">MYPAGE</a>
+                    <a href="#">HELP</a>
+                    <a href="#"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
+                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;</a>
+                </div>
+            </div>
+            <div class="logo">
+                <div>
+                    <a href="#"><img src="../img/mu_header_logo.png" alt="로고"></a>
+                    <form action="#">
+                        <input type="text" name="search" />
+                        <button><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="menu">
+                    <ul class="category">
+                        <li>
+                            <a href="#"><i class="fas fa-futbol"></i>KITS</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="#">&nbsp;Home</a></li>
+                                <li><a href="#">&nbsp;Away</a></li>
+                                <li><a href="#">&nbsp;Third</a></li>
+                                <li><a href="#">&nbsp;GoalKeeper</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-running"></i>&nbsp;TRAINING</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="">&nbsp;MAN</a></li>
+                                <li><a href="">&nbsp;WOMAN</a></li>
+                                <li><a href="">&nbsp;KID</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-tshirt"></i>&nbsp;RETRO</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="">&nbsp;Shirt</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-gift"></i>&nbsp;GIFT</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="">&nbsp;Accessory</a></li>
+                                <li><a href="">&nbsp;Bag</a></li>
+                                <li><a href="">&nbsp;Cap</a></li>
+                                <li><a href="">&nbsp;Flag</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-percentage"></i>&nbsp;SALE</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <ul>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">주문조회</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">1:1문의</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </header>
+        <main>
+           <!-- FAQ -->
+           <div class="normal">
+                <h2>주문조회</h2>
+                
+                <div class="delivery">
+                    <div class="mypageTopWrap">
+                        <div class="myInfo">
+                            <div class="inbox">
+                                <div class="line">
+                                    <div class="img">
+                                        <img src="../img/img_member_class.png" alt="green">
+                                    </div>
+                                    <div class="name">
+                                        <strong>홍길동</strong>
+                                        님은
+                                        <strong>GREEN</strong>
+                                        회원입니다.
+                                        <span>(2019.3.10 회원가입)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inbox">
+                                <div class="total">
+                                    <p class="tit">누적결제 금액</p>
+                                    <p class="txt">
+                                        총
+                                        <strong>1,500,000</strong>
+                                        원
+                                        <span>(2020.9.10 소멸)</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proInfo pdtm">
+                        <p class="tit1">상품정보</p>
+                        <div class="deliV">
+                            <div class="con">
+                                <ul>
+                                    <li class="list">
+                                        <div class="proImg">
+                                            <div class="imgWrap">
+                                                <div class="img">
+                                                    <img src="../img/mu_order_info2.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="proName">
+                                            <p class="tit">
+                                                [맨유]
+                                                <span class="muitem">맨유</span>
+                                            </p>
+                                            <p class="txt">맨유 트래블재킷 2020-21</p>
+                                        </div>
+                                        <div class="proPrice">
+                                            <div class="inPrice">
+                                                <ul>
+                                                    <li>
+                                                        <span>154,400</span>
+                                                        원
+                                                    </li>
+                                                    <li class="multi">
+                                                        <img src="../img/icon_multi_order.jpg" alt="">
+                                                    </li>
+                                                    <li>
+                                                        <span>1</span>
+                                                        개
+                                                    </li>
+                                                    <li class="equal">
+                                                        <img src="../img/icon_equal_order.jpg" alt="">
+                                                    </li>
+                                                    <li>
+                                                        <span>154,400</span>
+                                                        원
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="orderBtn">
+                                            <a href="#" class="popOpen cancle">주문취소</a>
+                                        </div>
+                                    </li>
+                                    <li class="list">
+                                        <div class="proImg">
+                                            <div class="imgWrap">
+                                                <div class="img">
+                                                    <img src="../img/mu_order_info1.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="proName">
+                                            <p class="tit">
+                                                [맨유]
+                                                <span class="muitem">맨유</span>
+                                            </p>
+                                            <p class="txt">맨유 홈 저지 2020-21</p>
+                                        </div>
+                                        <div class="proPrice">
+                                            <div class="inPrice">
+                                                <ul>
+                                                    <li>
+                                                        <span>106,900</span>
+                                                        원
+                                                    </li>
+                                                    <li class="multi">
+                                                        <img src="../img/icon_multi_order.jpg" alt="">
+                                                    </li>
+                                                    <li>
+                                                        <span>1</span>
+                                                        개
+                                                    </li>
+                                                    <li class="equal">
+                                                        <img src="../img/icon_equal_order.jpg" alt="">
+                                                    </li>
+                                                    <li>
+                                                        <span>106,900</span>
+                                                        원
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="orderBtn two">
+                                            <a href="#" class="popOpen">환불</a>
+                                            <a href="#" class="popOpen">교환</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btnArea w140">
+                        <a href="#">전체 주문취소</a>
+                        <a href="#">전체 주문환불</a>
+                        <a href="#">전체 제품교환</a>
+                    </div>
+                    <div class="proInfo pdt">
+                        <p class="tit">
+                            주문자 정보
+                        </p>
+                        <div class="diDiv con">
+                            <table class="diTable" border="1" cellspacing="0">
+                                <caption>주문자정보</caption>
+                                <colgroup>
+                                    <col width="190px" class="thWide">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>주문번호 / 일자</span>
+                                        </th>
+                                        <td>
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">
+                                                        <span class="blackCr">MU2020082512345</span>
+                                                        &nbsp;&nbsp;/&nbsp;&nbsp;  2020.08.25 12:24:52
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>주문자명</span>
+                                        </th>
+                                        <td>
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">
+                                                        <span class="blackCr">홍길동</span>
+                                                        &nbsp;(010-1234-1234)
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>총 주문금액</span>
+                                        </th>
+                                        <td>
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">
+                                                        <span class="blackCr">261,300원</span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>배송비</span>
+                                        </th>
+                                        <td>
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">0원</span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>쿠폰</span>
+                                        </th>
+                                        <td>
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">-26,130원</span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>총 결제금액</span>
+                                        </th>
+                                        <td>
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">
+                                                        <span class="blackCr">235,170원</span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>결제수단 / 상태</span>
+                                        </th>
+                                        <td>
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">
+                                                        <span class="blackCr">카카오페이</span>
+                                                        &nbsp;(카카오페이)
+                                                    </span>
+                                                    <span class="blackCr">&nbsp;&nbsp;/ 결제완료</span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" style="border-bottom: 0px;">
+                                            <span>배송상태</span>
+                                        </th>
+                                        <td style="border-bottom: 0px;">
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">
+                                                        <span class="blackCr">배송중</span>
+                                                        &nbsp;(CJ대한통운 송장번호 690288741234)
+                                                    </span>
+                                                    <a href="#" class="trace">
+                                                        <span>[배송추적]</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="proInfo pdt">
+                        <p class="tit">
+                            배송지정보
+                        </p>
+                        <div class="diDiv con">
+                            <table class="diTable" border="1" cellspacing="0">
+                                <caption>배송지정보입력</caption>
+                                <colgroup>
+                                    <col width="190px" class="thWide">
+                                    <col width="*">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>수령자</span>
+                                        </th>
+                                        <td>
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">
+                                                        <span class="blackCr">홍길동</span>
+                                                        &nbsp;(010-1234-1234)
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">
+                                            <span>배송지</span>
+                                        </th>
+                                        <td>
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">
+                                                        (11234) 부산시 중구 남포동 123-12 롯데빌딩 5층
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" style="border-bottom: 0px;">
+                                            <span>배송 요청사항</span>
+                                        </th>
+                                        <td style="border-bottom: 0px;">
+                                            <ul class="pta">
+                                                <li>
+                                                    <span class="valign">경비실에 맡겨 주세요.</span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="btnArea w210">
+                        <a href="#" class="colorGray">전체 주문내역 보기</a>
+                        <a href="#">주문 문의</a>
+                    </div>
+                </div>
+                <div class="listSearch">
+                    <input type="text" placeholder="검색어를 입력해 주세요" class="sinput">
+                    <a href="#"><img src="../img/btn_list_search.gif" alt="검색"></a>
+                </div>
+            </div>
+            <div class="paging">
+                <span class="prev">
+                    <a href="#"><&nbsp;이전</a>
+                </span>
+                <span class="num">
+                    <a href="#" class="on">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                </span>
+                <span class="next">
+                    <a href="#">다음&nbsp;></a>
+                </span>
+            </div>
+        </main>
+        <footer>
+            <ul>
+                <li><a href="#">개인정보 보호 정책</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">더 알아보기</a></li>
+            </ul>
+
+            <div>
+                <p class="footer1">
+                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
+                </p>
+                <p class="footer2">
+                    <strong>MANCHESTER UNITED</strong><br />
+                    영국 스트렛포드 올드 트래포드<br />
+                    대표이사 : 김우드워드<br />
+                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
+                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
+                </p>
+                <p class="footer3">
+                    <strong>고객센터</strong><br />
+                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
+                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
+                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
+                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
+                </p>
+            </div>
+        </footer>
+        <button type="button" id="top" style="display: inline-block;">상단이동</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>맨유::order</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="../js/top.js"></script>
+    <script src="../js/category.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script>
+       
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="top">
+                <div>
+                    <a href="#"><i class="far fa-user"></i>&nbsp;LOGIN</a>
+                    <a href="#">SIGN UP</a>
+                    <a href="#">MYPAGE</a>
+                    <a href="#">HELP</a>
+                    <a href="#"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
+                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;</a>
+                </div>
+            </div>
+            <div class="logo">
+                <div>
+                    <a href="#"><img src="../img/mu_header_logo.png" alt="로고"></a>
+                    <form action="#">
+                        <input type="text" name="search" />
+                        <button><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="menu">
+                    <ul class="category">
+                        <li>
+                            <a href="#"><i class="fas fa-futbol"></i>KITS</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="#">&nbsp;Home</a></li>
+                                <li><a href="#">&nbsp;Away</a></li>
+                                <li><a href="#">&nbsp;Third</a></li>
+                                <li><a href="#">&nbsp;GoalKeeper</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-running"></i>&nbsp;TRAINING</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="">&nbsp;MAN</a></li>
+                                <li><a href="">&nbsp;WOMAN</a></li>
+                                <li><a href="">&nbsp;KID</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-tshirt"></i>RETRO</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="">&nbsp;Shirt</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-gift"></i>GIFT</a>
+                            <ul class="category-bar" style="display: none;">
+                                <li><a href="">&nbsp;Accessory</a></li>
+                                <li><a href="">&nbsp;Bag</a></li>
+                                <li><a href="">&nbsp;Cap</a></li>
+                                <li><a href="">&nbsp;Flag</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-percentage"></i>&nbsp;SALE</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <ul>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">주문조회</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">고객센터</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </header>
+        <main>
+            <!-- 장바구니 -->
+            <section id="order">
+              
+                <!-- 제목, 페이지 네비게이션-->
+                <nav>
+                  <h1>주문결제</h1>
+                  <p>
+                    HOME > <span>장바구니</span> > <strong>주문결제</strong>
+                  </p>
+                </nav>
+                <section>
+                  <form action="#">
+                      <div class="product">
+                          <table>
+                              <thead>
+                                <tr>
+                                  <th>상품정보</th>
+                                  <th>수량</th>
+                                  <th>상품금액</th>
+                                  <td>할인/적립</td>
+                                  <th>배송비</th>
+                                  <th>합계</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="empty">
+                                  <td colspan="7">장바구니에 상품이 없습니다.</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <article>
+                                      <a href="#"><img src="../img/mu_item6.png" alt="상품정보"></a>
+                                      <div>
+                                        <h2><a href="#">맨유 골키퍼 홈 저지 2020-21</a></h2>
+                                        <p>사이즈:2XL / COLOR: YELLOW</p>
+                                      </div>
+                                    </article>
+                                  </td>
+                                  <td>1</td>
+                                  <td>106,900원</td>
+                                  <td>10,690원</td>
+                                  <td>무료배송</td>
+                                  <td>96,210원</td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <article>
+                                      <a href="#"><img src="../img/mu_item1.png" alt="상품정보"></a>
+                                      <div>
+                                        <h2><a href="#">맨유 홈 저지 2020-21</a></h2>
+                                        <p>사이즈:3XL / COLOR: RED</p>
+                                      </div>
+                                    </article>
+                                  </td>
+                                  <td>1</td>
+                                  <td>116,400원</td>
+                                  <td>11,640원</td>
+                                  <td>무료배송</td>
+                                  <td>104,760원</td>
+                                </tr>
+                              </tbody>
+                            </table>                      
+                      </div>
+                      
+                      <section>
+                          <article class="delivery">
+                              <h1>배송정보</h1>
+                              
+                              <div class="user">
+                                  <label>주문자 <input type="text" name="name" /></label>
+                                  <label>휴대폰 <input type="text" name="hp" /><span>- 포함 입력</span></label>
+                                  <label>이메일 <input type="email" name="email"><span>- 이메일 양식에 맞게 작성하세요.</span></label>
+                              </div>
+                                                           
+                              <div class="address">
+                                  <label>
+                                      우편번호 <input type="text" name="zip" value="54321"/>
+                                      <input type="button" value="검색" />
+                                  </label>
+                                  <label>기본주소 <input type="text" name="addr1" class="addr" value="부산광역시 연제구 거제2동"/></label>
+                                  <label>상세주소 <input type="text" name="addr2" class="addr" value="월드컵대로 344"/></label>
+                              </div>
+                          </article>
+      
+                          <article class="discount">
+                              <h1>할인정보</h1>
+      
+                              <div>
+                                  <p>현재 포인트 : <span>7233</span>점</p>
+                                  <label>
+                                      <input type="text" name="point" />점
+                                      <input type="button" value="적용"/>
+                                  </label>
+                                  <span>포인트 10,000점 이상이면 현금처럼 사용 가능합니다.</span>
+                              </div>
+                          </article>
+      
+                          <article class="payment">
+                              <h1>결제정보</h1>
+                              <div>
+                                  <span>신용카드</span>
+                                  <p>
+                                      <label><input type="radio" name="payment" value="type1"/>신용카드 결제</label>
+                                      <label><input type="radio" name="payment" value="type2"/>체크카드 결제</label>                                
+                                  </p>
+                              </div>
+                              <div>
+                                  <span>계좌이체</span>
+                                  <p>
+                                      <label><input type="radio" name="payment" value="type3"/>실시간 계좌이체</label>
+                                      <label><input type="radio" name="payment" value="type4"/>무통장 입금</label>                                
+                                  </p>
+                              </div>
+                              <div>
+                                  <span>기타</span>
+                                  <p>
+                                      <label><input type="radio" name="payment" value="type3"/>휴대폰결제</label>
+                                      <label>
+                                          <input type="radio" name="payment" value="type4"/>카카오페이
+                                          <img src="../img/ico_kakaopay.gif" alt="카카오페이"/>
+                                      </label>                                
+                                  </p>
+                              </div>
+                          </article>
+      
+                          <article class="alert">
+                              <ul>
+                                  <li><span>맨유스토어의 모든 판매자는 안전거래를 위해 구매금액, 결제수단에 상관없이 모든거래에 대하여 맨유스토어 책임회사의 구매안전서비스(에스크로)를 제공하고 있습니다.</span></li>
+                                  <li><span>맨유스토어 책임회사의 전자금융거래법에 의해 결제대금예치업 등록번호는 02-006-07708 입니다.</span></li>
+                                  <li><span>등록여부는 금융감독원 홈페이지(www.fss.or.kr)의 업무자료>인허가업무안내>전자금융업등록현황에서 확인하실수 있습니다.</span></li>
+                              </ul>
+                          </article>
+      
+                          <div class="info">
+                              <h2>최종결제 정보</h2>
+                              <table border="0">
+                                <tr>
+                                  <td>총</td>
+                                  <td>2 건</td>
+                                </tr>
+                                <tr>
+                                  <td>상품금액</td>
+                                  <td>223,300</td>
+                                </tr>
+                                <tr>
+                                  <td>할인금액</td>
+                                  <td>-22,330</td>
+                                </tr>
+                                <tr>
+                                  <td>배송비</td>
+                                  <td>0</td>
+                                </tr>
+                                <tr>
+                                  <td>포인트 할인</td>
+                                  <td>2,233</td>
+                                </tr>
+                                <tr>
+                                  <td>전체주문금액</td>
+                                  <td>200,970</td>
+                                </tr>
+                                
+                              </table>
+                              <input type="button" name="" value="결제하기">
+                  
+                            </div>
+                      </section>                
+                  </form>
+                </section>
+              </section>
+          </main>
+        <footer>
+            <ul>
+                <li><a href="#">개인정보 보호 정책</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">더 알아보기</a></li>
+            </ul>
+
+            <div>
+                <p class="footer1">
+                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
+                </p>
+                <p class="footer2">
+                    <strong>MANCHESTER UNITED</strong><br />
+                    영국 스트렛포드 올드 트래포드<br />
+                    대표이사 : 김우드워드<br />
+                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
+                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
+                </p>
+                <p class="footer3">
+                    <strong>고객센터</strong><br />
+                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
+                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
+                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
+                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
+                </p>
+            </div>
+        </footer>
+        <button type="button" id="top" style="display: inline-block;">상단이동</button>
+    </div>
+</body>
+</html>

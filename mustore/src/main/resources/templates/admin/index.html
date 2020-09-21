@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>맨유::admin</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script th:src="@{/admin/js/admin.js}"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" th:href="@{/admin/css/admin.css}">
+</head>
+<style>
+
+</style>
+<script>
+
+</script>
+<body class="ECInfluencer">
+    <div id="wrap" class>
+        <div id="header">
+            <div class="header">
+                <div class="head">
+                    <h1 class="logo">
+                        <a href="#">
+                            <img th:src="@{/admin/img/admin_header_logo.png}" alt="manstore">
+                        </a>
+                    </h1>
+                    <div class="changeModeToggle">
+                        <strong class="mode now" id="ec-influencer-gnb-mode-smart">스마트모드</strong>
+                        <label class="toggle ec-influencer-gnb-mode-change">
+                            <input type="checkbox" class="check" id="ec-influencer-gnb-mode-change-checkbox">
+                            <span class="label"></span>
+                        </label>
+                        <strong class="mode ec-influencer-gnb-mode-change" id="ec-influencer-gnb-mode-pro" style="cursor: pointer;">프로모드</strong>
+                    </div>
+                </div>
+                <ul class="util" id="gnb">
+                    <li class="shop">
+                        <a href="#">쇼핑몰 바로가기</a>
+                        <div class="dropLayer">
+                            <div class="mail">
+                                <a href="#" target="_blank" class="btnPc">PC쇼핑몰 바로가기</a>
+                                <a href="#" target="_blank" class="btnMobile">모바일쇼핑몰 바로가기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="setting">
+                        <a href="#">설정</a>
+                    </li>
+                </ul>
+                <div class="member ec-influencer-gnb-member-area">
+                    <span class="ec-influencer-gnb-member">
+                        <strong class="name">
+                            <span class="icoUser"></span>
+                            대표운영자님
+                        </strong>
+                        <button type="button" class="btnMore eClick">회원정보 보기</button>
+                    </span>
+                    <div class="dropLayer ec-influencer-gnb-member-info" style="display: none;">
+                        <div class="userInfo">
+                            <span class="icoUser"></span>
+                            <strong class="mall">manutd</strong>
+                            <span class="user">대표운영자님</span>
+                            <div class="cs">
+                                <a href="#" id="eAddcafe24CustomerIdBtn" class="btnCS" onclick="addCafe24CustomerId(); return false;">CS전용 계정생성</a>
+                                <span id="cafe24CustomerIdLoading" style="display: none; vertical-align: middle;">
+                                    <img src="./img/ico_loading.gif" alt="loading">
+                                </span>
+                                <a href="#" class="btnFaq" target="_blank" title="새창 열림">FAQ</a>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <a href="#">내쇼핑몰정보</a>
+                            <a href="#">로그아웃</a>
+                        </div>
+                        <button type="button" class="btnClose eClose" id="ec-influencer-gnb-member-area-close">닫기</button>
+                    </div>
+                </div>
+                <div class="add ec-influencer-gnb-add-menu-area">
+                    <button type="button" class="btnMore eClick ec-influencer-gnb-more-view">더보기</button>
+                    <div class="dropLayer ec-influencer-gnb-add-menu" style="display: none;">
+                        <div class="divide">
+                            <strong class="title">바로가기</strong>
+                            <ul class="link">
+                                <li>
+                                    <a href="#" target="_blank">자주 묻는 질문</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:alert('사용할 수 없습니다.')" target="_blank">1:1 문의</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">앱스토어</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">쇼핑몰센터</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">마케팅센터</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">교육센터</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">디자인센터</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="divide">
+                            <strong class="title">편의기능</strong>
+                            <ul class="link">
+                                <li>
+                                    <a href="#" class="link" onclick="addFavorite();">즐겨찾기 추가</a>
+                                    <a href="#" class="link" onclick="shop_admin_icon();">바탕화면 추가</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="layout">
+        <div id="container">
+            <div id="sidebar">
+                <div class="snbArea">
+                    <ul id="snb">
+                        <li class="depth1 expandable">
+                            <a href="#" id="QA_Lnb_Menu2486" menuno="2486" treeno="2703" class="product" targetframe="F">상품관리</a>
+                            <ul>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu2033" menuno="2033" treeno="2705" class targetframe="F">상품등록</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu2037" menuno="2037" treeno="2704" class targetframe="F">상품목록</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu2136" menuno="2136" treeno="2706" class targetframe="F">상품분류 관리</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu2464" menuno="2464" treeno="2736" class targetframe="F">메인진열 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth1 expandable">
+                            <a href="#" id="QA_Lnb_Menu2487" menuno="2487" treeno="2707" class="order" targetframe="F">주문관리</a>
+                            <ul>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu74" menuno="74" treeno="2708" class targetframe="F">전체주문목록</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu71" menuno="71" treeno="2709" class targetframe="F">배송관리</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu74" menuno="76" treeno="2710" class targetframe="F">취소/교환/반품/환불</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class>
+                            <a href="#" id="QA_Lnb_Menu2488" menuno="2488" treeno="2711" class targetframe="F">고객관리</a>    
+                        </li>
+                        <li class="depth1 expandable">
+                            <a href="#" id="QA_Lnb_Menu2489" menuno="2489" treeno="2712" class="board" targetframe="F">게시판관리</a>
+                            <ul>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu106" menuno="106" treeno="2713" class targetframe="F">게시판 설정</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu390" menuno="390" treeno="2714" class targetframe="F">게시물 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth1 expandable">
+                            <a href="#" id="QA_Lnb_Menu2490" menuno="2490" treeno="2715" class="design" targetframe="F">디자인관리</a>
+                            <ul>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu1562" menuno="1562" treeno="2716" class targetframe="F">디자인 보관함</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu1563" menuno="1563" treeno="2717" class targetframe="F">디자인 추가</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu2014" menuno="2014" treeno="2718" class targetframe="F">디자인 백업/복구</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth1 expandable">
+                            <a href="#" id="QA_Lnb_Menu2491" menuno="2491" treeno="2719" class="promotion" targetframe="F">프로모션</a>
+                            <ul>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu2011" menuno="2011" treeno="2720" class targetframe="F">혜택 관리</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu284" menuno="284" treeno="2721" class targetframe="F">쿠폰 관리</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu1603" menuno="1603" treeno="2722" class targetframe="F">적립금 관리</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth1 expandable">
+                            <a href="#" id="QA_Lnb_Menu2492" menuno="2492" treeno="2723" class="calculate" targetframe="F">통계분석</a>
+                            <ul>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu2063" menuno="2063" treeno="2724" class targetframe="F">매출 분석</a>
+                                </li>
+                                <li class>
+                                    <a href="#" id="QA_Lnb_Menu2069" menuno="2069" treeno="2725" class targetframe="F">상품 분석</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class>
+                            <a href="#" id="QA_Lnb_Menu2441" menuno="2441" treeno="2729" class="appstore" targetframe="F">앱스토어</a>                            
+                        </li>
+                        <li class>
+                            <a href="#" id="QA_Lnb_Menu2504" menuno="2504" treeno="2742" class="market" targetframe="F">마켓통합관리</a>                            
+                        </li>
+                    </ul>
+                    <div class="customer">
+                        <strong class="title">
+                            고객센터
+                            <span class="info">(평일 9~18시)</span>
+                        </strong>
+                        <div class="tel">
+                            1554
+                            <span class="dot">.</span>
+                            1212
+                        </div>
+                    </div>
+                    <div class="ftp">
+                        <strong class="title">파일 업로드 사용 용량</strong>
+                        &nbsp;
+                        <a href="#" class="btnUploader" id="ec-smartmode-lnb-file-uploader">업로더</a>
+                        <div class="info">
+                            <div class="gauge">
+                                <span class="value" style="width: 12%;"></span>
+                            </div>
+                            <div class="data">
+                                <strong class="value">12%</strong>
+                                <span class="capacity">
+                                    <strong class="value">24MB</strong>
+                                    / 200MB
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="layout">
+            <div id="content">
+                <div class="gridSet nowrap">
+                    <div class="grid">
+                        <div class="dashArea">
+                            <div class="mTitle">
+                                <h2>오늘 매출 현황</h2>
+                                <span class="desc">(8월27일 09:10 기준)</span>
+                                <span class="cManual eSmartMode" code="MN">
+                                    <a href="#" target="_blank" class="btnManual" title="새창 열림">메뉴얼</a>
+                                </span>
+                            </div>
+                            <div class="mDashSales">
+                                <a href="#" class="item order">
+                                    <strong class="title">
+                                        주문
+                                        <span id="orderCount" class="count">(70건)</span>
+                                    </strong>
+                                    <span class="data">
+                                        <strong id="orderPrice" class="value">700,000</strong>
+                                        <span class="unit">원</span>
+                                    </span>
+                                </a>
+                                <a href="#" class="item payment">
+                                    <strong class="title">
+                                        결제
+                                        <span id="payedCount" class="count">(69건)</span>
+                                    </strong>
+                                    <span class="data">
+                                        <strong id="payedPrice" class="value">690,000</strong>
+                                        <span class="unit">원</span>
+                                    </span>
+                                </a>
+                                <a href="#" class="item refund">
+                                    <strong class="title">
+                                        환불
+                                        <span id="refundCount" class="count">(1건)</span>
+                                    </strong>
+                                    <span class="data">
+                                        <strong id="refundPrice" class="value">10,000</strong>
+                                        <span class="unit">원</span>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="mTitle">
+                                <h2>주문현황</h2>
+                                <span class="desc">(최근 1개월 기준)</span>
+                            </div>
+                            <div class="gridSet">
+                                <div class="mDashStatus order">
+                                    <a href="#" id="no_pay_cnt" class="item">
+                                        <strong class="title">입금전</strong>
+                                        <span class="count">10</span>
+                                    </a>
+                                </div>
+                                <div class="mDashStatus order">
+                                    <a href="#" id="is_shipped_f" class="item">
+                                        <strong class="title">배송준비중</strong>
+                                        <span class="count">10</span>
+                                    </a>
+                                </div>
+                                <div class="mDashStatus order">
+                                    <a href="#" id="is_shipped_w" class="item">
+                                        <strong class="title">배송대기</strong>
+                                        <span class="count">10</span>
+                                    </a>
+                                </div>
+                                <div class="mDashStatus order">
+                                    <a href="#" id="is_shipped_m" class="item">
+                                        <strong class="title">배송중</strong>
+                                        <span class="count">40</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mTitle">
+                                <h2>취소 / 교환 / 반품 / 환불현황</h2>
+                                <span class="desc">(최근 1개월 기준)</span>
+                            </div>
+                            <div class="gridSet">
+                                <div class="mDashStatus cs">
+                                    <a href="#" id="cancel_count" class="item">
+                                        <strong class="title">취소</strong>
+                                        <span class="count">0</span>
+                                    </a>
+                                </div>
+                                <div class="mDashStatus cs">
+                                    <a href="#" id="change_count" class="item">
+                                        <strong class="title">교환</strong>
+                                        <span class="count">0</span>
+                                    </a>
+                                </div>
+                                <div class="mDashStatus cs">
+                                    <a href="#" id="return_count" class="item">
+                                        <strong class="title">반품</strong>
+                                        <span class="count">0</span>
+                                    </a>
+                                </div>
+                                <div class="mDashStatus cs">
+                                    <a href="#" id="before_refund" class="item">
+                                        <strong class="title">환불</strong>
+                                        <span class="count">1</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="gridSet nowrap notify">
+                                <div class="grid notice">
+                                    <div class="mDashNotice">
+                                        <div class="tab eTab" bindstatus="true">
+                                            <ul>
+                                                <li class="eTab_notice selected">
+                                                    <a href="#">공지사항</a>
+                                                </li>
+                                                <li class="eTab_update">
+                                                    <a href="#">업그레이드</a>
+                                                </li>
+                                                <li class="eTeb_market">
+                                                    <a href="#">해외 소식</a>
+                                                </li>
+                                                <li class="eTab_faq">
+                                                    <a href="#">자주묻는 질문</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tabContent" id="tabContent1" style="display: block;">
+                                            <div class="news">
+                                                <ul class="list">
+                                                    <li>
+                                                        <a href="#">
+                                                            <strong>[이벤트] [리뷰톡톡] '코로나19 극복을 위한 1+1 이벤트!'</strong>
+                                                        </a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-08-24</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <strong>[안내] [사전공지] 오래된 주문은 '과거주문조회' 메뉴에서 조회하세요.</strong>
+                                                        </a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-08-24</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <strong>[안내] 온라인쇼핑몰의무보험(개인정보배상책임보험) 가입점검 강화에 따른 안내</strong>
+                                                        </a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-08-10</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <strong>[안내] 해외운영대행 서비스 개편 오픈 안내</strong>
+                                                        </a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-07-28</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <strong>[이벤트] [플러스앱] '코로나19 극복 이벤트'</strong>
+                                                        </a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-07-23</span>
+                                                    </li>
+                                                </ul>
+                                                <a href="#" class="btnMore">더보기</a>
+                                            </div>
+                                        </div>
+                                        <div class="tabContent" id="tabContent2" style="display: none;">
+                                            <div class="news">
+                                                <ul class="list">
+                                                    <li>
+                                                        <a href="#">[부가서비스] 우체국 택배 연동 API 업그레이드 안내</a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-08-26</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">[고객관리] 회원구분(개인,사업자,외국인) 및 상호명 조건으로 회원 검색 개선</a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-08-26</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">[모바일쇼핑몰] 모바일어드민 대시보드 상품준비중 주문 현황 추가 안내</a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-08-20</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">[부가서비스] 맨유스토어 스마트매니저 추가 안내</a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-08-26</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">[스마트디자인] 해외 주소 입력 방식 개선 안내</a>
+                                                        <span class="icoNoticeNew">New</span>
+                                                        <span class="date">2020-08-26</span>
+                                                    </li>
+                                                </ul>
+                                                <a href="#" class="btnMore">더보기</a>
+                                            </div>
+                                        </div>
+                                        <div class="tabContent" id="tabContent3" style="display: none;">
+                                            <div class="news">
+                                                <ul class="list">
+                                                    <li>
+                                                        <a href="#"> 장기 비로그인 계정 비밀번호 초기화 안내 </a>
+                                                        <img src="./img/ico_route_sk11st.gif" alt="11번가">
+                                                        <span class="date">2020-08-26</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"> [식품/뷰티] 건전한 온라인 유통문화 확산을 위한 무료 온라인 교육 안내 </a>
+                                                        <img src="./img/ico_route_sk11st.gif" alt="11번가">
+                                                        <span class="date">2020-08-26</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"> [공지] 청소년보호정책 개정 안내입니다.(2020년 9월 2일)</a>
+                                                        <img src="./img/ico_route_sk11st.gif" alt="11번가">
+                                                        <span class="date">2020-08-20</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"> 국표원, '어린이제품 안전특별법' 안전기준치 위반 26개 제품 리콜명령</a>
+                                                        <img src="./img/ico_route_sk11st.gif" alt="11번가">
+                                                        <span class="date">2020-08-26</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">[기술표준원] 어린이제품 등 리콜안내</a>
+                                                        <img src="./img/ico_route_inpark.gif" alt="인터파크">
+                                                        <span class="date">2020-08-26</span>
+                                                    </li>
+                                                </ul>
+                                                <a href="#" class="btnMore">더보기</a>
+                                            </div>
+                                        </div>
+                                        <div class="tabContent" id="tabContent4" style="display: none;">
+                                            <div class="news">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid gFlex1">
+                        <div class="bannerArea">
+                            <div class="mAdBanner">
+                                <span id="admngDebug"></span>
+                                <div class="admng-multi-tempbox" style="position: relative; width: 295px;">
+                                    <span id="admngSide_5">
+                                        <a href="#">
+                                            <img src="./img/be_global_banner_295x318.jpg" alt="배너" name="admngPopImage">
+                                        </a>
+                                        <img src="" alt="">
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mAdBanner">
+                                <span id="admngDebug"></span>
+                                <span id="admngSide_3">
+                                    <a href="#">
+                                        <img src="./img/smartmode_banner2.jpg" alt="배너">
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="mAdBanner card">
+                                <a href="#" name="ec-mode-dashboard-pg" data-ispgwait="F">
+                                    <img src="./img/smartmode_banner3.jpg" alt="배너" id="ec-mode-pg-status-banner-ok">
+                                </a>
+                                <input type="hidden" id="ec-mode-pg-need-status-refresh" value="F">
+                            </div>
+                            <div class="mDashService">
+                                <a href="#" target="_blank" title="새창 열림" class="service edu">고객센터</a>
+                                <a href="#" target="_blank" title="새창 열림" class="service edu">창업센터</a>
+                                <a href="#" target="_blank" title="새창 열림" class="service edu">마케팅센터</a>
+                                <a href="#" target="_blank" title="새창 열림" class="service edu">디자인센터</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span id="admngDebug"></span>
+            <span id="admngSide_2"></span>
+        </div>
+    </div>
+</body>
+</html>

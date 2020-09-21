@@ -1,0 +1,505 @@
+/* order-list */
+body {
+    font-size: 14px;
+    font-family: '맑은 고딕', 'Malgun Gothic', 'Dotum', '돋움', 'arial', 'verdana', sans-serif;
+    color: #2e3039;
+}
+.optionArea {
+    margin: 0 0 30px;
+    padding: 20px;
+    border-radius: 2px;
+    clear: both;
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 0px 2px 1px 0px rgba(205,211,222,1);
+}
+.mCtrl {
+    padding: 7px 15px;
+    border: 1px solid #dedede;
+    line-height: 21px;
+    text-align: center;
+    background: #fff;
+}
+.mCtrl.typeHeader {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -1px;
+}
+.mCtrl .gRight{
+    float: right;
+    text-align: right;
+}
+.btnCtrl {
+    height: 28px;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 28px;
+    background-color: #7c7c8c;
+    transition: .2s ease-out;
+}
+.cTip {display: inline-block;}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+th {
+    display: table-cell;
+    font-weight: bold;
+    margin: 0;
+}
+.mOption table {
+    line-height: 1.5;
+    background-color: #fff;
+}
+caption {
+    overflow: hidden;
+    width: 1px;
+    font-size: 1px;
+    line-height: 0;
+    text-indent: 150%;
+    white-space: nowrap;
+}
+.mOption th {
+    padding: 9px 9px 7px;
+    border: 1px solid #dedede;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+    background-color: #f3f3f3;
+}
+.mOption td {
+    height: 24px;
+    padding: 9px 9px 7px;
+    border: 1px solid #dedede;
+    text-align: left;
+}
+.fSelect {
+    display: inline;
+    height: 32px;
+    margin: 0;
+    border: 1px solid #d4d4d4;
+    color: #2e3039;
+    font-size: 14px;
+    line-height: 30px;
+    appearance: none;
+}
+.fSelect {
+    padding: 0 30px 0 10px;
+    background: #fff url('../img/ico_select.png') no-repeat right 10px center;
+}
+.btnDate {
+    min-width: 46px;
+    height: 28px;
+    padding: 0 5px;
+    font-size: 13px;
+    line-height: 26px;
+    color: #2e3039;
+    border: 1px solid #98989b;
+    background-color: #fff;
+    transition: .2s ease-out;
+}
+.btnDate {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.btnDate + .btnDate {
+    position: relative;
+    z-index: 1;
+    margin-left: -5px;
+    border-right: 0;
+}
+.btnDate.selected {
+    color: #fff;
+    border-color: #fe343c;
+    background-color: #fe343c;
+}
+.btnDate:hover {
+    color: #fff;
+    border-color: #fe343c;
+    background-color: #fe343c;
+}
+.btnDate + .btnDate:before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    display: block;
+    width: 1px;
+    height: 28px;
+    background-color: #98989b;
+}
+.btnDate + .btnDate:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    display: block;
+    width: 1px;
+    height: 28px;
+    background-color: #98989b;
+}
+.gBreak {
+    display: inline-block;
+    margin: 1px 0 0;
+}
+.fText {
+    height: 32px;
+    line-height: 14px;
+}
+.fText {
+    max-width: 100%;
+    padding: 0 9px 2px;
+    box-sizing: border-box;
+    border: 1px solid #d4d4d4;
+    font-size: 14px;
+    color: #686b6d;
+    outline: 0 none;
+    transition: border .2s ease-out;
+}
+.fText.gDate {
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.btnIcon.icoCal {
+    width: 19px;
+    height: 19px;
+    vertical-align: text-top;
+    background-position: -50px -500px;
+}
+a.btnIcon {
+    display: inline-block;
+    overflow: hidden;
+    width: 28px;
+    height: 28px;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    background: url('../img/sfix_icon_button.png') 0 0 no-repeat;
+    box-sizing: border-box;
+}
+.btnIcon span {
+    visibility: hidden;
+    display: block;
+    height: 100%;
+    font-size: 1px;
+}
+.btnIcon.icoPlus {
+    position: relative;
+    border: 1px solid #98989b;
+    background-color: #fff;
+    background-image: none;
+}
+.btnIcon.icoPlus:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 2px;
+    margin: -1px 0 0 -6px;
+    background-color: #565656;
+    background-image: none;
+}
+.btnIcon.icoPlus:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 12px;
+    margin: -6px 0 0 -1px;
+    background-color: #565656;
+    transform: rotate(180deg);
+    background-image: none;
+}
+.btnNormal {
+    height: 28px;
+    padding: 0 10px;
+    color: #1c1c1c;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 26px;
+    border: 1px solid #98989b;
+    background-color: #fff;
+    transition: .2s ease-out;
+}
+.btnNormal {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.btnNormal em.icoLink {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: -3px -4px 0 4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #6b6b6b transparent transparent transparent;
+    vertical-align: middle;
+    -webkit-transform: rotate(-90deg);
+}
+
+label.gLabel {outline: 0;}
+.gLabel {
+    display: inline-block;
+    margin: 0 28px 0 0;
+}
+.gLabel .fChk {vertical-align: text-top;}
+input[type="checkbox"]:checked {
+    border: 0;
+    background-image: url('../img/bg_checkbox_checked.png');
+    transition: .2s ease-out;
+}
+input[type="checkbox"] {
+    position: relative;
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    background: #fff;
+    outline: 0;
+}
+
+.mButton {
+    margin: 20px 0;
+    padding: 0 4px 0 0;
+}
+.mButton.gCenter {
+    position: relative;
+    text-align: center;
+}
+.mButton a:first-child {margin-left: 0;}
+.mButton a {margin: 0 0 0 10px;}
+.mButton::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.btnSearch {
+    min-width: 84px;
+    height: 36px;
+    padding: 0 20px;
+    color: #fff;
+    line-height: 34px;
+    border: 1px solid transparent;
+    background-color: #fe343c;
+}
+.btnSearch {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.btnSearch.reset {
+    color: #fe343c;
+    border-color: #fe343c;
+    background-color: #fff;
+}
+
+.section {
+    margin: 0 0 30px;
+    padding: 30px 20px;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+.section .mTitle:first-child + .mTab.typeTab {
+    margin: -31px -21px 20px;
+    background: #ecf0f7;
+}
+.mTab.typeTab {
+    display: flex;
+    position: relative;
+}
+.mTab.typeTab > ul {
+    display: flex;
+    flex: 1;
+    border-left: 1px solid #dadcdd;
+}
+.mTab.typeTab > ul > li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-width: 160px;
+    border-top: 1px solid #dadcdd;
+    border-right: 1px solid #dadcdd;
+    background-color: #f5f7fb;
+}
+.mTab.typeTab > ul > li.selected {
+    z-index: 1;
+    height: 40px;
+    background-color: #fff;
+}
+.mTab.typeTab > ul > li.selected:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: -1px 0;
+    background-color: #fe343c;
+}
+.mTab.typeTab > ul > li.selected a {
+    line-height: 40px;
+    color: #fe343c;
+}
+.mTab.typeTab > ul > li > a {
+    display: inline-block;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 38px;
+    color: #898989;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+.mTab.typeTab > ul > li.selected:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
+.mTab.typeTab:after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    display: block;
+    border-bottom: 1px solid #dadcdd;
+}
+.mState {
+    margin: 10px 0;
+    line-height: 20px;
+}
+.mState:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.mState .gLeft {float: left;}
+.mState .total {
+    float: left;
+    margin: 0 8px 0 0;
+    color: #97989b;
+}
+.mState .total strong {color: #fe343c;}
+
+.mState .gRight {float: right;}
+
+.mBoard.gScroll {
+    position: relative;
+    overflow: auto;
+    border-right: 1px solid #d9dadc;
+    border-left: 1px solid #d9dadc;
+}
+.gScroll {overflow: auto;}
+.mBoard.typeOrder table {border-top: 0;}
+.mBoard.gScroll table {margin-left: -1px;}
+caption {
+    overflow: hidden;
+    width: 1px;
+    font-size: 1px;
+    line-height: 0;
+    text-indent: 150%;
+    white-space: nowrap;
+}
+.mBoard.typeOrder th, .mBoard.typeOrder tbody th[scope*='col'] {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.mBoard.typeOrder td {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.mBoard tbody th[scope*='col'] {
+    padding: 8px 5px;
+    text-align: center;
+}
+.mBoard.gScroll th {border-right-width: 0;}
+.mBoard tbody th {
+    border: 1px solid #dedede;
+    text-align: left;
+    word-break: keep-all;
+}
+.mBoard th {
+    vertical-align: top;
+    color: #2e3039;
+    background-color: #f3f3f3;
+}
+.w24 {width: 24px;}
+.w120 {width: 120px;}
+.w150 {width: 150px;}
+.w95 {width: 95px;}
+.w105 {width: 105px;}
+.w60 {width: 60px;}
+.w45 {width: 45px;}
+.mTooltip {
+    position: relative;
+    display: inline-block;
+    margin: -2px 0 0;
+    vertical-align: middle;
+    text-align: left;
+}
+.mTooltip > .icon {
+    display: block;
+    overflow: hidden;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    text-indent: 150%;
+    white-space: nowrap;
+    cursor: pointer;
+    background: url('../img/sfix_tooltip.png') #828ba3 center no-repeat;
+}
+.mBoard.gScroll td {border-right-width: 0;}
+.mBoard .empty td {
+    margin-top: -1px;
+    border: 1px solid #d9dadc;
+    padding: 50px 0;
+    text-align: center;
+    font-size: 14px;
+}
+.mBoard > p.empty {
+    margin-top: -1px;
+    border: 1px solid #d9dadc;
+    padding: 50px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.mCtrl.typeFooter {margin: -1px 0 0 0;}
+.mCtrl:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.mPaginate {
+    margin: 25px 0 0;
+    text-align: center;
+}
