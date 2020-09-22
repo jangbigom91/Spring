@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>맨유:member</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/member.css}"/>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="member-wrapper">
+      <header>
+        <a href="#"><img th:src="@{/img/mu_header_logo.png}" alt="맨유로고"></a>
+      </header>
+      <main>
+      <div layout:fragment="content"></div>
+      </main>
+   		  
+	  <!-- footer 시작 -->
+      <footer th:include="/fragments/_footer.html::_footer"></footer>
+      <!-- footer 끝 -->
+	</div>
+</body>
+</html>

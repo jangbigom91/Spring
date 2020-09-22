@@ -1,5 +1,5 @@
 package kr.co.mustore.admin.service;
 
-public class BoardService {
+public class AdminMainService {
 
 }

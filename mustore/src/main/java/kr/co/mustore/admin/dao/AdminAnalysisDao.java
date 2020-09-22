@@ -1,5 +1,5 @@
 package kr.co.mustore.admin.dao;
 
-public class PromotionDao {
+public class AdminAnalysisDao {
 
 }

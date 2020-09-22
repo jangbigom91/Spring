@@ -1,348 +1,222 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>맨유::view</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script src="../js/top.js"></script>
-    <script src="../js/category.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <link rel="stylesheet" href="../css/style.css"/>
-    <script>
-       
-    </script>
-    <style>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_shop.html">
 
-    </style>
-</head>
-
-<body>
-    <div id="wrapper">
-        <header>
-            <div class="top">
-                <div>
-                    <a href="#"><i class="far fa-user"></i>&nbsp;LOGIN</a>
-                    <a href="#">SIGN UP</a>
-                    <a href="#">MYPAGE</a>
-                    <a href="#">HELP</a>
-                    <a href="#"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
-                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;</a>
-                </div>
-            </div>
-            <div class="logo">
-                <div>
-                    <a href="#"><img src="../img/mu_header_logo.png" alt="로고"></a>
-                    <form action="#">
-                        <input type="text" name="search" />
-                        <button><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="menu">
-                    <ul class="category">
-                        <li>
-                            <a href="#"><i class="fas fa-futbol"></i>KITS</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="#">&nbsp;Home</a></li>
-                                <li><a href="#">&nbsp;Away</a></li>
-                                <li><a href="#">&nbsp;Third</a></li>
-                                <li><a href="#">&nbsp;GoalKeeper</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-running"></i>&nbsp;TRAINING</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;MAN</a></li>
-                                <li><a href="">&nbsp;WOMAN</a></li>
-                                <li><a href="">&nbsp;KID</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-tshirt"></i>RETRO</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Shirt</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-gift"></i>GIFT</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Accessory</a></li>
-                                <li><a href="">&nbsp;Bag</a></li>
-                                <li><a href="">&nbsp;Cap</a></li>
-                                <li><a href="">&nbsp;Flag</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-percentage"></i>&nbsp;SALE</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <ul>
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">주문조회</a></li>
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">고객센터</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-        </header>
-        <main>
-            <!-- 카테고리/베스트 상품 영역-->
-         
-            
-            <!-- 상품 상세페이지-->
-            <section id="view">
-                <nav>
-                    <h1>맨체스터 유나이티드 홈 저지 2020-21</h1>
-                    <p>
-                        HOME > <span>KITS</span> > <strong>Home</strong>
-                    </p>
-                </nav>
-                <section>
-                    <article class="info">
-                        <div class="image">
-                            <img src="../img/mu_itemview.png" alt="상품이미지">
-                        </div>
-                        <div class="summary">
-                            <nav>
-                                <h1>맨체스터 유나이티드</h1>
-                                <h2>상품번호&nbsp;:&nbsp;<span>10234156987</span></h2>
-                            </nav>
-                            <p>맨체스터 유나이티드 홈 저지 2020-21</p>
-                            <nav>
-                                <img src="../img/icon_couponno.png" alt="쿠폰불가">
-                            </nav>
-                            <nav>
-                                <div class="org_price">
-                                    <del>106,900</del>
-                                    <span>10%</span>
-                                </div>
-                                <div class="dis_price">
-                                    <ins>96,210</ins>
-                                </div>
-                            </nav>
-                            <nav>
-                                <span class="delivery">무료배송</span>
-                                <span class="arrival">2주 뒤 도착예정</span>
-                                <span class="desc">본 상품은 해외배송 가능합니다.</span>
-                            </nav>
-                            <nav>
-                                <span class="card cardfree"><i>아이콘</i>무이자할부</span>&nbsp;&nbsp;
-                                <span class="card cardadd"><i>아이콘</i>카드추가혜택</span>
-                            </nav>
-                            <nav>
-                                <span class="origin">원산지-상세설명 참조</span>
-                            </nav>
-                            <img src="../img/paybanner.png" alt="카드결제" class="banner" />
-                            <div class="btn_choice">
-                                <div class="btnIn">
-                                    <button type="button" class="btn-add-order">바로구매</button>
-                                    <button type="button" class="btn-add-cart">장바구니</button>
-                                    <button type="button" class="btn-add-wish">WISH♥</button>
-                                </div>
-                            </div>
-                            <div class="total">
-                                <span>96,210</span>
-                                <em>총 상품금액</em>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="detail">
-                        <nav>상품정보</nav>
-                        <!-- 상품상세페이지 이미지-->
-                        <img src="../img/mu_view1.png" alt="상품이미지">
-                        <img src="../img/mu_view2.png" alt="상품이미지">
-                    </article>
-
-                    <article class="notice">
-                        <nav>
-                            <h1>상품 정보 제공</h1>
-                            <p>[전자상거래에 관한 상품정보 제공에 관한 고시] 항목에 의거 등록된 정보입니다.</p>
-                        </nav>
-                        <table border="0">
-                            <tr>
-                                <td>상품번호</td>
-                                <td>10234156987</td>
-                            </tr>
-                            <tr>
-                                <td>상품상태</td>
-                                <td>새상품</td>
-                            </tr>
-                            <tr>
-                                <td>부가세 면세여부</td>
-                                <td>과세상품</td>
-                            </tr>
-                            <tr>
-                                <td>영수증발행</td>
-                                <td>발행가능 - 신용카드 전표, 온라인 현금영수증</td>
-                            </tr>
-                            <tr>
-                                <td>사업자구분</td>
-                                <td>사업자 판매자</td>
-                            </tr>
-                            <tr>
-                                <td>브랜드</td>
-                                <td>맨체스터 유나이티드</td>
-                            </tr>
-                            <tr>
-                                <td>원산지</td>
-                                <td>해외생산</td>
-                            </tr>
-                        </table>
-                        <table border="0">
-                            <tr>
-                                <td>제품소재</td>
-                                <td>100% 재활용 폴리</td>
-                            </tr>
-                            <tr>
-                                <td>색상</td>
-                                <td>빨강</td>
-                            </tr>
-                            <tr>
-                                <td>사이즈</td>
-                                <td>S~4XL</td>
-                            </tr>
-                            <tr>
-                                <td>제조자/수입국</td>
-                                <td>영국</td>
-                            </tr>
-                            <tr>
-                                <td>제조국</td>
-                                <td>영국</td>
-                            </tr>
-                            <tr>
-                                <td>취급시 주의사항</td>
-                                <td>상품정보참고</td>
-                            </tr>
-                            <tr>
-                                <td>제조연월</td>
-                                <td>상품태그참고</td>
-                            </tr>
-                            <tr>
-                                <td>품질보증기준</td>
-                                <td>소비자홈페이지 참고</td>
-                            </tr>
-                            <tr>
-                                <td>A/S 책임자와 전화번호</td>
-                                <td>맨유 051-243-1234</td>
-                            </tr>
-                            <tr>
-                                <td>주문후 예상 배송기간</td>
-                                <td>2주 뒤 도착예정</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">구매, 교환, 반품, 배송, 설치 등과 관련하여 추가비용, 제한조건 등의 특이사항이 있는 경우</td>
-                            </tr>
-                        </table>
-                        <p class="notice">
-                            소비자가 전자상거래등에서 소비자 보호에 관한 법률 제 17조 제1항 또는 제3항에 따라 청약철회를 하고
-                            동법 제 18조 제1항 에 따라 청약철회한 물품을 판매자에게 반환하였음에도 불구 하고 결제 대금의
-                            환급이 3영업일을 넘게 지연된 경우, 소비자 는 전자상거래등에서 소비자보호에 관한 법률 제18조
-                            제2항 및 동법 시행령 제21조 2에 따라 지연일수에 대하여 전상법 시행령으로 정하는 이율을 곱하여
-                            산정한 지연이자(“지연배상금”)를 신청할 수 있습니다. 아울러, 교환∙반품∙보증 및 결제대금의
-                            환급신청은 [나의쇼핑정보]에서 하실 수 있으며, 자세한 문의는 개별 판매자에게 연락하여 주시기 바랍니다.<br />
-                            - 맨유는 아디다스코리아(유)와 공식 제휴 중인 온라인 판매자 입니다.<br />
-                            - 맨유스토어에서 판매하는 모든 아디다스 제품은 맨유의 아디다스 제품 취급 전국 매장에서 사이즈 교환,AS접수가 가능합니다.<br />
-                            - 맨유스토어에서 사용되는 배너 및 관련 콘텐츠는 아디다스코리아(유)에 저작권이 있으며 상업적인 용도로 무단 복제 및 도용을 금지합니다.
-                        </p>
-                    </article>
-                    <article class="qna">
-                        <nav>
-                            <h1>상품문의</h1>
-                        </nav>
-                        <ul>
-                            <li>
-                                <div>
-                                    <span>jan****** 2020-08-20</span>
-                                </div>
-                                <h3>맨유 홈저지/RED/L</h3>
-                                <p>사이즈가 정사이즈로 나오나요??</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <span>asd****** 2020-08-19</span>
-                                </div>
-                                <h3>맨유 홈저지/RED/M</h3>
-                                <p>상품은 언제 도착예정인가요?</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <span>qwe****** 2020-08-19</span>
-                                </div>
-                                <h3>맨유 홈저지/RED/2XL</h3>
-                                <p>비밀문의글입니다.</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <span>zxc****** 2020-08-15</span>
-                                </div>
-                                <h3>맨유 홈저지/RED/XL</h3>
-                                <p>색상은 RED 하나뿐인가요?</p>
-                            </li>
-                            <li>
-                                <div>
-                                    <span>dfg****** 2020-08-14</span>
-                                </div>
-                                <h3>맨유 홈저지/RED/S</h3>
-                                <p>세탁방법은 어떻게 되나요?</p>
-                            </li>
-                        </ul>
-                        <div class="paging">
-                            <span class="prev">
-                                <a href="#"><&nbsp;이전</a>
-                            </span>
-                            <span class="num">
-                                <a href="#" class="on">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#">6</a>
-                                <a href="#">7</a>
-                            </span>
-                            <span class="next">
-                                <a href="#">다음&nbsp;></a>
-                            </span>
-                        </div>
-                    </article>
-                </section>
-            </section>
-        </main>
-        <footer>
-            <ul>
-                <li><a href="#">개인정보 보호 정책</a></li>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">사이트맵</a></li>
-                <li><a href="#">더 알아보기</a></li>
-            </ul>
-
-            <div>
-                <p class="footer1">
-                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
-                </p>
-                <p class="footer2">
-                    <strong>MANCHESTER UNITED</strong><br />
-                    영국 스트렛포드 올드 트래포드<br />
-                    대표이사 : 김우드워드<br />
-                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
-                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
-                </p>
-                <p class="footer3">
-                    <strong>고객센터</strong><br />
-                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
-                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
-                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
-                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
-                </p>
-            </div>
-        </footer>
-        <button type="button" id="top" style="display: inline-block;">상단이동</button>
-    </div>
-</body>
+<!-- 상품 상세페이지-->
+<section id="view" layout:fragment="content">
+	<nav>
+	    <h1>맨체스터 유나이티드 홈 저지 2020-21</h1>
+	    <p>
+	        HOME > <span>KITS</span> > <strong>Home</strong>
+	    </p>
+	</nav>
+	<section>
+	    <article class="info">
+	        <div class="image">
+	            <img th:src="@{/img/mu_itemview.png}" alt="상품이미지">
+	        </div>
+	        <div class="summary">
+	            <nav>
+	                <h1>맨체스터 유나이티드</h1>
+	                <h2>상품번호&nbsp;:&nbsp;<span>10234156987</span></h2>
+	            </nav>
+	            <p>맨체스터 유나이티드 홈 저지 2020-21</p>
+	            <nav>
+	                <img th:src="@{/img/icon_couponno.png}" alt="쿠폰불가">
+	            </nav>
+	            <nav>
+	                <div class="org_price">
+	                    <del>106,900</del>
+	                    <span>10%</span>
+	                </div>
+	                <div class="dis_price">
+	                    <ins>96,210</ins>
+	                </div>
+	            </nav>
+	            <nav>
+	                <span class="delivery">무료배송</span>
+	                <span class="arrival">2주 뒤 도착예정</span>
+	                <span class="desc">본 상품은 해외배송 가능합니다.</span>
+	            </nav>
+	            <nav>
+	                <span class="card cardfree"><i>아이콘</i>무이자할부</span>&nbsp;&nbsp;
+	                <span class="card cardadd"><i>아이콘</i>카드추가혜택</span>
+	            </nav>
+	            <nav>
+	                <span class="origin">원산지-상세설명 참조</span>
+	            </nav>
+	            <img th:src="@{/img/paybanner.png}" alt="카드결제" class="banner" />
+	            <div class="btn_choice">
+	                <div class="btnIn">
+	                    <button type="button" class="btn-add-order">바로구매</button>
+	                    <button type="button" class="btn-add-cart">장바구니</button>
+	                    <button type="button" class="btn-add-wish">WISH♥</button>
+	                </div>
+	            </div>
+	            <div class="total">
+	                <span>96,210</span>
+	                <em>총 상품금액</em>
+	            </div>
+	        </div>
+	    </article>
+	    <article class="detail">
+	        <nav>상품정보</nav>
+	        <!-- 상품상세페이지 이미지-->
+	        <img th:src="@{/img/mu_view1.png}" alt="상품이미지">
+	        <img th:src="@{/img/mu_view2.png}" alt="상품이미지">
+	    </article>
+	
+	    <article class="notice">
+	        <nav>
+	            <h1>상품 정보 제공</h1>
+	            <p>[전자상거래에 관한 상품정보 제공에 관한 고시] 항목에 의거 등록된 정보입니다.</p>
+	        </nav>
+	        <table border="0">
+	            <tr>
+	                <td>상품번호</td>
+	                <td>10234156987</td>
+	            </tr>
+	            <tr>
+	                <td>상품상태</td>
+	                <td>새상품</td>
+	            </tr>
+	            <tr>
+	                <td>부가세 면세여부</td>
+	                <td>과세상품</td>
+	            </tr>
+	            <tr>
+	                <td>영수증발행</td>
+	                <td>발행가능 - 신용카드 전표, 온라인 현금영수증</td>
+	            </tr>
+	            <tr>
+	                <td>사업자구분</td>
+	                <td>사업자 판매자</td>
+	            </tr>
+	            <tr>
+	                <td>브랜드</td>
+	                <td>맨체스터 유나이티드</td>
+	            </tr>
+	            <tr>
+	                <td>원산지</td>
+	                <td>해외생산</td>
+	            </tr>
+	        </table>
+	        <table border="0">
+	            <tr>
+	                <td>제품소재</td>
+	                <td>100% 재활용 폴리</td>
+	            </tr>
+	            <tr>
+	                <td>색상</td>
+	                <td>빨강</td>
+	            </tr>
+	            <tr>
+	                <td>사이즈</td>
+	                <td>S~4XL</td>
+	            </tr>
+	            <tr>
+	                <td>제조자/수입국</td>
+	                <td>영국</td>
+	            </tr>
+	            <tr>
+	                <td>제조국</td>
+	                <td>영국</td>
+	            </tr>
+	            <tr>
+	                <td>취급시 주의사항</td>
+	                <td>상품정보참고</td>
+	            </tr>
+	            <tr>
+	                <td>제조연월</td>
+	                <td>상품태그참고</td>
+	            </tr>
+	            <tr>
+	                <td>품질보증기준</td>
+	                <td>소비자홈페이지 참고</td>
+	            </tr>
+	            <tr>
+	                <td>A/S 책임자와 전화번호</td>
+	                <td>맨유 051-243-1234</td>
+	            </tr>
+	            <tr>
+	                <td>주문후 예상 배송기간</td>
+	                <td>2주 뒤 도착예정</td>
+	            </tr>
+	            <tr>
+	                <td colspan="2">구매, 교환, 반품, 배송, 설치 등과 관련하여 추가비용, 제한조건 등의 특이사항이 있는 경우</td>
+	            </tr>
+	        </table>
+	        <p class="notice">
+			            소비자가 전자상거래등에서 소비자 보호에 관한 법률 제 17조 제1항 또는 제3항에 따라 청약철회를 하고
+			            동법 제 18조 제1항 에 따라 청약철회한 물품을 판매자에게 반환하였음에도 불구 하고 결제 대금의
+			            환급이 3영업일을 넘게 지연된 경우, 소비자 는 전자상거래등에서 소비자보호에 관한 법률 제18조
+			            제2항 및 동법 시행령 제21조 2에 따라 지연일수에 대하여 전상법 시행령으로 정하는 이율을 곱하여
+			            산정한 지연이자(“지연배상금”)를 신청할 수 있습니다. 아울러, 교환∙반품∙보증 및 결제대금의
+			            환급신청은 [나의쇼핑정보]에서 하실 수 있으며, 자세한 문의는 개별 판매자에게 연락하여 주시기 바랍니다.<br />
+	            - 맨유는 아디다스코리아(유)와 공식 제휴 중인 온라인 판매자 입니다.<br />
+	            - 맨유스토어에서 판매하는 모든 아디다스 제품은 맨유의 아디다스 제품 취급 전국 매장에서 사이즈 교환,AS접수가 가능합니다.<br />
+	            - 맨유스토어에서 사용되는 배너 및 관련 콘텐츠는 아디다스코리아(유)에 저작권이 있으며 상업적인 용도로 무단 복제 및 도용을 금지합니다.
+	        </p>
+	    </article>
+	    <article class="qna">
+	        <nav>
+	            <h1>상품문의</h1>
+	        </nav>
+	        <ul>
+	            <li>
+	                <div>
+	                    <span>jan****** 2020-08-20</span>
+	                </div>
+	                <h3>맨유 홈저지/RED/L</h3>
+	                <p>사이즈가 정사이즈로 나오나요??</p>
+	            </li>
+	            <li>
+	                <div>
+	                    <span>asd****** 2020-08-19</span>
+	                </div>
+	                <h3>맨유 홈저지/RED/M</h3>
+	                <p>상품은 언제 도착예정인가요?</p>
+	            </li>
+	            <li>
+	                <div>
+	                    <span>qwe****** 2020-08-19</span>
+	                </div>
+	                <h3>맨유 홈저지/RED/2XL</h3>
+	                <p>비밀문의글입니다.</p>
+	            </li>
+	            <li>
+	                <div>
+	                    <span>zxc****** 2020-08-15</span>
+	                </div>
+	                <h3>맨유 홈저지/RED/XL</h3>
+	                <p>색상은 RED 하나뿐인가요?</p>
+	            </li>
+	            <li>
+	                <div>
+	                    <span>dfg****** 2020-08-14</span>
+	                </div>
+	                <h3>맨유 홈저지/RED/S</h3>
+	                <p>세탁방법은 어떻게 되나요?</p>
+	            </li>
+	        </ul>
+	        <div class="paging">
+	            <span class="prev">
+	                <a href="#"><&nbsp;이전</a>
+	            </span>
+	            <span class="num">
+	                <a href="#" class="on">1</a>
+	                <a href="#">2</a>
+	                <a href="#">3</a>
+	                <a href="#">4</a>
+	                <a href="#">5</a>
+	                <a href="#">6</a>
+	                <a href="#">7</a>
+	            </span>
+	            <span class="next">
+	                <a href="#">다음&nbsp;></a>
+	            </span>
+	        </div>
+	    </article>
+	</section>
+</section>
 </html>

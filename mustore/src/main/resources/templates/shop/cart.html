@@ -1,230 +1,106 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>맨유::cart</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script src="../js/top.js"></script>
-    <script src="../js/category.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <link rel="stylesheet" href="../css/style.css"/>
-    <script>
-       
-    </script>
-    <style>
-    
-    </style>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_shop.html">
 
-<body>
-    <div id="wrapper">
-        <header>
-            <div class="top">
-                <div>
-                    <a href="#"><i class="far fa-user"></i>&nbsp;LOGIN</a>
-                    <a href="#">SIGN UP</a>
-                    <a href="#">MYPAGE</a>
-                    <a href="#">HELP</a>
-                    <a href="#"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
-                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;</a>
-                </div>
-            </div>
-            <div class="logo">
-                <div>
-                    <a href="#"><img src="../img/mu_header_logo.png" alt="로고"></a>
-                    <form action="#">
-                        <input type="text" name="search" />
-                        <button><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="menu">
-                    <ul class="category">
-                        <li>
-                            <a href="#"><i class="fas fa-futbol"></i>KITS</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="#">&nbsp;Home</a></li>
-                                <li><a href="#">&nbsp;Away</a></li>
-                                <li><a href="#">&nbsp;Third</a></li>
-                                <li><a href="#">&nbsp;GoalKeeper</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-running"></i>&nbsp;TRAINING</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;MAN</a></li>
-                                <li><a href="">&nbsp;WOMAN</a></li>
-                                <li><a href="">&nbsp;KID</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-tshirt"></i>RETRO</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Shirt</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-gift"></i>GIFT</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Accessory</a></li>
-                                <li><a href="">&nbsp;Bag</a></li>
-                                <li><a href="">&nbsp;Cap</a></li>
-                                <li><a href="">&nbsp;Flag</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-percentage"></i>&nbsp;SALE</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <ul>
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">주문조회</a></li>
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">고객센터</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-        </header>
-        <main>
-            <!-- 장바구니 -->
-            <section id="cart">
-              
-                <!-- 제목, 페이지 네비게이션-->
-                <nav>
-                  <h1>장바구니</h1>
-                  <p>
-                    HOME >
-                    <span>KITS</span>
-                    >
-                    <strong>장바구니</strong>
-                  </p>
-                </nav>
-                <section>
-                  <form action="#">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th><input type="checkbox" name="all"></th>
-                          <th>상품정보</th>
-                          <th>수량</th>
-                          <th>상품금액</th>
-                          <th>할인/적립</th>
-                          <th>배송비</th>
-                          <th>합계</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="empty">
-                          <td colspan="7">장바구니에 상품이 없습니다.</td>
-                        </tr>
-                        <tr>
-                          <td><input type="checkbox"></td>
-                          <td>
-                            <article>
-                              <a href="#"><img src="../img/mu_item1.png" alt="상품이미지"></a>
-                              <div>
-                                <h2><a href="#">맨유 홈 저지 2020-21</a></h2>
-                                <p>사이즈:3XL / COLOR: RED</p>
-                              </div>
-                            </article>
-                          </td>
-                          <td>1</td>
-                          <td>116,400</td>
-                          <td>11,640</td>
-                          <td>무료배송</td>
-                          <td>104,760</td>
-                        </tr>
-                        <tr>
-                          <td><input type="checkbox"></td>
-                          <td>
-                            <article>
-                              <a href="#"><img src="../img/mu_item6.png" alt="상품이미지"></a>
-                              <div>
-                                <h2><a href="#">맨유 골키퍼 홈 저지 2020-21</a></h2>
-                                <p>사이즈:2XL / COLOR: YELLOW</p>
-                              </div>
-                            </article>
-                          </td>
-                          <td>1</td>
-                          <td>106,900</td>
-                          <td>10,690</td>
-                          <td>무료배송</td>
-                          <td>96,210</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <input type="button" name="allcheck" value="전체선택">
-                    <input type="button" name="del" value="선택삭제">
-                  </form>
-                </section>
-                <div class="info">
-                  <h2>전체합계</h2>
-                  <table border="0">
-                    <tr>
-                      <td>수량</td>
-                      <td>2</td>
-                    </tr>
-                    <tr>
-                      <td>상품금액</td>
-                      <td>223,300</td>
-                    </tr>
-                    <tr>
-                      <td>할인금액</td>
-                      <td>-22,330</td>
-                    </tr>
-                    <tr>
-                      <td>배송비</td>
-                      <td>0</td>
-                    </tr>
-                    <tr>
-                      <td>포인트</td>
-                      <td>2,233</td>
-                    </tr>
-                    <tr>
-                      <td>총 주문금액</td>
-                      <td>200,970</td>
-                    </tr>
-                  </table>
-                  <input type="button" name="" value="주문하기">
-                </div>
-              </section>
-        </main>
-        <footer>
-            <ul>
-                <li><a href="#">개인정보 보호 정책</a></li>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">사이트맵</a></li>
-                <li><a href="#">더 알아보기</a></li>
-            </ul>
-
-            <div>
-                <p class="footer1">
-                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
-                </p>
-                <p class="footer2">
-                    <strong>MANCHESTER UNITED</strong><br />
-                    영국 스트렛포드 올드 트래포드<br />
-                    대표이사 : 김우드워드<br />
-                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
-                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
-                </p>
-                <p class="footer3">
-                    <strong>고객센터</strong><br />
-                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
-                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
-                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
-                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
-                </p>
-            </div>
-        </footer>
-        <button type="button" id="top" style="display: inline-block;">상단이동</button>
-    </div>
-</body>
+<!-- 장바구니 -->
+<section id="cart" layout:fragment="content">
+	<!-- 제목, 페이지 네비게이션-->
+	<nav>
+	  <h1>장바구니</h1>
+	  <p>
+	    HOME >
+	    <span>KITS</span>
+	    >
+	    <strong>장바구니</strong>
+	  </p>
+	</nav>
+	<section>
+	  <form action="#">
+	    <table>
+	      <thead>
+	        <tr>
+	          <th><input type="checkbox" name="all"></th>
+	          <th>상품정보</th>
+	          <th>수량</th>
+	          <th>상품금액</th>
+	          <th>할인/적립</th>
+	          <th>배송비</th>
+	          <th>합계</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr class="empty">
+	          <td colspan="7">장바구니에 상품이 없습니다.</td>
+	        </tr>
+	        <tr>
+	          <td><input type="checkbox"></td>
+	          <td>
+	            <article>
+	              <a href="#"><img th:src="@{/img/mu_item1.png}" alt="상품이미지"></a>
+	              <div>
+	                <h2><a href="#">맨유 홈 저지 2020-21</a></h2>
+	                <p>사이즈:3XL / COLOR: RED</p>
+	              </div>
+	            </article>
+	          </td>
+	          <td>1</td>
+	          <td>116,400</td>
+	          <td>11,640</td>
+	          <td>무료배송</td>
+	          <td>104,760</td>
+	        </tr>
+	        <tr>
+	          <td><input type="checkbox"></td>
+	          <td>
+	            <article>
+	              <a href="#"><img th:src="@{/img/mu_item6.png}" alt="상품이미지"></a>
+	              <div>
+	                <h2><a href="#">맨유 골키퍼 홈 저지 2020-21</a></h2>
+	                <p>사이즈:2XL / COLOR: YELLOW</p>
+	              </div>
+	            </article>
+	          </td>
+	          <td>1</td>
+	          <td>106,900</td>
+	          <td>10,690</td>
+	          <td>무료배송</td>
+	          <td>96,210</td>
+	        </tr>
+	      </tbody>
+	    </table>
+	    <input type="button" name="allcheck" value="전체선택">
+	    <input type="button" name="del" value="선택삭제">
+	  </form>
+	</section>
+	<div class="info">
+	  <h2>전체합계</h2>
+	  <table border="0">
+	    <tr>
+	      <td>수량</td>
+	      <td>2</td>
+	    </tr>
+	    <tr>
+	      <td>상품금액</td>
+	      <td>223,300</td>
+	    </tr>
+	    <tr>
+	      <td>할인금액</td>
+	      <td>-22,330</td>
+	    </tr>
+	    <tr>
+	      <td>배송비</td>
+	      <td>0</td>
+	    </tr>
+	    <tr>
+	      <td>포인트</td>
+	      <td>2,233</td>
+	    </tr>
+	    <tr>
+	      <td>총 주문금액</td>
+	      <td>200,970</td>
+	    </tr>
+	  </table>
+	  <input type="button" name="" value="주문하기">
+	</div>
+</section>
 </html>

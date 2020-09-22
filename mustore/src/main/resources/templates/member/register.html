@@ -1,130 +1,86 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>맨유::register</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="../css/member.css"/>
-</head>
-<style>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_member.html">
 
-</style>
-<body>
-	<div id="member-wrapper">
-		<div id="member-register">
-			<section class="register">
-				<a href="/kmarket"><img src="../img/mu_header_logo.png" alt="맨유로고"></a>
-				<h1>유나이티드가입</h1>
-				<form action="../member/register.do" method="POST">
-					<section>
-						<table>
-							<caption>필수 정보입력</caption>
-							<tr>
-								<th><span class="essential">★</span>아이디</th>
-								<td><input type="text" name="km_uid" placeholder="사용 할 아이디를 입력하세요." required /><span class="msgId">&nbsp;영문, 숫자로 4~12자까지 설정해 주세요.</span></td>
-							</tr>
-							<tr>
-								<th><span class="essential">★</span>비밀번호</th>
-								<td>
-                                    <input type="password" name="km_pass" placeholder="비밀번호를 입력하세요." required /><span class="msgPass">&nbsp;영문, 숫자, 특수문자를 조합하여 8~12자까지 설정해 주세요.</span>
-                                </td>
-							</tr>
-							<tr>
-								<th><span class="essential">★</span>비밀번호확인</th>
-								<td><input type="password" name="km_pass" placeholder="비밀번호를 확인하세요." required /><span class="msgPass">&nbsp;비밀번호 재입력</span></td>
-							</tr>
-						</table>
-					</section>
-					<section>
-						<table>
-							<caption>기본 정보입력</caption>
-							<tr>
-								<th><span class="essential">★</span>이름</th>
-								<td><input type="text" name="km_name" placeholder="이름을 입력하세요." required /></td>
-							</tr>
-							<tr>
-								<th><span class="essential">★</span>성별</th>
-                                <td>
-                                    <label><input type="radio" name="km_gender" value="1" checked>&nbsp;남</label> 
-                                    <label><input type="radio" name="gender" value="2">&nbsp;여</label>
-                                </td>
-							</tr>
-							<tr>
-								<th><span class="essential">★</span>EMAIL</th>
-                                <td>
-                                    <input type="email" name="km_email" placeholder="이메일 입력하세요." required />
-                                    <span class="inputemail">-이메일 형식으로 입력하세요.</span>
-                                </td>
-                                
-							</tr>
-							<tr>
-								<th><span class="essential">★</span>휴대폰</th>
-                                <td>
-                                    <input type="text" name="km_hp" maxlength="13" placeholder="휴대폰번호 입력하세요." required />
-                                    <span class="msgHp">-포함 13자리를 입력하세요.</span>
-                                </td>
-							</tr>
-							<tr class="addr">
-								<th><span class="essential">★</span>주소</th>
-								<td>
-									<div>
-										<input type="text" name="km_zip" id="zip" placeholder="우편번호 입력 클릭" readonly />
-									</div>
-									<div>
-										<input type="text" name="km_addr1" id="addr1" size="50" placeholder="주소를 검색하세요." readonly />
-									</div>
-									<div>
-										<input type="text" name="km_addr2" id="addr2" size="50" placeholder="상세주소를 입력하세요." />
-									</div>
-								</td>
-							</tr>
-						</table>
-		
-					</section>
-					<div>
-                        <input type="submit" class="join" value="회원가입" />
-                        <button class="btn1">
-                            <span class="fb"><i class="fab fa-facebook">&nbsp;Facebook 로그인</i></span>
-                        </button>
-                        <button class="btn2">
-                            <span class="gg"><i class="fab fa-google">&nbsp;Google 로그인</i></span>
-                        </button>
-					</div>
-				</form>
+<div id="member-register" layout:fragment="content">
+	<section class="register">
+		<h1>유나이티드가입</h1>
+		<form action="../member/register.do" method="POST">
+			<section>
+				<table>
+					<caption>필수 정보입력</caption>
+					<tr>
+						<th><span class="essential">★</span>아이디</th>
+						<td><input type="text" name="km_uid" placeholder="사용 할 아이디를 입력하세요." required /><span class="msgId">&nbsp;영문, 숫자로 4~12자까지 설정해 주세요.</span></td>
+					</tr>
+					<tr>
+						<th><span class="essential">★</span>비밀번호</th>
+						<td>
+	                                 <input type="password" name="km_pass" placeholder="비밀번호를 입력하세요." required /><span class="msgPass">&nbsp;영문, 숫자, 특수문자를 조합하여 8~12자까지 설정해 주세요.</span>
+	                             </td>
+					</tr>
+					<tr>
+						<th><span class="essential">★</span>비밀번호확인</th>
+						<td><input type="password" name="km_pass" placeholder="비밀번호를 확인하세요." required /><span class="msgPass">&nbsp;비밀번호 재입력</span></td>
+					</tr>
+				</table>
 			</section>
-		</div>
-        <footer>
-            <ul>
-                <li><a href="#">개인정보 보호 정책</a></li>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">사이트맵</a></li>
-                <li><a href="#">더 알아보기</a></li>
-            </ul>
-
-            <div>
-                <p class="footer1">
-                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
-                </p>
-                <p class="footer2">
-                    <strong>MANCHESTER UNITED</strong><br />
-                    영국 스트렛포드 올드 트래포드<br />
-                    대표이사 : 김우드워드<br />
-                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
-                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
-                </p>
-                <p class="footer3">
-                    <strong>고객센터</strong><br />
-                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
-                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
-                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
-                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
-                </p>
-            </div>
-        </footer>
-    </div>
-</body>
+			<section>
+				<table>
+					<caption>기본 정보입력</caption>
+					<tr>
+						<th><span class="essential">★</span>이름</th>
+						<td><input type="text" name="km_name" placeholder="이름을 입력하세요." required /></td>
+					</tr>
+					<tr>
+						<th><span class="essential">★</span>성별</th>
+	                             <td>
+	                                 <label><input type="radio" name="km_gender" value="1" checked>&nbsp;남</label> 
+	                                 <label><input type="radio" name="gender" value="2">&nbsp;여</label>
+	                             </td>
+					</tr>
+					<tr>
+						<th><span class="essential">★</span>EMAIL</th>
+	                             <td>
+	                                 <input type="email" name="km_email" placeholder="이메일 입력하세요." required />
+	                                 <span class="inputemail">-이메일 형식으로 입력하세요.</span>
+	                             </td>
+	                             
+					</tr>
+					<tr>
+						<th><span class="essential">★</span>휴대폰</th>
+	                             <td>
+	                                 <input type="text" name="km_hp" maxlength="13" placeholder="휴대폰번호 입력하세요." required />
+	                                 <span class="msgHp">-포함 13자리를 입력하세요.</span>
+	                             </td>
+					</tr>
+					<tr class="addr">
+						<th><span class="essential">★</span>주소</th>
+						<td>
+							<div>
+								<input type="text" name="km_zip" id="zip" placeholder="우편번호 입력 클릭" readonly />
+							</div>
+							<div>
+								<input type="text" name="km_addr1" id="addr1" size="50" placeholder="주소를 검색하세요." readonly />
+							</div>
+							<div>
+								<input type="text" name="km_addr2" id="addr2" size="50" placeholder="상세주소를 입력하세요." />
+							</div>
+						</td>
+					</tr>
+				</table>
+	
+			</section>
+			<div>
+	                     <input type="submit" class="join" value="회원가입" />
+	                     <button class="btn1">
+	                         <span class="fb"><i class="fab fa-facebook">&nbsp;Facebook 로그인</i></span>
+	                     </button>
+	                     <button class="btn2">
+	                         <span class="gg"><i class="fab fa-google">&nbsp;Google 로그인</i></span>
+	                     </button>
+			</div>
+		</form>
+	</section>
+</div>
 </html>

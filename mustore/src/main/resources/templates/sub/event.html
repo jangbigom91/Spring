@@ -1,225 +1,86 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>맨유::event</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script src="../js/top.js"></script>
-    <script src="../js/category.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="stylesheet" href="../css/sub.css"/>
-    <script>
-       
-    </script>
-    <style>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_sub.html">
 
-    </style>
-</head>
-
-<body>
-    <div id="wrapper">
-        <header>
-            <div class="top">
-                <div>
-                    <a href="#"><i class="far fa-user"></i>&nbsp;LOGIN</a>
-                    <a href="#">SIGN UP</a>
-                    <a href="#">MYPAGE</a>
-                    <a href="#">HELP</a>
-                    <a href="#"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
-                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;</a>
-                </div>
-            </div>
-            <div class="logo">
-                <div>
-                    <a href="#"><img src="../img/mu_header_logo.png" alt="로고"></a>
-                    <form action="#">
-                        <input type="text" name="search" />
-                        <button><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="menu">
-                    <ul class="category">
-                        <li>
-                            <a href="#"><i class="fas fa-futbol"></i>KITS</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="#">&nbsp;Home</a></li>
-                                <li><a href="#">&nbsp;Away</a></li>
-                                <li><a href="#">&nbsp;Third</a></li>
-                                <li><a href="#">&nbsp;GoalKeeper</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-running"></i>&nbsp;TRAINING</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;MAN</a></li>
-                                <li><a href="">&nbsp;WOMAN</a></li>
-                                <li><a href="">&nbsp;KID</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-tshirt"></i>&nbsp;RETRO</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Shirt</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-gift"></i>&nbsp;GIFT</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Accessory</a></li>
-                                <li><a href="">&nbsp;Bag</a></li>
-                                <li><a href="">&nbsp;Cap</a></li>
-                                <li><a href="">&nbsp;Flag</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-percentage"></i>&nbsp;SALE</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <ul>
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">주문조회</a></li>
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">1:1문의</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-        </header>
-        <main>
-           <!-- 이벤트 -->
-            <table>
-                <caption class="event_caption"><span>이벤트 당첨자</span></caption>
-                <tr class="ev">
-                    <th><span>번호</span></th>
-                    <th><span>이벤트명</span></th>
-                    <th><span>이벤트기간</span></th>
-                    <th><span>당첨자 발표일</span></th>
-                    <th><span class="ev-view">당첨자보기</span></th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>맨유 경기 티켓</td>
-                    <td>2020/08/20~2020/12/31</td>
-                    <td>2021/01/01</td>
-                    <td><input type="button" value="확인"></td>
-                </tr>
-            </table>
-            <div class="paging">
-                <span class="prev">
-                    <a href="#"><&nbsp;이전</a>
-                </span>
-                <span class="num">
-                    <a href="#" class="on">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                </span>
-                <span class="next">
-                    <a href="#">다음&nbsp;></a>
-                </span>
-            </div>
-        </main>
-        <footer>
-            <ul>
-                <li><a href="#">개인정보 보호 정책</a></li>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">사이트맵</a></li>
-                <li><a href="#">더 알아보기</a></li>
-            </ul>
-
-            <div>
-                <p class="footer1">
-                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
-                </p>
-                <p class="footer2">
-                    <strong>MANCHESTER UNITED</strong><br />
-                    영국 스트렛포드 올드 트래포드<br />
-                    대표이사 : 김우드워드<br />
-                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
-                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
-                </p>
-                <p class="footer3">
-                    <strong>고객센터</strong><br />
-                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
-                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
-                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
-                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
-                </p>
-            </div>
-        </footer>
-        <button type="button" id="top" style="display: inline-block;">상단이동</button>
-    </div>
-</body>
+<!-- 이벤트 -->
+	<table layout:fragment="content">
+	    <caption class="event_caption"><span>이벤트 당첨자</span></caption>
+	    <tr class="ev">
+	        <th><span>번호</span></th>
+	        <th><span>이벤트명</span></th>
+	        <th><span>이벤트설명</span></th>
+	        <th><span>당첨자 발표일</span></th>
+	        <th><span class="ev-view">당첨자보기</span></th>
+	    </tr>
+	    <tr>
+	        <td>1</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	    <tr>
+	        <td>2</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	    <tr>
+	        <td>3</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	    <tr>
+	        <td>4</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	    <tr>
+	        <td>5</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	    <tr>
+	        <td>6</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	    <tr>
+	        <td>7</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	    <tr>
+	        <td>8</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	    <tr>
+	        <td>9</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	    <tr>
+	        <td>10</td>
+	        <td>맨유 경기 티켓</td>
+	        <td>시즌 티켓</td>
+	        <td>2021/01/01</td>
+	        <td><input type="button" value="확인"></td>
+	    </tr>
+	</table>
 </html>

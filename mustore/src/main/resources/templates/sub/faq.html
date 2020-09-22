@@ -1,429 +1,292 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>맨유::faq</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script src="../js/top.js"></script>
-    <script src="../js/category.js"></script>
-    <script src="../js/faqlist.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="stylesheet" href="../css/sub.css"/>
-    <style>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_sub.html">
 
-    </style>
-    <script>
-        
-    </script>
-</head>
-<body>
-    <div id="wrapper">
-        <header>
-            <div class="top">
-                <div>
-                    <a href="#"><i class="far fa-user"></i>&nbsp;LOGIN</a>
-                    <a href="#">SIGN UP</a>
-                    <a href="#">MYPAGE</a>
-                    <a href="#">HELP</a>
-                    <a href="#"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
-                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;</a>
-                </div>
-            </div>
-            <div class="logo">
-                <div>
-                    <a href="#"><img src="../img/mu_header_logo.png" alt="로고"></a>
-                    <form action="#">
-                        <input type="text" name="search" />
-                        <button><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="menu">
-                    <ul class="category">
-                        <li>
-                            <a href="#"><i class="fas fa-futbol"></i>KITS</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="#">&nbsp;Home</a></li>
-                                <li><a href="#">&nbsp;Away</a></li>
-                                <li><a href="#">&nbsp;Third</a></li>
-                                <li><a href="#">&nbsp;GoalKeeper</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-running"></i>&nbsp;TRAINING</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;MAN</a></li>
-                                <li><a href="">&nbsp;WOMAN</a></li>
-                                <li><a href="">&nbsp;KID</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-tshirt"></i>&nbsp;RETRO</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Shirt</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-gift"></i>&nbsp;GIFT</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Accessory</a></li>
-                                <li><a href="">&nbsp;Bag</a></li>
-                                <li><a href="">&nbsp;Cap</a></li>
-                                <li><a href="">&nbsp;Flag</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-percentage"></i>&nbsp;SALE</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <ul>
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">주문조회</a></li>
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">1:1문의</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-        </header>
-        <main>
-           <!-- FAQ -->
-           <div class="normal">
-                <div class="subBanner">
-                    <h2>FAQ</h2>
-                </div>
-                <div class="customer">
-                    <div class="tabs four">
-                        <ul>
-                            <li class="on"><a href="#"><span>FAQ</span></a></li>
-                            <li><a href="#"><span>1:1문의</span></a></li>
-                            <li><a href="#"><span>공지사항</span></a></li>
-                            <li><a href="#"><span>주문조회</span></a></li>
-                            </ul>
-                    </div>
-                    <div class="subHeadTxt">
-                        <p class="tit">1:1문의 전 제품, 쇼핑이용, 회원관련 등 궁금하신 내용의 질문과 답변을 확인해 주십시오.</p>
-                        <p class="txt ty">
-                            맨유스토어의 질문과 답변이 부족하신가요?
-                            <br>
-                            직접
-                            <span>1:1</span>
-                            문의를 통해서 더 자세하게 문의해 주시면 신속하고 친철하게 답변드리겠습니다.
-                        </p>
-                        <div class="btn">
-                            <a href="#">1:1문의하기</a>
-                        </div>
-                    </div>
-                    <div class="categoryTab">
-                        <ul>
-                            <li class="on"><a href="#">제품문의</a></li>
-                            <li><a href="#">주문/배송/환불</a></li>
-                            <li><a href="#">회원문의</a></li>
-                            <li class="last"><a href="#">기타문의</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="faqList">
-                        <ul>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 맨유 홈 저지 2020-21 유니폼의 특징이 무엇인가요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            클럽 엠블럼의 무한한 영감. 배지 뒷면을 떠오르게 하는 신선한 스트라이프 디자인을 담아낸 맨체스터 유나이티드 FC 홈 저지입니다.
-                                            <br>
-                                            가슴의 우븐 엠블럼이 팀을 향한 자부심을 더해줍니다. 부드러운 소재가 언제 어디서나 편안한 착용감을 선사합니다.
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 맨유 홈 쇼츠의 특징은 무엇인가요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            맨체스터 유나이티드 FC의 홈 컬러를 담아낸 새로운 키트를 만나보세요. 올드 트래포드에서 선수들이 착용하는 홈 키트를 스트리트웨어 버전으로 재구성한 축구 쇼츠입니다.
-                                            <br>
-                                            부드러운 소재가 쾌적하고 편안한 착용감을 선사합니다. 밑단의 우븐 배지가 팀을 향한 자부심을 더해줍니다.
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 맨유 어웨이 저지 2020-21 유니폼의 특징은 무엇인가요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            시작과 여정에 대한 재조명. 철도 회사의 실업팀으로 탄생한 뿌리와 역사에서 영감을 얻은 맨체스터 유나이티드 FC 어웨이 키트를 만나보세요. 뉴턴 히스 FC를 기념하는 축구 저지입니다. 공식 매치 셔츠의 팬 버전으로, 우븐 클럽 배지가 팀을 향한 자부심을 더해줍니다.
-                                            <br>
-                                            손으로 칠한 듯한 카모플라주 프린트가 스포티한 디자인에 예술적인 재해석을 더해줍니다.
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 맨유 트레이닝 저지의 특징은 무엇인가요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            맨체스터 유나이티드 FC 선수들의 필수 데일리 아이템을 만나보세요. 스타일과 퍼포먼스의 완벽한 조화를 담아낸 트레이닝 저지입니다.
-                                            <br>
-                                            부드러운 소재가 그라운드의 안팎에서 쾌적한 착용감을 제공합니다. 앞면의 클럽 엠블럼과 뒷면 프린트가 클럽을 향한 자부심을 더해줍니다.
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 맨유 트레이닝 팬츠의 특징은 무엇인가요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            시합에 앞선 완벽한 준비. 맨체스터 유나이티드 FC 선수들이 훈련과 연습 시 착용하는 트레이닝 팬츠입니다.
-                                            <br>
-                                            쾌적한 습기 흡수 소재를 사용하여 편안하게 운동에 집중할 수 있습니다. 양쪽 색상이 다른 대담한 디자인으로 언제 어디서나 세련된 룩을 선사합니다.
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 맨유 앤섬자켓의 특징은 무엇인가요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            설명이 필요 없는 진정한 챔피언. 칼라부터 커프스까지 이어진 3-스트라이프의 절제된 스타일이 돋보이는 맨체스터 유나이티드 FC 축구 재킷입니다.
-                                            <br>
-                                            경기 전 선수들이 착용하는 풀 짚업 재킷을 재현한 버전으로, 가슴의 토널 배지가 팀을 향한 자부심을 더해줍니다.
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 맨유 H저지의 특징은 무엇인가요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            맨체스터 유나이티드 FC의 트레블 우승은 전 세계 축구 팬의 마음을 사로잡고 기네스북에 등재된 위대한 클럽을 탄생시켰습니다.
-                                            <br>
-                                            바르셀로나의 운명적인 밤으로부터 20주년을 기리는 홈 저지를 만나보세요. 팬을 위해 제작된 특별한 버전으로 선수가 착용하는 시합용 유니폼보다 더 넉넉한 핏이 적용되어 있습니다.
-                                            <br>
-                                            건조가 빠른 땀 배출 소재가 쾌적한 착용감을 제공하고, 1998/99 시즌의 놀라운 기록을 기념하는 디테일과 엠블렘이 특별한 룩을 더해줍니다.
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 세탁 시 주의사항은 무엇인가요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            1. 땀을 많이 흘렸을 경우 즉시 세탁하십시오.<br>
-                                            2. 염소 표백제 및 강력효소세제는 절대사용하지 마십시오.<br>
-                                            3. 립이나 밴드 부분은 뜨거운 물에서 변형되므로 특히 유의 하십시오.<br>
-                                            4. 세제를 먼저 물에 풀어 충분히 용해시킨후 세탁하십시오.<br>
-                                            5. 흰옷과 유색옷은 이염될수있으므로 구분하여 세탁하십시오.<br>
-                                            6. 물에 오래 담가 두거나 세탁후 그대로 놓아두면 탈색이나 이염이 될수있으니 곧 탈수하여
-                                            주십시오.<br>
-                                            7. 나염이 들어간 제품은 나염에 손상이 가지않도록 뒤집어서 세탁 하십시오.<br>
-                                            8. 면이 함유된 제품은 세탁후 약간의 수축현상이 생길수있으니 유의바랍니다.<br>
-                                            9. 본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고 부착된 장신구 등은
-                                            강한 충격에 의하여 파손될 수 있으니 유의하십시오.<br>
-                                            10. 제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.<br>
-                                            11. 강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.<br>
-                                            12. 심한마찰은 보풀이 발생할수 있습니다.<br>
-                                            13. 불꽃 접근시 불길이 옮겨 붙을 가능성이 있으니 주의바랍니다.
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 제품의 품질보증은 어떻게 되나요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            본 제품은 공정거래 위원회가 고시한 소비자 분쟁 해결기준에 의거 정당한 소비자 피해에 대해 수리, 교환 환불해 드립니다.<br>
-                                            보증기간 : 판매일로부터 1년<br>
-
-                                            교환장소 : 구입점<br>
-
-                                            수입자 : 맨유스토어<br>
-
-                                            주소 : 부산시 부산진구 구덕로 123번길 맨체스터빌딩<br>
-
-                                            대표전화 : 051-243-1234<br>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 제품의 A/S정책은 어떻게 되나요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            수선 접수 및 심의 프로세스<br>
-                                            1. 수선 및 심의 접수 : 가까운 매장 방문 접수<br>
-
-                                            2. 수선 및 심의 진행처 : A/S 센터에서 심의 판정 및 수선<br>
-
-                                            3. 제품 배송 :접수 매장으로 수선 제품 도착 시 고객에게 안내<br>
-
-                                            4. 수선 및 심의 결과 상담 : 맨유스토어 고객만족센터 051-243-1234<br>
-
-                                            판정 결과는 품질보증기간 및 내용 연수 경과 여부, 제품 하자 또는 소비자 과실 여부에 따라 결정 됩니다.<br>
-                                            판정 결과에 따라 수선 비용이 부가 될 수 있으며 제품 수선이 불가능 할 경우에는 반송이 이루어 집니다.<br>
-                                            교환 판정 시, 회수 택배비는 무료이며, 소비자과실로 판정되는 경우 배송비는 소비자 부담입니다.<br>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="hover">
-                                <a href="#" class="faqbtn">
-                                    <div class="question">
-                                        <div class="blet">Q</div>
-                                        <div class="title">[제품문의] 제품을 반품할 수 있는 조건은 무엇인가요?</div>
-                                    </div>
-                                </a>
-                                <div class="faqanswer" style="display: none;">
-                                    <div class="faqbox">
-                                        <div class="blet">A</div>
-                                        <div class="text">
-                                            반품은 배송완료일로부터 7일 이내에 신청해 주십시오.<br>
-                                            단, 다음과 같은 경우 반품신청이 불가능 할 수 있습니다.<br>
-
-                                            1. 반품요청기간이 지난 경우<br>
-                                            2. 포장을 개봉하였거나 포장이 훼손되어(상품의 Tag분리/분실, 비닐포장 훼손, 신발박스 훼손 등) 상품가치가 현저히 감소한 경우<br>
-                                            3. 액세서리, 전자제품의 포장을 개봉 하였으나 단순 변심으로 교환,반품 원하는 경우<br>
-                                            4. 구매자의 책임있는 사유로 상품 등이 멸실 또는 훼손된 경우<br>
-                                            5. 구매자의 사용 또는 일부 소비에 의하여 상품가치가 현저히 감소한 경우<br>
-                                            6. 기간의 경과에 의하여 재판매가 곤란할 정도로 상품가치가 현저히 감소한 경우<br>
-                                            7. 주문확인 후 상품제작에 들어가는 주문제작 상품인 경우<br>
-                                            8. 복제가 가능한 상품 등의 포장을 훼손한 경우<br>
-                                            9. 단, 재화 등의 내용이 표시 (이미지 또는 기능을 포함) 및 광고 내용과 다르거나 계약내용과 다르게 이행된 때에는 당해 재화 등을 공급 받은 날부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약 철회 등을 할 수 있습니다.<br>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="listSearch">
-                    <input type="text" placeholder="검색어를 입력해 주세요" class="sinput">
-                    <a href="#"><img src="../img/btn_list_search.gif" alt="검색"></a>
-                </div>
-            </div>
-            <div class="paging">
-                <span class="prev">
-                    <a href="#"><&nbsp;이전</a>
-                </span>
-                <span class="num">
-                    <a href="#" class="on">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                </span>
-                <span class="next">
-                    <a href="#">다음&nbsp;></a>
-                </span>
-            </div>
-        </main>
-        <footer>
-            <ul>
-                <li><a href="#">개인정보 보호 정책</a></li>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">사이트맵</a></li>
-                <li><a href="#">더 알아보기</a></li>
-            </ul>
-
-            <div>
-                <p class="footer1">
-                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
-                </p>
-                <p class="footer2">
-                    <strong>MANCHESTER UNITED</strong><br />
-                    영국 스트렛포드 올드 트래포드<br />
-                    대표이사 : 김우드워드<br />
-                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
-                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
-                </p>
-                <p class="footer3">
-                    <strong>고객센터</strong><br />
-                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
-                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
-                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
-                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
-                </p>
-            </div>
-        </footer>
-        <button type="button" id="top" style="display: inline-block;">상단이동</button>
-    </div>
-</body>
+<!-- FAQ -->
+<div class="normal" layout:fragment="content">
+	<div class="subBanner">
+	    <h2>FAQ</h2>
+	</div>
+	<div class="customer">
+	    <div class="tabs four">
+	        <ul>
+	            <li class="on"><a href="#"><span>FAQ</span></a></li>
+	            <li><a href="#"><span>1:1문의</span></a></li>
+	            <li><a href="#"><span>공지사항</span></a></li>
+	            <li><a href="#"><span>주문조회</span></a></li>
+	            </ul>
+	    </div>
+	    <div class="subHeadTxt">
+	        <p class="tit">1:1문의 전 제품, 쇼핑이용, 회원관련 등 궁금하신 내용의 질문과 답변을 확인해 주십시오.</p>
+	        <p class="txt ty">
+	           	맨유스토어의 질문과 답변이 부족하신가요?
+	            <br>
+	           	직접
+	            <span>1:1</span>
+	           	문의를 통해서 더 자세하게 문의해 주시면 신속하고 친철하게 답변드리겠습니다.
+	        </p>
+	        <div class="btn">
+	            <a href="#">1:1문의하기</a>
+	        </div>
+	    </div>
+	    <div class="categoryTab">
+	        <ul>
+	            <li class="on"><a href="#">제품문의</a></li>
+	            <li><a href="#">주문/배송/환불</a></li>
+	            <li><a href="#">회원문의</a></li>
+	            <li class="last"><a href="#">기타문의</a></li>
+	        </ul>
+	    </div>
+	
+	    <div class="faqList">
+	        <ul>
+	            <li class="hover">
+	                <a href="#" class="faqbtn">
+	                    <div class="question">
+	                        <div class="blet">Q</div>
+	                        <div class="title">[제품문의] 맨유 홈 저지 2020-21 유니폼의 특징이 무엇인가요?</div>
+	                    </div>
+	                </a>
+	                <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+	                       	클럽 엠블럼의 무한한 영감. 배지 뒷면을 떠오르게 하는 신선한 스트라이프 디자인을 담아낸 맨체스터 유나이티드 FC 홈 저지입니다.
+	                        <br>
+	                       	가슴의 우븐 엠블럼이 팀을 향한 자부심을 더해줍니다. 부드러운 소재가 언제 어디서나 편안한 착용감을 선사합니다.
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 맨유 홈 쇼츠의 특징은 무엇인가요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+	                       	맨체스터 유나이티드 FC의 홈 컬러를 담아낸 새로운 키트를 만나보세요. 올드 트래포드에서 선수들이 착용하는 홈 키트를 스트리트웨어 버전으로 재구성한 축구 쇼츠입니다.
+	                        <br>
+	                       	부드러운 소재가 쾌적하고 편안한 착용감을 선사합니다. 밑단의 우븐 배지가 팀을 향한 자부심을 더해줍니다.
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 맨유 어웨이 저지 2020-21 유니폼의 특징은 무엇인가요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+	                       	시작과 여정에 대한 재조명. 철도 회사의 실업팀으로 탄생한 뿌리와 역사에서 영감을 얻은 맨체스터 유나이티드 FC 어웨이 키트를 만나보세요. 뉴턴 히스 FC를 기념하는 축구 저지입니다. 공식 매치 셔츠의 팬 버전으로, 우븐 클럽 배지가 팀을 향한 자부심을 더해줍니다.
+	                        <br>
+	                       	손으로 칠한 듯한 카모플라주 프린트가 스포티한 디자인에 예술적인 재해석을 더해줍니다.
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 맨유 트레이닝 저지의 특징은 무엇인가요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+	                       	맨체스터 유나이티드 FC 선수들의 필수 데일리 아이템을 만나보세요. 스타일과 퍼포먼스의 완벽한 조화를 담아낸 트레이닝 저지입니다.
+	                        <br>
+	                       	부드러운 소재가 그라운드의 안팎에서 쾌적한 착용감을 제공합니다. 앞면의 클럽 엠블럼과 뒷면 프린트가 클럽을 향한 자부심을 더해줍니다.
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 맨유 트레이닝 팬츠의 특징은 무엇인가요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+	                       	시합에 앞선 완벽한 준비. 맨체스터 유나이티드 FC 선수들이 훈련과 연습 시 착용하는 트레이닝 팬츠입니다.
+	                        <br>
+	                       	쾌적한 습기 흡수 소재를 사용하여 편안하게 운동에 집중할 수 있습니다. 양쪽 색상이 다른 대담한 디자인으로 언제 어디서나 세련된 룩을 선사합니다.
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 맨유 앤섬자켓의 특징은 무엇인가요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+	                       	설명이 필요 없는 진정한 챔피언. 칼라부터 커프스까지 이어진 3-스트라이프의 절제된 스타일이 돋보이는 맨체스터 유나이티드 FC 축구 재킷입니다.
+	                        <br>
+	                       	경기 전 선수들이 착용하는 풀 짚업 재킷을 재현한 버전으로, 가슴의 토널 배지가 팀을 향한 자부심을 더해줍니다.
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 맨유 H저지의 특징은 무엇인가요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+	                  		맨체스터 유나이티드 FC의 트레블 우승은 전 세계 축구 팬의 마음을 사로잡고 기네스북에 등재된 위대한 클럽을 탄생시켰습니다.
+	                        <br>
+	                       	바르셀로나의 운명적인 밤으로부터 20주년을 기리는 홈 저지를 만나보세요. 팬을 위해 제작된 특별한 버전으로 선수가 착용하는 시합용 유니폼보다 더 넉넉한 핏이 적용되어 있습니다.
+	                        <br>
+	                       	건조가 빠른 땀 배출 소재가 쾌적한 착용감을 제공하고, 1998/99 시즌의 놀라운 기록을 기념하는 디테일과 엠블렘이 특별한 룩을 더해줍니다.
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 세탁 시 주의사항은 무엇인가요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+	                        1. 땀을 많이 흘렸을 경우 즉시 세탁하십시오.<br>
+	                        2. 염소 표백제 및 강력효소세제는 절대사용하지 마십시오.<br>
+	                        3. 립이나 밴드 부분은 뜨거운 물에서 변형되므로 특히 유의 하십시오.<br>
+	                        4. 세제를 먼저 물에 풀어 충분히 용해시킨후 세탁하십시오.<br>
+	                        5. 흰옷과 유색옷은 이염될수있으므로 구분하여 세탁하십시오.<br>
+	                        6. 물에 오래 담가 두거나 세탁후 그대로 놓아두면 탈색이나 이염이 될수있으니 곧 탈수하여
+	                   		      주십시오.<br>
+	                        7. 나염이 들어간 제품은 나염에 손상이 가지않도록 뒤집어서 세탁 하십시오.<br>
+	                        8. 면이 함유된 제품은 세탁후 약간의 수축현상이 생길수있으니 유의바랍니다.<br>
+	                        9. 본 제품에 부착된 원부자재를 어린아이가 삼키지 않도록 주의하시고 부착된 장신구 등은
+	                       	      강한 충격에 의하여 파손될 수 있으니 유의하십시오.<br>
+	                        10. 제품에 따라 민감한 피부를 가지신 분은 알레르기 반응이 일어날 수 있으니 유의하십시오.<br>
+	                        11. 강한 마찰에 의한 화상의 위험이 있으니 유의하십시오.<br>
+	                        12. 심한마찰은 보풀이 발생할수 있습니다.<br>
+	                        13. 불꽃 접근시 불길이 옮겨 붙을 가능성이 있으니 주의바랍니다.
+	                        <br>
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 제품의 품질보증은 어떻게 되나요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+			                              본 제품은 공정거래 위원회가 고시한 소비자 분쟁 해결기준에 의거 정당한 소비자 피해에 대해 수리, 교환 환불해 드립니다.<br>
+			                              보증기간 : 판매일로부터 1년<br>
+			
+			                              교환장소 : 구입점<br>
+			
+			                              수입자 : 맨유스토어<br>
+			
+			                              주소 : 부산시 부산진구 구덕로 123번길 맨체스터빌딩<br>
+			
+			                              대표전화 : 051-243-1234<br>
+	                        <br>
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 제품의 A/S정책은 어떻게 되나요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                <div class="faqbox">
+	                    <div class="blet">A</div>
+	                    <div class="text">
+	                  		수선 접수 및 심의 프로세스<br>
+	                        1. 수선 및 심의 접수 : 가까운 매장 방문 접수<br>
+	
+	                        2. 수선 및 심의 진행처 : A/S 센터에서 심의 판정 및 수선<br>
+	
+	                        3. 제품 배송 :접수 매장으로 수선 제품 도착 시 고객에게 안내<br>
+	
+	                        4. 수선 및 심의 결과 상담 : 맨유스토어 고객만족센터 051-243-1234<br>
+	
+				                              판정 결과는 품질보증기간 및 내용 연수 경과 여부, 제품 하자 또는 소비자 과실 여부에 따라 결정 됩니다.<br>
+				                              판정 결과에 따라 수선 비용이 부가 될 수 있으며 제품 수선이 불가능 할 경우에는 반송이 이루어 집니다.<br>
+				                              교환 판정 시, 회수 택배비는 무료이며, 소비자과실로 판정되는 경우 배송비는 소비자 부담입니다.<br>
+	                        <br>
+	                    </div>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="hover">
+	            <a href="#" class="faqbtn">
+	                <div class="question">
+	                    <div class="blet">Q</div>
+	                    <div class="title">[제품문의] 제품을 반품할 수 있는 조건은 무엇인가요?</div>
+	                </div>
+	            </a>
+	            <div class="faqanswer" style="display: none;">
+	                    <div class="faqbox">
+	                        <div class="blet">A</div>
+	                        <div class="text">
+				                                 반품은 배송완료일로부터 7일 이내에 신청해 주십시오.<br>
+				                                 단, 다음과 같은 경우 반품신청이 불가능 할 수 있습니다.<br>
+	
+	                            1. 반품요청기간이 지난 경우<br>
+	                            2. 포장을 개봉하였거나 포장이 훼손되어(상품의 Tag분리/분실, 비닐포장 훼손, 신발박스 훼손 등) 상품가치가 현저히 감소한 경우<br>
+	                            3. 액세서리, 전자제품의 포장을 개봉 하였으나 단순 변심으로 교환,반품 원하는 경우<br>
+	                            4. 구매자의 책임있는 사유로 상품 등이 멸실 또는 훼손된 경우<br>
+	                            5. 구매자의 사용 또는 일부 소비에 의하여 상품가치가 현저히 감소한 경우<br>
+	                            6. 기간의 경과에 의하여 재판매가 곤란할 정도로 상품가치가 현저히 감소한 경우<br>
+	                            7. 주문확인 후 상품제작에 들어가는 주문제작 상품인 경우<br>
+	                            8. 복제가 가능한 상품 등의 포장을 훼손한 경우<br>
+	                            9. 단, 재화 등의 내용이 표시 (이미지 또는 기능을 포함) 및 광고 내용과 다르거나 계약내용과 다르게 이행된 때에는 당해 재화 등을 공급 받은 날부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약 철회 등을 할 수 있습니다.<br>
+	                            <br>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+	        </ul>
+	    </div>
+	</div>
+	<div class="listSearch">
+	    <input type="text" placeholder="검색어를 입력해 주세요" class="sinput">
+	    <a href="#"><img th:src="@{/img/btn_list_search.gif}" alt="검색"></a>
+	</div>
+</div>
 </html>

@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("kr.co.mustore.dao")
+@MapperScan("kr.co.mustore")
 public class MustoreApplication {
 
 	public static void main(String[] args) {

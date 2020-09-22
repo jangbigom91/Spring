@@ -1,292 +1,154 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>맨유::notice</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script src="../js/top.js"></script>
-    <script src="../js/category.js"></script>
-    <script src="../js/faqlist.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="stylesheet" href="../css/sub.css"/>
-    <style>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_sub.html">
 
-    </style>
-    <script>
-        
-    </script>
-</head>
-<body>
-    <div id="wrapper">
-        <header>
-            <div class="top">
-                <div>
-                    <a href="#"><i class="far fa-user"></i>&nbsp;LOGIN</a>
-                    <a href="#">SIGN UP</a>
-                    <a href="#">MYPAGE</a>
-                    <a href="#">HELP</a>
-                    <a href="#"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
-                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;</a>
-                </div>
-            </div>
-            <div class="logo">
-                <div>
-                    <a href="#"><img src="../img/mu_header_logo.png" alt="로고"></a>
-                    <form action="#">
-                        <input type="text" name="search" />
-                        <button><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="menu">
-                    <ul class="category">
-                        <li>
-                            <a href="#"><i class="fas fa-futbol"></i>KITS</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="#">&nbsp;Home</a></li>
-                                <li><a href="#">&nbsp;Away</a></li>
-                                <li><a href="#">&nbsp;Third</a></li>
-                                <li><a href="#">&nbsp;GoalKeeper</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-running"></i>&nbsp;TRAINING</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;MAN</a></li>
-                                <li><a href="">&nbsp;WOMAN</a></li>
-                                <li><a href="">&nbsp;KID</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-tshirt"></i>&nbsp;RETRO</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Shirt</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-gift"></i>&nbsp;GIFT</a>
-                            <ul class="category-bar" style="display: none;">
-                                <li><a href="">&nbsp;Accessory</a></li>
-                                <li><a href="">&nbsp;Bag</a></li>
-                                <li><a href="">&nbsp;Cap</a></li>
-                                <li><a href="">&nbsp;Flag</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-percentage"></i>&nbsp;SALE</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <ul>
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">주문조회</a></li>
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">1:1문의</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-        </header>
-        <main>
-           <!-- 공지사항 -->
-           <div class="normal">
-                <div class="subBanner">
-                    <h2 class="notiBanner">공지사항</h2>
-                </div>
-                <div class="customer">
-                    <div class="tabs four">
-                        <ul>
-                            <li><a href="#"><span>FAQ</span></a></li>
-                            <li><a href="#"><span>1:1문의</span></a></li>
-                            <li class="on"><a href="#"><span>공지사항</span></a></li>
-                            <li><a href="#"><span>주문조회</span></a></li>
-                            </ul>
-                    </div>
-                    <div class="listDiv">
-                        <table class="listType" border="1" cellspacing="0">
-                            <caption></caption>
-                            <colgroup>
-                                <col width="*">
-                                <col class="days">
-                                <col class="hits">
-                            </colgroup>
-                            <tbody>
-                                <tr class="hpoint">
-                                    <td class="left">
-                                        <a href="#">
-                                            <span class="noti">[공지]</span>
-                                            웹사이트 점검에 따른 서비스 일시 중지 안내
-                                        </a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.31</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">200</span>
-                                    </td>
-                                </tr>
-                                <tr class="hpoint">
-                                    <td class="left">
-                                        <a href="#">
-                                            <span class="noti">[공지]</span>
-                                            맨유스토어 2020-21시즌 신상품 출시!!!
-                                        </a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.22</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">321</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <a href="#">맨유 2020-21시즌 티켓 판매 실시</a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.25</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">567</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <a href="#">맨유 2020-21시즌 홈 저지 판매 실시</a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.24</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">602</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <a href="#">맨유 2020-21시즌 어웨이 저지 판매 실시</a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.24</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">798</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <a href="#">맨유 2020-21시즌 트레이닝복 판매 실시</a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.24</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">552</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <a href="#">맨유 2020-21시즌 자켓 판매 실시</a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.24</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">675</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <a href="#">긴급 서버점검 실시</a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.23</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">581</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <a href="#">코로나로 인한 배송지연 안내</a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.20</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">845</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <a href="#">신규회원을 위한 이벤트 실시</a>
-                                    </td>
-                                    <td class="days">
-                                        <span class="itca">2020.08.19</span>
-                                    </td>
-                                    <td class="hits">
-                                        <span class="itca">513</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="listSearch">
-                    <input type="text" placeholder="검색어를 입력해 주세요" class="sinput">
-                    <a href="#"><img src="../img/btn_list_search.gif" alt="검색"></a>
-                </div>
-            </div>
-            <div class="paging">
-                <span class="prev">
-                    <a href="#"><&nbsp;이전</a>
-                </span>
-                <span class="num">
-                    <a href="#" class="on">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                </span>
-                <span class="next">
-                    <a href="#">다음&nbsp;></a>
-                </span>
-            </div>
-        </main>
-        <footer>
-            <ul>
-                <li><a href="#">개인정보 보호 정책</a></li>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">사이트맵</a></li>
-                <li><a href="#">더 알아보기</a></li>
-            </ul>
-
-            <div>
-                <p class="footer1">
-                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
-                </p>
-                <p class="footer2">
-                    <strong>MANCHESTER UNITED</strong><br />
-                    영국 스트렛포드 올드 트래포드<br />
-                    대표이사 : 김우드워드<br />
-                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
-                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
-                </p>
-                <p class="footer3">
-                    <strong>고객센터</strong><br />
-                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
-                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
-                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
-                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
-                </p>
-            </div>
-        </footer>
-        <button type="button" id="top" style="display: inline-block;">상단이동</button>
-    </div>
-</body>
+<!-- 공지사항 -->
+<div class="normal" layout:fragment="content">
+	    <div class="subBanner">
+	        <h2 class="notiBanner">공지사항</h2>
+	    </div>
+	    <div class="customer">
+	        <div class="tabs four">
+	            <ul>
+	                <li><a href="#"><span>FAQ</span></a></li>
+	                <li><a href="#"><span>1:1문의</span></a></li>
+	                <li class="on"><a href="#"><span>공지사항</span></a></li>
+	                <li><a href="#"><span>주문조회</span></a></li>
+	                </ul>
+	        </div>
+	        <div class="listDiv">
+	            <table class="listType" border="1" cellspacing="0">
+	                <caption></caption>
+	                <colgroup>
+	                    <col width="*">
+	                    <col class="days">
+	                    <col class="hits">
+	                </colgroup>
+	                <tbody>
+	                    <tr class="hpoint">
+	                        <td class="left">
+	                            <a href="#">
+	                                <span class="noti">[공지]</span>
+                                	웹사이트 점검에 따른 서비스 일시 중지 안내
+	                            </a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.31</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">200</span>
+	                        </td>
+	                    </tr>
+	                    <tr class="hpoint">
+	                        <td class="left">
+	                            <a href="#">
+	                                <span class="noti">[공지]</span>
+                                	맨유스토어 2020-21시즌 신상품 출시!!!
+	                            </a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.22</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">321</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 티켓 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.25</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">567</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 홈 저지 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.24</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">602</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 어웨이 저지 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.24</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">798</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 트레이닝복 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.24</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">552</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 자켓 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.24</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">675</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">긴급 서버점검 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.23</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">581</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">코로나로 인한 배송지연 안내</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.20</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">845</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">신규회원을 위한 이벤트 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.19</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">513</span>
+	                        </td>
+	                    </tr>
+	                </tbody>
+	            </table>
+	        </div>
+	    </div>
+	    <div class="listSearch">
+	        <input type="text" placeholder="검색어를 입력해 주세요" class="sinput">
+	        <a href="#"><img th:src="@{/img/btn_list_search.gif}" alt="검색"></a>
+	    </div>
+	</div>
+</main>
 </html>
