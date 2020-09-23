@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.kmarket.admin.dao.AdminProductDao;
+import kr.co.kmarket.admin.persistence.AdminProductsRepo;
 import kr.co.kmarket.vo.ProductsVo;
 
 @Service
@@ -14,8 +15,11 @@ public class AdminProductService {
 	@Autowired
 	private AdminProductDao dao;
 	
+	@Autowired
+	private AdminProductsRepo repo;
+	
 	public void insertProduct(ProductsVo vo) {
-		dao.insertProduct(vo);
+		repo.save(vo);
 	} 
 	public ProductsVo selectProduct() {
 		return dao.selectProduct();
@@ -31,6 +35,7 @@ public class AdminProductService {
 	public void deleteProduct() {
 		dao.deleteProduct();
 	}
+	
 	
 	// Limit start 계산
 	public int getLimitStart(String pg) {

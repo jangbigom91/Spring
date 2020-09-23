@@ -13,7 +13,6 @@
 	<select id="selectCountProducts" resultType="int">
 		SELECT COUNT(*) FROM `km_products`;
 	</select>
-
 	<!-- 
 	<insert id="insertUser">
 		INSERT INTO `USER3` VALUES (#{uid}, #{name}, #{hp}, #{age});		
