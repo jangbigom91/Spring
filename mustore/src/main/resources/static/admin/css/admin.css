@@ -185,7 +185,7 @@ main table span {
 footer {
     width: 100%;
     height: 60px;
-    background: #0d3a46;
+    background: #e53537;
 }
 
 footer > div {
@@ -235,6 +235,10 @@ input {
     color: #333;
     vertical-align: middle;
     box-sizing: border-box;
+}
+
+input.search {
+	width:60px;
 }
 
 input[type=checkbox] {

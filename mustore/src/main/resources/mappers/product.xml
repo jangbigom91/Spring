@@ -6,12 +6,21 @@
 <mapper namespace="kr.co.mustore.admin.dao.AdminProductDao">
 
 	<select id="selectProducts" resultType="kr.co.mustore.vo.ProductsVo">
-		SELECT * FROM `mu_products` LIMIT #{start}, 10;
+		SELECT * FROM `mu_products` LIMIT ${start}, 10;
 	</select>
 	
 	
 	<select id="selectCountProducts" resultType="int">
 		SELECT COUNT(*) FROM `mu_products`;
+	</select>
+	
+	<select id="selectProductsBySearch" resultType="kr.co.mustore.vo.ProductsVo">
+		SELECT * FROM `mu_products` WHERE
+		<if test="opt.equals('name')">`name` LIKE '%${keyword}%'</if>
+		<if test="opt.equals('code')">`code` ='${keyword}%'</if>
+		<if test="opt.equals('company')">`company` LIKE '%${keyword}%'</if>
+		<if test="opt.equals('seller')">`seller` LIKE '%${keyword}%'</if>
+		LIMIT ${start}, 10;
 	</select>
 	<!-- 
 	<insert id="insertUser">

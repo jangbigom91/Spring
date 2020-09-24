@@ -34,6 +34,22 @@ public class AdminProductController {
 	@Autowired
 	private AdminCategory2Repo cate2Repo;
 	
+	@GetMapping("/admin/product/search")
+	public String search(String pg, String keyword, String opt, Model model) {
+		
+		int start = service.getLimitStart(pg);
+		int total = service.selectCountProducts();
+		int pageEnd = service.getPageEnd(total);
+		
+		List<ProductsVo> products = service.selectProductsBySearch(start, opt, keyword);
+		model.addAttribute("products", products);
+		model.addAttribute("pageEnd", pageEnd);
+		model.addAttribute("currentPg", pg);
+		
+		return "/admin/product/list";
+	}
+	
+	
 	@GetMapping("/admin/product/list")
 	public String list(Model model, String pg) {
 		
@@ -56,29 +72,48 @@ public class AdminProductController {
 	
 	@PostMapping("/admin/product/register")
 	public String register(ProductsVo vo, HttpServletRequest req) throws Exception {
-		
-		vo.setThumb1(vo.getFile1().getOriginalFilename());
-		vo.setThumb2(vo.getFile2().getOriginalFilename());
-		vo.setThumb3(vo.getFile3().getOriginalFilename());
-		vo.setDetail(vo.getFile4().getOriginalFilename());
-		
+
 		vo.setIp(req.getRemoteAddr());
 		vo.setRdate(LocalDateTime.now().toString());
 		
+		vo = service.uploadThumb(vo);
 		service.insertProduct(vo);
 		
-		// 파일업로드
-		//MultipartFile f1 = vo.getFile1();
-		//MultipartFile f2 = vo.getFile2();
-		//MultipartFile f3 = vo.getFile3();
-		//MultipartFile f4 = vo.getFile4();
-		
-		//f1.transferTo(new File("/thumb/file1.jpg"));
-		//f2.transferTo(new File("/thumb/file2.jpg"));
-		//f3.transferTo(new File("/thumb/file3.jpg"));
-		//f4.transferTo(new File("/thumb/file4.jpg"));
-		
 		return "redirect:/admin/product/register";
+		
+		// AdminProductService 쪽으로 이동
+		// 썸네일 업로드
+		//String path = new File("src/main/resources/static/thumb/").getAbsolutePath();
+		
+		// 확장자 추출
+		//String name1 = vo.getFile1().getOriginalFilename(); // 파일명 구분
+		//String ext1 = name1.substring(name1.lastIndexOf(".")); // 확장자 구분
+		
+		//String name2 = vo.getFile2().getOriginalFilename(); // 파일명 구분
+		//String ext2 = name2.substring(name2.lastIndexOf(".")); // 확장자 구분
+		
+		//String name3 = vo.getFile3().getOriginalFilename(); // 파일명 구분
+		//String ext3 = name3.substring(name3.lastIndexOf(".")); // 확장자 구분
+		
+		//String name4 = vo.getFile4().getOriginalFilename(); // 파일명 구분
+		//String ext4 = name4.substring(name4.lastIndexOf(".")); // 확장자 구분
+		
+		// 고유파일명 생성
+		//String uName1 = UUID.randomUUID().toString()+ext1;
+		//String uName2 = UUID.randomUUID().toString()+ext2;
+		//String uName3 = UUID.randomUUID().toString()+ext3;
+		//String uName4 = UUID.randomUUID().toString()+ext4;
+		
+		//String fullPath1 = path+"/"+uName1;
+		//String fullPath2 = path+"/"+uName2;
+		//String fullPath3 = path+"/"+uName3;
+		//String fullPath4 = path+"/"+uName4;
+		
+		//vo.getFile1().transferTo(new File(fullPath1));
+		//vo.getFile2().transferTo(new File(fullPath2));
+		//vo.getFile3().transferTo(new File(fullPath3));
+		//vo.getFile4().transferTo(new File(fullPath4));
+		
 	}
 	
 	@ResponseBody
