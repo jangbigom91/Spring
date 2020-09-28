@@ -45,8 +45,9 @@ public class AdminProductService {
 	public void updateProduct() {
 		dao.updateProduct();
 	}
-	public void deleteProduct() {
-		dao.deleteProduct();
+	
+	public int deleteProduct(String[] codes) {
+		return dao.deleteProduct(codes);
 	}
 	
 	
