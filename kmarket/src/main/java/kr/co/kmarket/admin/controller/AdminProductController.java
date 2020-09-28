@@ -34,6 +34,14 @@ public class AdminProductController {
 	@Autowired
 	private AdminCategory2Repo cate2Repo;
 	
+	@ResponseBody
+	@GetMapping("/admin/product/delete")
+	public int delete(String[] codes) {
+		
+		return service.deleteProduct(codes);
+	}
+	
+	
 	@GetMapping("/admin/product/search")
 	public String search(String pg, String keyword, String opt, Model model) {
 		
@@ -126,5 +134,4 @@ public class AdminProductController {
 	public List<Category2Vo> getCate2(int code1) {
 		return cate2Repo.findByCode1OrderBySeq(code1);
 	}
-	
 }
