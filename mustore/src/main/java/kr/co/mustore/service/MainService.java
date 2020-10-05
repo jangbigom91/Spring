@@ -15,11 +15,23 @@ public class MainService {
 	@Autowired
 	private MainDao dao;
 	
-	public List<ProductsVo> selectHitProduct() {
-		return dao.selectHitProducts();
+	public List<ProductsVo> selectKitsProduct() {
+		return dao.selectKitsProduct();
 	}
 	
-	public List<ProductsVo> selectBestProduct() {
-		return dao.selectBestProducts();
+	public List<ProductsVo> selectGiftProduct() {
+		return dao.selectGiftProduct();
+	}
+	
+	public List<ProductsVo> selectTrainingProduct() {
+		return dao.selectTrainingProduct();
+	}
+	
+	public List<ProductsVo> selectRetroProduct() {
+		return dao.selectRetroProduct();
+	}
+	
+	public List<ProductsVo> selectSaleProduct() {
+		return dao.selectSaleProduct();
 	}
 }

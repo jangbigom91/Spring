@@ -4,18 +4,39 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.mustore.dao.MainDao">
 	
-	<select id="selectHitProduct" resultType="kr.co.mustore.vo.ProductsVo">
+	<select id="selectKitsProduct" resultType="kr.co.mustore.vo.ProductsVo">
 		SELECT *, Floor(price*(1-discount/100)) AS salePrice 
 		FROM `mu_products` 
 		ORDER BY `hit` DESC 
-		LIMIT 8; <!-- 조회수가 큰 순서대로 8개가 메인페이지 히트상품에 상품출력 -->
+		LIMIT 8; <!-- 조회수가 큰 순서대로 8개가 메인페이지 KITS에 상품출력 -->
 	</select>
 	
-	<select id="selectBestProduct" resultType="kr.co.mustore.vo.ProductsVo">
+	<select id="selectGiftProduct" resultType="kr.co.mustore.vo.ProductsVo">
 		SELECT *, Floor(price*(1-discount/100)) AS salePrice 
 		FROM `mu_products` 
 		ORDER BY `sold` DESC 
-		LIMIT 5; <!-- sold가 큰 순서대로 5개가 메인페이지(카테고리) 베스트상품에 상품출력 -->
+		LIMIT 8; <!-- sold가 큰 순서대로 8개가 메인페이지(카테고리) GIFT에 상품출력 -->
+	</select>
+	
+	<select id="selectTrainingProduct" resultType="kr.co.mustore.vo.ProductsVo">
+		SELECT *, Floor(price*(1-discount/100)) AS salePrice 
+		FROM `mu_products` 
+		ORDER BY `score` DESC 
+		LIMIT 8; <!-- score가 큰 순서대로 8개가 메인페이지(카테고리) TRAINING에 상품출력 -->
+	</select>
+	
+	<select id="selectRetroProduct" resultType="kr.co.mustore.vo.ProductsVo">
+		SELECT *, Floor(price*(1-discount/100)) AS salePrice 
+		FROM `mu_products` 
+		ORDER BY `rdate` DESC 
+		LIMIT 8; <!-- rdate가 큰 순서대로 8개가 메인페이지(카테고리) RETRO에 상품출력 -->
+	</select>
+	
+	<select id="selectSaleProduct" resultType="kr.co.mustore.vo.ProductsVo">
+		SELECT *, Floor(price*(1-discount/100)) AS salePrice 
+		FROM `mu_products` 
+		ORDER BY `discount` DESC 
+		LIMIT 8; <!-- discount가 큰 순서대로 8개가 메인페이지(카테고리) SALE에 상품출력 -->
 	</select>
 	
 <!--

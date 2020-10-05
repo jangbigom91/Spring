@@ -10,6 +10,9 @@ import kr.co.mustore.vo.ProductsVo;
 @Repository
 public interface MainDao {
 	
-	public List<ProductsVo> selectHitProducts();
-	public List<ProductsVo> selectBestProducts();
+	public List<ProductsVo> selectKitsProduct();
+	public List<ProductsVo> selectGiftProduct();
+	public List<ProductsVo> selectTrainingProduct();
+	public List<ProductsVo> selectRetroProduct();
+	public List<ProductsVo> selectSaleProduct();
 }
