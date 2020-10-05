@@ -1,6 +1,6 @@
 $(document).ready(function(){
     		
-	var menu = $('.menu ul:nth-child(1) a');
+	var menu = $('.menu .category:nth-child(1) a');
 	
 	$('#top').click(function(){
 		

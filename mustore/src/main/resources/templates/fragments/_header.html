@@ -5,15 +5,15 @@
 	    <div>
 	        <a th:href="@{/member/login}"><i class="far fa-user"></i>&nbsp;LOGIN</a>
 	        <a th:href="@{/member/signup}">SIGN UP</a>
-	        <a href="#">MYPAGE</a>
-	        <a href="#">HELP</a>
-	        <a href="#"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
+	        <a th:href="@{/member/login}">MYPAGE</a>
+	        <a th:href="@{/sub/faq}">HELP</a>
+	        <a th:href="@{/sub/delivery-check}"><i class="fas fa-star"></i>&nbsp;FAVORITE</a>
 	        <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;</a>
 	    </div>
 	</div>
 	<div class="logo">
 	    <div>
-	        <a href="#"><img th:src="@{/img/mu_header_logo.png}" alt="로고"></a>
+	        <a th:href="@{/index}"><img th:src="@{/img/mu_header_logo.png}" alt="로고"></a>
 	        <form action="#">
 	            <input type="text" name="search" />
 	            <button><i class="fa fa-search"></i></button>
@@ -60,11 +60,11 @@
 	        </ul>
 	        <div>
 	            <ul>
-	                <li><a href="#">이벤트</a></li>
-	                <li><a href="#">주문조회</a></li>
-	                <li><a href="#">공지사항</a></li>
-	                <li><a href="#">1:1문의</a></li>
-	                <li><a href="#">FAQ</a></li>
+	                <li><a th:href="@{/sub/event}">이벤트</a></li>
+	                <li><a th:href="@{/sub/delivery-check}">주문조회</a></li>
+	                <li><a th:href="@{/sub/notice}">공지사항</a></li>
+	                <li><a th:href="@{/sub/qna}">1:1문의</a></li>
+	                <li><a th:href="@{/sub/faq}">FAQ</a></li>
 	            </ul>
 	        </div>
 	    </div>
