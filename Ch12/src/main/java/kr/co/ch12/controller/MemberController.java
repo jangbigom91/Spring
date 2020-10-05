@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import kr.co.ch12.service.MemberService;
 import kr.co.ch12.vo.MemberVO;
-import kr.co.ch12.vo.UserVO;
 
 @Controller
 public class MemberController {

@@ -32,11 +32,28 @@
 						
 						$('.recommend > img[alt=loading]').remove();
 						
+						$.each(data, function(i, item){
+							var dom = $('.hit > article:eq(0)').clone();
+							
+							var imgUrl = '/kmarket/thumb/'+item.cate1+"/"+item.cate2+"/"+item.thumb1;
+							
+							dom.find('.thumb > img').attr('src', imgUrl);
+							dom.find('h2').text(item.name);
+							dom.find('p').text(item.descript);
+							dom.find('.org_price > del').text(item.price);
+							dom.find('.org_price > span').text(item.discount);
+							
+							$('.recommend').append(dom);
+							
+						});
+						
+						/*
 						for(var item in data) {
-
 							var dom = $('.hit > article:eq(0)').clone();
 							$('.recommend').append(dom);
 						}
+						*/
+						
 					}
 				});
  			}
