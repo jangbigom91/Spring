@@ -14,6 +14,8 @@ public interface MainDao {
 	public List<ProductsVo> selectHitProduct();
 	public List<ProductsVo> selectBestProduct();
 	public List<ProductsVo> selectRecProduct();
+	public List<ProductsVo> selectNewProduct();
+	public List<ProductsVo> selectDiscountProduct();
 	
 	
 }

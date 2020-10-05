@@ -30,4 +30,12 @@ public class MainService {
 	public List<ProductsVo> selectRecProduct() {
 		return dao.selectRecProduct();
 	}
+	
+	public List<ProductsVo> selectNewProduct() {
+		return dao.selectNewProduct();
+	}
+	
+	public List<ProductsVo> selectDiscountProduct() {
+		return dao.selectDiscountProduct();
+	}
 }

@@ -34,7 +34,21 @@
 		SELECT *, Floor(price*(1-discount/100)) AS salePrice 
 		FROM `km_products` 
 		ORDER BY `score` DESC 
-		LIMIT 8; <!-- sold가 큰 순서대로 5개가 메인페이지(카테고리) 베스트상품에 상품출력 -->
+		LIMIT 8; <!-- score가 큰 순서대로 8개가 메인페이지(카테고리) 추천상품에 상품출력 -->
+	</select>
+	
+	<select id="selectNewProduct" resultType="kr.co.kmarket.vo.ProductsVo">
+		SELECT *, Floor(price*(1-discount/100)) AS salePrice 
+		FROM `km_products` 
+		ORDER BY `rdate` DESC 
+		LIMIT 8; <!-- rdate가 큰 순서대로 8개가 메인페이지(카테고리) 최신상품에 상품출력 -->
+	</select>
+	
+	<select id="selectDiscountProduct" resultType="kr.co.kmarket.vo.ProductsVo">
+		SELECT *, Floor(price*(1-discount/100)) AS salePrice 
+		FROM `km_products` 
+		ORDER BY `discount` DESC 
+		LIMIT 8; <!-- discount가 큰 순서대로 8개가 메인페이지(카테고리) 할인상품에 상품출력 -->
 	</select>
 	
 	
