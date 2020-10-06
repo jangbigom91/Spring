@@ -6,7 +6,7 @@
       <li th:each="cate1:${cate1List}">
           <a href="#"><i class="fas fa-tshirt"></i>[[${cate1.title}]]</a>
           <ol>
-              <li><a href="#">남성의류</a></li>
+              <li th:each="cate2:${cate1.cate2List}"><a href="#">[[${cate2.title}]]</a></li>
           </ol>
       </li>
   </ul>
