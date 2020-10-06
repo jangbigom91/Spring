@@ -375,6 +375,14 @@ cursor: pointer;
   font-size: 12px;
 }
 
+#member-register > .register table .btnZip {
+	display: block;
+    float: right;
+    width: 100px;
+    height: 33px;
+    margin-right: 330px;
+    margin-top: 5px;
+}
 /* member-signup */
 #member-signup > .signup {
   width: 900px;

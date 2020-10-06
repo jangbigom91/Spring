@@ -2,7 +2,15 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.co.mustore.dao">
+<mapper namespace="kr.co.mustore.dao.MemberDao">
+	
+	<select id="selectCountUid" resultType="kr.co.mustore.vo.ResultVo">
+		SELECT COUNT(`uid`) AS `result` FROM `mu_member` WHERE `uid`=#{uid};
+	</select>
+	
+	<select id="selectCountHp" resultType="kr.co.mustore.vo.ResultVo">
+		SELECT COUNT(`hp`) AS `result` FROM `mu_member` WHERE `hp`=#{hp};
+	</select>
 	<!--
 	<insert id="insertMember">
 		INSERT INTO `MEMBER` SET
