@@ -1,5 +1,8 @@
 package kr.co.mustore.service;
 
-public class ShopService {
+import org.springframework.stereotype.Service;
 
+@Service
+public class ShopService {
+	
 }

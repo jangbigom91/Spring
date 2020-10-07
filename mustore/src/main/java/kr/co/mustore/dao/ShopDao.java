@@ -1,5 +1,8 @@
 package kr.co.mustore.dao;
 
-public class ShopDao {
+import org.springframework.stereotype.Repository;
 
+@Repository
+public class ShopDao {
+	
 }

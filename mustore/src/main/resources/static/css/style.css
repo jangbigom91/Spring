@@ -191,12 +191,13 @@ main > section > section > article {
     height: 345px;
 }
 main > section > section > h3 {background-color: #ef3e42; color: #fff;}
-main > section > section > h3 > span {
+main > section > section > h3 > span > a {
     display: inline-block;
     margin: 10px;
     border-bottom: 2px solid #111;
     font-weight: bold;
     font-size: 16px;
+    color: #fff;
 }
 main > section > section > article > a {
     display: block;
@@ -1678,81 +1679,81 @@ main > #order-complete {}
   #search > section > article > ul > .price {
       position: relative;
       margin-left: 250px;
-  }
-  #search > section > article > ul > .price .coupon-no {
-      margin-top: 20px;
-  }
-  #search > section > article > ul > .price .coupon-ok {
-      width: 100%;
-      margin-top: 20px;
-  }
-  
-  #search > section > article .mu {
-      display: block;
-      width: 100%;
-      height: 100%;
-  }
-  #search > section > article .name {
-      font-size: 16px;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 6px;
-  }
-  #search > section > article .desc > a:hover {
-      text-decoration: underline;
-  }
-  #search > section > article .org_price {}
-  #search > section > article .org_price > del::after {content: "원";}
-  #search > section > article .org_price > ins::after {content: "원";}
-  #search > section > article .org_price > del {
-      font-size: 12px;
-      color: #aaa;
-  }
-  #search > section > article .org_price > span {
-      color: #eb000a;
-      font-size: 10px;
-  }
-  #search > section > article .org_price > span::after { content: "↓"; }
-  #search > section > article .dis_price {}
-  #search > section > article .dis_price > ins {
-      font-size: 16px;
-      text-decoration: none;
-  }
-  #search > section > article .dis_price > ins::after { content: "원"; }
-  
-  #search > .paging {
-      width: 1300px;
-      padding: 30px 0;
-      text-align: center;
-  }
-  
-  #search > .paging > span > a {
-      color: #777;            
-      font-size: 11px;
-      letter-spacing: -1px;
-  }
-  
-  #search > .paging > span > a:hover {
-      text-decoration: underline;
-  }
-  
-  #search > .paging > .num > a {
-      display: inline-block;
-      min-width: 14px;
-      margin: 0 2px;
-      padding: 8px 9px;
-      border: 1px solid #c4c4c4;
-      background: url() 0 0 repeat-x;
-      color: #000;
-      font-size: 12px;
-      text-align: center;
-      text-decoration: none;
-  }
-  #search > .paging > .num > a:hover {
-      border: 1px solid #454c5f;
-      text-decoration: none;
-  }
-  #search > .paging > .num > a.on {
-      color: #fe434c;
-      font-weight: bold;
-  }
+}
+#search > section > article > ul > .price .coupon-no {
+    margin-top: 20px;
+}
+#search > section > article > ul > .price .coupon-ok {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#search > section > article .mu {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#search > section > article .name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+}
+#search > section > article .desc > a:hover {
+    text-decoration: underline;
+}
+#search > section > article .org_price {}
+#search > section > article .org_price > del::after {content: "원";}
+#search > section > article .org_price > ins::after {content: "원";}
+#search > section > article .org_price > del {
+    font-size: 12px;
+    color: #aaa;
+}
+#search > section > article .org_price > span {
+    color: #eb000a;
+    font-size: 10px;
+}
+#search > section > article .org_price > span::after { content: "↓"; }
+#search > section > article .dis_price {}
+#search > section > article .dis_price > ins {
+    font-size: 16px;
+    text-decoration: none;
+}
+#search > section > article .dis_price > ins::after { content: "원"; }
+
+#search > .paging {
+    width: 1300px;
+    padding: 30px 0;
+    text-align: center;
+}
+
+#search > .paging > span > a {
+    color: #777;            
+    font-size: 11px;
+    letter-spacing: -1px;
+}
+
+#search > .paging > span > a:hover {
+    text-decoration: underline;
+}
+
+#search > .paging > .num > a {
+    display: inline-block;
+    min-width: 14px;
+    margin: 0 2px;
+    padding: 8px 9px;
+    border: 1px solid #c4c4c4;
+    background: url() 0 0 repeat-x;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+}
+#search > .paging > .num > a:hover {
+    border: 1px solid #454c5f;
+    text-decoration: none;
+}
+#search > .paging > .num > a.on {
+    color: #fe434c;
+    font-weight: bold;
+}
