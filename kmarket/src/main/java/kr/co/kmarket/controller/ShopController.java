@@ -9,10 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.kmarket.service.ShopService;
 import kr.co.kmarket.vo.CategoriesVo;
+import kr.co.kmarket.vo.ProductCartVo;
 import kr.co.kmarket.vo.ProductsVo;
+import kr.co.kmarket.vo.ResultVo;
 
 
 @Controller
@@ -20,7 +24,7 @@ public class ShopController {
 	
 	@Autowired
 	private ShopService service;
-	
+
 	@GetMapping("/shop/search")
 	public String search() {
 		return "/shop/search";
@@ -30,13 +34,10 @@ public class ShopController {
 	public String list(int cate1, int cate2, int sort, Model model, HttpSession sess) {
 		
 		List<ProductsVo> items = service.selectProducts(cate1, cate2, sort);
+		String[] tits = service.getTitles(sess, cate1, cate2);
 		
-		List<CategoriesVo> categories = (List<CategoriesVo>) sess.getAttribute("cate1List");		
-		String tit1 = categories.get(cate1-1).getTitle();
-		String tit2 = categories.get(cate1-1).getCate2List().get(cate2-1).getTitle();
-		
-		model.addAttribute("tit1", tit1);
-		model.addAttribute("tit2", tit2);
+		model.addAttribute("tit1", tits[0]);
+		model.addAttribute("tit2", tits[1]);
 		model.addAttribute("cate1", cate1);
 		model.addAttribute("cate2", cate2);
 		model.addAttribute("items", items);
@@ -45,13 +46,30 @@ public class ShopController {
 	}
 	
 	@GetMapping("/shop/view")
-	public String view() {
+	public String view(int code, Model model, HttpSession sess) {
+		
+		sess.getAttribute("");
+		ProductsVo vo = service.selectProduct(code);
+		String[] tits = service.getTitles(sess, vo.getCate1(), vo.getCate2());
+		
+		model.addAttribute("tit1", tits[0]);
+		model.addAttribute("tit2", tits[1]);
+		model.addAttribute(vo);
+		
 		return "/shop/view";
 	}
 	
 	@GetMapping("/shop/cart")
 	public String cart() {
 		return "/shop/cart";
+	}
+	
+	@ResponseBody
+	@PostMapping("/shop/cart")
+	public ResultVo cart(ProductCartVo vo) {
+		
+		int result = service.insertCart(vo);
+		return new ResultVo(result);
 	}
 	
 	@GetMapping("/shop/order")

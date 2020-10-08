@@ -7,8 +7,15 @@
 </header>
 
 <div id="member-login" layout:fragment="content">
+	<script th:inline="javascript">
+		var success = [[${success}]];
+		if(success == 'fail') {
+			alert('로그인에 실패했습니다. 아이디 비밀번호를 다시 확인하십시요');
+		}
+	</script>
+
     <img th:src="@{/img/member_txt_login.gif}" alt="로그인" />
-	<form action="#">
+	<form th:action="@{/member/login}" method="post">
 		<div>
 			<label>
 				<span><img th:src="@{/img/member_txt_id.gif}" alt="아이디"></span> 

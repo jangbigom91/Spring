@@ -624,7 +624,7 @@ h5.rating.star5 {background-position: 0 -200px;}
 }
 #list > section > article .thumb > img { width: 100%; }
 
-#list > section > article .name {
+#list > section > article .name > a {
     font-size: 16px;
     font-weight: bold;
     color: #333;
@@ -739,7 +739,7 @@ h5.rating.star5 {background-position: 0 -200px;}
 #view .info > div {
     float: left;
     width: 50%;
-    height: 100%;
+    height: auto;
     padding: 10px;
     box-sizing: border-box;
 }
