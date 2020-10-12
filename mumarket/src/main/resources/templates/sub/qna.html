@@ -1,0 +1,154 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_sub.html">
+
+<!-- QNA -->
+<div class="normal" layout:fragment="content">
+	 <div class="subBanner">
+	     <h2>1:1 문의</h2>
+	 </div>
+	 <div class="customer">
+	     <div class="tabs four">
+	         <ul>
+	             <li><a href="#"><span>FAQ</span></a></li>
+	             <li class="on"><a href="#"><span>1:1문의</span></a></li>
+	             <li><a href="#"><span>공지사항</span></a></li>
+	             <li><a href="#"><span>주문조회</span></a></li>
+	             </ul>
+	     </div>
+	     <div class="subHeadTxt">
+	         <p class="tit">쇼핑몰 이용 및 회원, 결제사항에 문의가 필요하신가요?</p>
+	         <p class="txt">
+             	문의사항을 선택 후 문의내용을 보내주시면 신속하고 친철하게 답변 드리겠습니다.
+	             <br>
+             	문의에 대한 답변은 
+	             <span>이메일과 마이페이지 내에 문의 답변 내역</span>
+             		을 확인해 주십시오.
+	             <br>
+	             <span>제품문의</span>
+             		는 제품 상세페이지에서 문의해 주시고,
+	             <span>배송관련 문의</span>
+	             	는 마이페이지 주문/배송에서 주문건별로 문의가 가능하십니다.
+	         </p>
+	     </div>
+	     <div class="inquireH">1:1 문의</div>
+	     <div class="inquireDiv">
+	         <table class="inquireTable" border="1" cellspacing="0">
+	             <caption>문의 내용입력</caption>
+	             <colgroup>
+	                 <col width="190px" class="thWide">
+	                 <col width="*">
+	             </colgroup>
+	             <tbody>
+	                 <tr>
+	                     <th scope="row">
+	                         <span>
+                          		문의 유형
+	                             <u>선택</u>
+	                         </span>
+	                     </th>
+	                     <td>
+	                         <ul class="pta selection">
+	                             <li class="pr">
+	                                 <div class="custom-radio">
+	                                     <input type="radio" name="typeOfInquiry" id="type01">
+	                                     <label for="type01">회원문의</label>
+	                                 </div>
+	                             </li>
+	                             <li class="pr">
+	                                 <div class="custom-radio">
+	                                     <input type="radio" name="typeOfInquiry" id="type02">
+	                                     <label for="type02">결제문의</label>
+	                                 </div>
+	                             </li>
+	                             <li class="pr">
+	                                 <div class="custom-radio">
+	                                     <input type="radio" name="typeOfInquiry" id="type03">
+	                                     <label for="type03">기타문의</label>
+	                                 </div>
+	                             </li>
+	                         </ul>
+	                     </td>
+	                 </tr>
+	                 <tr>
+	                     <th scope="row">
+	                         <span>이름</span>
+	                     </th>
+	                     <td>
+	                         <input type="text" class="w387">
+	                     </td>
+	                 </tr>
+	                 <tr>
+	                     <th scope="row">
+	                         <span>휴대폰</span>
+	                     </th>
+	                     <td>
+	                         <ul class="pta">
+	                             <li>
+	                                 <select class="select" style="position: absolute; opacity: 0; font-size: 14px; width: 109px; height: 40px;">
+	                                     <option value="010" selected="selected">010</option>
+	                                     <option value="011">011</option>
+	                                 </select>
+	                                 <span class="searchStyleSelectBox" style="display: inline-block;">
+	                                     <span class="searchStyleSelectBoxInner" style="width: 49px; display: inline;">010</span>
+	                                 </span>
+	                             </li>
+	                             <li>
+	                                 <span class="unit">-</span>
+	                             </li>
+	                             <li>
+	                                 <input type="text" class="w118c" maxlength="4">
+	                             </li>
+	                             <li>
+	                                 <span class="unit">-</span>
+	                             </li>
+	                             <li class="pr mq580 mq380">
+	                                 <input type="text" class="w118c" maxlength="4">
+	                             </li>
+	                             <li class="mq900">
+	                                 <span class="valign">
+	                                     <div class="custom-checkbox">
+	                                         <input type="checkbox" id="phoneAgree">
+	                                         <label for="phoneAgree" class="checked">정보 수신에 동의합니다.</label>
+	                                     </div>
+	                                 </span>
+	                             </li>
+	                         </ul>
+	                     </td>
+	                 </tr>
+	                 <tr>
+	                     <th scope="row">
+	                         <span>이메일</span>
+	                     </th>
+	                     <td>
+	                         <input type="text" class="w387">
+	                     </td>
+	                 </tr>
+	                 <tr>
+	                     <th scope="row">
+	                         <span>제목</span>
+	                     </th>
+	                     <td>
+	                         <input type="text" class="w100b" placeholder="문의 제목을 입력해 주세요.">
+	                     </td>
+	                 </tr>
+	                 <tr>
+	                     <th scope="row" style="border-bottom: 0px;">
+	                         <span>내용</span>
+	                     </th>
+	                     <td style="border-bottom: 0px;">
+	                             <textarea class="tta" placeholder="문의 내용을 입력해 주세요."></textarea>
+	                         </td>
+	                     </tr>
+	                 </tbody>
+	             </table>
+	         </div>
+	         <div class="btnArea">
+	             <a href="#" class="okbtn">
+	                 <span>문의하기</span>
+	             </a>
+	         </div>
+	     </div>
+	</div>
+</div>
+</html>

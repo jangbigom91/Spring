@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<header th:fragment="_header">
+    <div class="top">
+        <div>
+            <a th:if="${session.member eq null}"><i class="far fa-user"></i>&nbsp;LOGIN</a>
+            <a th:if="${session.member eq null}" th:href="@{/member/join}">SIGN UP</a>
+            <a th:if="${session.member}" th:href="@{/member/logout}">로그아웃</a>
+            <a th:if="${session.member}" href="#">MYPAGE</a>
+            <a th:if="${session.type == 2}" th:href="@{/admin/}">상품관리</a>
+            <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;장바구니</a>
+        </div>
+    </div>
+    <div class="logo">
+        <div>
+            <a th:href="@{/index}"><img th:src="@{/img/mu_header_logo.png}" alt="로고"></a>
+            <form action="#">
+                <input type="text" name="search" />
+                <button><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="menu">
+        <div>
+            <ul>
+                <li><a href="#">히트상품</a></li>
+                <li><a href="#">추천상품</a></li>
+                <li><a href="#">최신상품</a></li>
+                <li><a href="#">인기상품</a></li>
+                <li><a href="#">할인상품</a></li>
+            </ul>
+            <ul>
+                <li><a th:href="@{/sub/event}">이벤트</a></li>
+                <li><a th:href="@{/sub/delivery-check}">주문조회</a></li>
+                <li><a th:href="@{/sub/notice}">공지사항</a></li>
+                <li><a th:href="@{/sub/qna}">1:1문의</a></li>
+                <li><a th:href="@{/sub/faq}">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+</html>

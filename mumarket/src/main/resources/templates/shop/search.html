@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>맨유::shop-search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="../js/top.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <style>
+
+  </style>
+<script>
+ 
+</script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="top">
+                <div>
+                    <a href="#"><i class="far fa-user"></i>&nbsp;LOGIN</a>
+                    <a href="#">SIGN UP</a>
+                    <a href="#">MYPAGE</a>
+                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;장바구니</a>
+                </div>
+            </div>
+            <div class="logo">
+                <div>
+                    <a href="#"><img src="../img/mu_header_logo.png" alt="로고"></a>
+                    <form action="#">
+                        <input type="text" name="search" />
+                        <button><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="menu">
+                <div>
+                    <ul>
+                        <li><a href="#">히트상품</a></li>
+                        <li><a href="#">추천상품</a></li>
+                        <li><a href="#">최신상품</a></li>
+                        <li><a href="#">인기상품</a></li>
+                        <li><a href="#">할인상품</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">주문조회</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">1:1문의</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- 카테고리/베스트 상품 영역 -->
+            <aside>
+                <ul class="category">
+                    <li><i class="fa fa-bars" aria-hidden="true"></i>카테고리</li>
+                    <li>
+                        <a href="#"><i class="fas fa-futbol"></i>KITS</a>
+                        <ol>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Away</a></li>
+                            <li><a href="">Third</a></li>
+                            <li><a href="">GoalKeeper</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-running"></i>TRAINING</a>
+                        <ol>
+                            <li><a href="">MAN</a></li>
+                            <li><a href="">WOMAN</a></li>
+                            <li><a href="">KID</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-tshirt"></i>RETRO</a>
+                        <ol>
+                            <li><a href="">Shirt</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-gift"></i>GIFT</a>
+                        <ol>
+                            <li><a href="">Accessort</a></li>
+                            <li><a href="">Bag</a></li>
+                            <li><a href="">Cap</a></li>
+                            <li><a href="">Flag</a></li>
+                        </ol>
+                    </li>
+                </ul>
+                <!-- 베스트상품 배너 -->
+                <article class="best">
+                    <h1><i class="fas fa-crown"></i>베스트상품</h1>
+                    <ol>
+                        <li>
+                            <a href="#">
+                                <div class="best-item">
+                                    <i>1</i>
+                                    <img src="../img/mu_item1.png" alt="item1">
+                                </div>
+                                <h2>맨유 홈저지 2020-21</h2>
+                                <div class="org_price">
+                                    <del>106,900</del>
+                                    <span>10%</span>
+                                </div>
+                                <div class="dis_price">
+                                    <ins>96,210</ins>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="best-item">
+                                    <i>2</i>
+                                    <img src="../img/mu_item2.png" alt="item2">
+                                </div>
+                                <h2>맨유 트래블 재킷 - 적갈색</h2>
+                                <div class="org_price">
+                                    <del>154,400</del>
+                                    <span>10%</span>
+                                </div>
+                                <div class="dis_price">
+                                    <ins>138,960</ins>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="best-item">
+                                    <i>3</i>
+                                    <img src="../img/mu_item3.png" alt="item2">
+                                </div>
+                                <h2>맨유 트레이닝 탑 - 화이트</h2>
+                                <div class="org_price">
+                                    <del>106,900</del>
+                                    <span>10%</span>
+                                </div>
+                                <div class="dis_price">
+                                    <ins>96,210</ins>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="best-item">
+                                    <i>4</i>
+                                    <img src="../img/mu_item4.png" alt="item2">
+                                </div>
+                                <h2>맨유 트레이닝 탑 - 그린</h2>
+                                <div class="org_price">
+                                    <del>130,600</del>
+                                    <span>10%</span>
+                                </div>
+                                <div class="dis_price">
+                                    <ins>117,540</ins>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="best-item">
+                                    <i>5</i>
+                                    <img src="../img/mu_item5.png" alt="item2">
+                                </div>
+                                <h2>맨유 골키퍼 홈 저지</h2>
+                                <div class="org_price">
+                                    <del>116,400</del>
+                                    <span>10%</span>
+                                </div>
+                                <div class="dis_price">
+                                    <ins>104,760</ins>
+                                </div>
+                            </a>
+                        </li>
+                    </ol>
+                </article>
+                
+            </aside>
+
+            <!-- 상품검색 -->
+            <section id="search">
+              
+              <!-- 제목, 페이지 네비게이션 -->
+              <nav>
+                <h1>상품 검색 결과</h1>
+                <p>
+                  HOME > <span>상품검색</span> > <strong>검색키워드</strong>
+                </p>
+              </nav>
+              <div class="detail_search">
+                <h3>
+                  <strong>셔츠</strong>
+                  검색결과
+                  <em>
+                    (총&nbsp;: 
+                    <span>20</span>
+                    건)
+                  </em>
+                </h3>
+                <form action="#">
+                  <input type="text" name="search">
+                  <input type="submit" value="검색">
+                  <span>
+                    <label>
+                      <input type="checkbox" name="chk" value="상품명">
+                      상품명
+                    </label>
+                    <label>
+                      <input type="checkbox" name="chk" value="상품설명">
+                      상품설명
+                    </label>
+                    <label>
+                      <input type="checkbox" name="chk" value="상품가격">
+                      상품가격
+                    </label>
+                    <input type="text" name="min">원&nbsp;~&nbsp;
+                    <input type="text" name="max">원
+                  </span>
+                </form>
+                <p class="info">
+                  상세검색을 선택하지 않거나, 상품가격을 입력하지 않으면 전체에서 검색합니다.<br>
+                  검색어는 최대 30글자까지, 여러개의 검색어를 공백으로 구분하여 입력 할수 있습니다.
+                </p>
+              </div>
+              <ul class="sort">
+                <li><a href="#">판매많은순</a></li>
+                <li><a href="#">낮은가격순</a></li>
+                <li><a href="#">높은가격순</a></li>
+                <li><a href="#">평점높은순</a></li>
+                <li><a href="#">후기많은순</a></li>
+                <li><a href="#">최근등록순</a></li>
+              </ul>
+              <section>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item1.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">FreeMovement BLUEFORCE</h3>
+                      <p class="desc">
+                        <a href="#">[블루포스] 여름신상 남방/솔리드긴팔남자옷/데님청/체크스판셔츠</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;블루포스
+                      </h4>
+                      <h5 class="badge power">판매자등급</h5>
+                      <h6 class="reating star1">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item2.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">상품명</h3>
+                      <p class="desc">
+                        <a href="#">상품설명</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;판매자상점명
+                      </h4>
+                      <h5 class="badge great">판매자등급</h5>
+                      <h6 class="reating star2">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item3.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">상품명</h3>
+                      <p class="desc">
+                        <a href="#">상품설명</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;판매자상점명
+                      </h4>
+                      <h5 class="badge power great">판매자등급</h5>
+                      <h6 class="reating star3">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item4.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">상품명</h3>
+                      <p class="desc">
+                        <a href="#">상품설명</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;판매자상점명
+                      </h4>
+                      <h5 class="badge power great">판매자등급</h5>
+                      <h6 class="reating star4">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item5.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">상품명</h3>
+                      <p class="desc">
+                        <a href="#">상품설명</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;판매자상점명
+                      </h4>
+                      <h5 class="badge power great">판매자등급</h5>
+                      <h6 class="reating star5">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item6.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">상품명</h3>
+                      <p class="desc">
+                        <a href="#">상품설명</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;판매자상점명
+                      </h4>
+                      <h5 class="badge power great">판매자등급</h5>
+                      <h6 class="reating star5">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item7.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">상품명</h3>
+                      <p class="desc">
+                        <a href="#">상품설명</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;판매자상점명
+                      </h4>
+                      <h5 class="badge power great">판매자등급</h5>
+                      <h6 class="reating star5">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item8.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">상품명</h3>
+                      <p class="desc">
+                        <a href="#">상품설명</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;판매자상점명
+                      </h4>
+                      <h5 class="badge power great">판매자등급</h5>
+                      <h6 class="reating star5">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item1.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">상품명</h3>
+                      <p class="desc">
+                        <a href="#">상품설명</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;판매자상점명
+                      </h4>
+                      <h5 class="badge power great">판매자등급</h5>
+                      <h6 class="reating star5">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+                <article>
+                  <ul>
+                    <li>
+                      <a href="#" class="thumb">
+                        <img src="../img/mu_item2.png" alt="상품이미지">
+                      </a>
+                    </li>
+                    <li>
+                      <h3 class="name">상품명</h3>
+                      <p class="desc">
+                        <a href="#">상품설명</a>
+                      </p>
+                    </li>
+                    <li>
+                      <div class="dis_price">
+                        <ins>27,000</ins>
+                      </div>
+                      <div class="org_price">
+                        <del>30,000</del>
+                        <span>10%</span>
+                      </div>
+                      <span class="freeshipping">무료배송</span>
+                    </li>
+                    <li>
+                      <h4 class="seller">
+                        <i class="fas fa-home"></i>
+                        &nbsp;판매자상점명
+                      </h4>
+                      <h5 class="badge power great">판매자등급</h5>
+                      <h6 class="reating star5">상품평</h6>
+                      <h6></h6>
+                    </li>
+                  </ul>
+                </article>
+              </section>
+              <div class="paging">
+                <span class="prev">
+                    <a href="#"><&nbsp;이전</a>
+                </span>
+                <span class="num">
+                    <a href="#" class="on">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">7</a>
+                </span>
+                <span class="next">
+                    <a href="#">다음&nbsp;></a>
+                </span>
+            </div>
+            </section>
+        </main>
+        <footer>
+            <ul>
+                <li><a href="#">개인정보 보호 정책</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">사이트맵</a></li>
+                <li><a href="#">더 알아보기</a></li>
+            </ul>
+
+            <div>
+                <p class="footer1">
+                    <img src="../img/mu_footer_logo.png" alt="푸터로고">
+                </p>
+                <p class="footer2">
+                    <strong>MANCHESTER UNITED</strong><br />
+                    영국 스트렛포드 올드 트래포드<br />
+                    대표이사 : 김우드워드<br />
+                    사업자등록번호 : 110-11-12345 사업자정보확인<br />
+                    통신판매업신고 : 부산 12345호 Fax : 051-211-1123<br />
+                </p>
+                <p class="footer3">
+                    <strong>고객센터</strong><br />
+                    Tel : 051-243-1234 (평일 9:00~18:00)<br />
+                    올드 트래포드 전용 : 1554-1212 (365일 9:00~18:00)<br />
+                    부산시 부산진구 구덕로 123번길 맨체스터빌딩<br />
+                    Fax : 051-243-1111 | Mail : MU@ManUtd.co.kr<br />
+                </p>
+            </div>
+        </footer>
+        <button type="button" id="top" style="display: inline-block;">상단이동</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="/layout/layout_sub.html">
+
+<!-- 공지사항 -->
+<div class="normal" layout:fragment="content">
+	    <div class="subBanner">
+	        <h2 class="notiBanner">공지사항</h2>
+	    </div>
+	    <div class="customer">
+	        <div class="tabs four">
+	            <ul>
+	                <li><a href="#"><span>FAQ</span></a></li>
+	                <li><a href="#"><span>1:1문의</span></a></li>
+	                <li class="on"><a href="#"><span>공지사항</span></a></li>
+	                <li><a href="#"><span>주문조회</span></a></li>
+	                </ul>
+	        </div>
+	        <div class="listDiv">
+	            <table class="listType" border="1" cellspacing="0">
+	                <caption></caption>
+	                <colgroup>
+	                    <col width="*">
+	                    <col class="days">
+	                    <col class="hits">
+	                </colgroup>
+	                <tbody>
+	                    <tr class="hpoint">
+	                        <td class="left">
+	                            <a href="#">
+	                                <span class="noti">[공지]</span>
+                                	웹사이트 점검에 따른 서비스 일시 중지 안내
+	                            </a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.31</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">200</span>
+	                        </td>
+	                    </tr>
+	                    <tr class="hpoint">
+	                        <td class="left">
+	                            <a href="#">
+	                                <span class="noti">[공지]</span>
+                                	맨유스토어 2020-21시즌 신상품 출시!!!
+	                            </a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.22</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">321</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 티켓 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.25</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">567</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 홈 저지 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.24</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">602</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 어웨이 저지 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.24</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">798</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 트레이닝복 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.24</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">552</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">맨유 2020-21시즌 자켓 판매 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.24</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">675</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">긴급 서버점검 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.23</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">581</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">코로나로 인한 배송지연 안내</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.20</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">845</span>
+	                        </td>
+	                    </tr>
+	                    <tr>
+	                        <td class="left">
+	                            <a href="#">신규회원을 위한 이벤트 실시</a>
+	                        </td>
+	                        <td class="days">
+	                            <span class="itca">2020.08.19</span>
+	                        </td>
+	                        <td class="hits">
+	                            <span class="itca">513</span>
+	                        </td>
+	                    </tr>
+	                </tbody>
+	            </table>
+	        </div>
+	    </div>
+	    <div class="listSearch">
+	        <input type="text" placeholder="검색어를 입력해 주세요" class="sinput">
+	        <a href="#"><img th:src="@{/img/btn_list_search.gif}" alt="검색"></a>
+	    </div>
+	</div>
+</main>
+</html>
