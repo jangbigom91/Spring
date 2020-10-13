@@ -3,12 +3,12 @@
 <header th:fragment="_header">
     <div class="top">
         <div>
-            <a th:if="${session.member eq null}"><i class="far fa-user"></i>&nbsp;LOGIN</a>
-            <a th:if="${session.member eq null}" th:href="@{/member/join}">SIGN UP</a>
+            <a th:if="${session.member eq null}" th:href="@{/member/login}"><i class="far fa-user"></i>&nbsp;LOGIN</a>
+            <a th:if="${session.member eq null}" th:href="@{/member/register}">SIGN UP</a>
             <a th:if="${session.member}" th:href="@{/member/logout}">로그아웃</a>
             <a th:if="${session.member}" href="#">MYPAGE</a>
             <a th:if="${session.type == 2}" th:href="@{/admin/}">상품관리</a>
-            <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;장바구니</a>
+           <a th:href="@{/shop/cart}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;장바구니</a>
         </div>
     </div>
     <div class="logo">
@@ -26,7 +26,6 @@
                 <li><a href="#">히트상품</a></li>
                 <li><a href="#">추천상품</a></li>
                 <li><a href="#">최신상품</a></li>
-                <li><a href="#">인기상품</a></li>
                 <li><a href="#">할인상품</a></li>
             </ul>
             <ul>

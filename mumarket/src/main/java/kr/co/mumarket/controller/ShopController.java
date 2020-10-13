@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.mumarket.service.ShopService;
+import kr.co.mumarket.vo.CartTotalInfoVo;
+import kr.co.mumarket.vo.MemberVo;
 import kr.co.mumarket.vo.ProductCartVo;
 import kr.co.mumarket.vo.ProductsVo;
 import kr.co.mumarket.vo.ResultVo;
@@ -31,7 +33,7 @@ public class ShopController {
 	public String list(int cate1, int cate2, int sort, Model model, HttpSession sess) {
 		
 		List<ProductsVo> items = service.selectProducts(cate1, cate2, sort);
-		String[] tits = service.getTitles(sess, cate1, cate2);
+		String[] tits = service.getTitles(sess);
 		
 		model.addAttribute("tit1", tits[0]);
 		model.addAttribute("tit2", tits[1]);
@@ -45,20 +47,36 @@ public class ShopController {
 	@GetMapping("/shop/view")
 	public String view(int code, Model model, HttpSession sess) {
 		
-		sess.getAttribute("");
+		MemberVo member = (MemberVo) sess.getAttribute("member");
 		ProductsVo vo = service.selectProduct(code);
-		String[] tits = service.getTitles(sess, vo.getCate1(), vo.getCate2());
+		String[] tits = service.getTitles(sess);
 		
 		model.addAttribute("tit1", tits[0]);
 		model.addAttribute("tit2", tits[1]);
 		model.addAttribute(vo);
+		model.addAttribute("member", member);
 		
 		return "/shop/view";
 	}
 	
 	@GetMapping("/shop/cart")
-	public String cart() {
-		return "/shop/cart";
+	public String cart(Model model, HttpSession sess) {
+		
+		MemberVo member = (MemberVo) sess.getAttribute("member");
+		
+		if(member != null) {
+			List<ProductCartVo> items = service.selectCart(member.getUid());
+			model.addAttribute("items", items);
+			
+			// 전체합계에 출력할 데이터
+			CartTotalInfoVo totalInfo = service.cartTotalInfo(items);
+			model.addAttribute("totalInfo", totalInfo);
+
+			return "/shop/cart";
+		
+		}else {
+			return "redirect:/member/login?success=cart";
+		}
 	}
 	
 	@ResponseBody

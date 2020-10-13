@@ -5,36 +5,27 @@
 <header>
     <a th:href="@{/index}"><img th:src="@{/img/mu_header_logo.png}" alt="맨유로고"></a>
 </header>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>맨유::login</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="../css/member.css"/>
-    <style>
-
-    </style>
-</head>
-<body>
-	<div id="member-wrapper">
+	
 		<div id="member-login" layout:fragment="content">
+			<script th:inline="javascript">
+				var success = [[${success}]];
+				if(success == 'fail') {
+					alert('로그인에 실패했습니다. 아이디 비밀번호를 다시 확인하십시요');
+				}else if(success == 'cart') {
+					alert('장바구니 확인을 위해 로그인을 먼저 해야 합니다.');
+				}
+			</script>
 			<section class="login">
-                <img src="../img/mu_login.png" alt="로그인" />
-                <img src="../img/mu_header_logo.png" alt="로고"/>
-				<form action="#">
+                <img th:src="@{/img/mu_login.png}" alt="로그인" />
+                <img th:src="@{/img/mu_header_logo.png}" alt="로고"/>
+				<form th:action="@{/member/login}" method="post">
 					<div>
 						<label>
-							<span><img src="../img/member_txt_id.gif" alt="아이디"></span> 
+							<span><img th:src="@{/img/member_txt_id.gif}" alt="아이디"></span> 
 							<input type="text" name="uid"/>
 						</label>
 						<label>
-							<span><img src="../img/member_txt_pass.gif" alt="비밀번호"></span> 
+							<span><img th:src="@{/img/member_txt_pass.gif}" alt="비밀번호"></span> 
 							<input type="password" name="pass"/>
 						</label>
 					</div>
@@ -49,5 +40,4 @@
 				<img th:src="@{/img/mu_login_banner.png}" alt="banner">
 			</section>
 		</div>
-		
 </html>

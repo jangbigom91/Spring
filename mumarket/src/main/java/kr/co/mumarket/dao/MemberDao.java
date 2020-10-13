@@ -7,6 +7,7 @@ import kr.co.mumarket.vo.ResultVo;
 
 @Repository
 public interface MemberDao {
+	
 	public ResultVo selectCountUid(String uid);
 	public MemberVo selectMember(MemberVo vo);
 }

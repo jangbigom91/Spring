@@ -23,12 +23,27 @@
           <section class="join">
             <img src="../img/mu_join1.png" class="welcome" alt="welcome to manutd store">
             <div class="type">
-              <div class="event">
-                <img src="../img/mu_join2.png" alt="이벤트">
+              <div class="normal">
+                <img src="../img/member_join_tit_normal.gif" alt="구매회원 가입">
+                <div class="txt">
+                  <img src="../img/member_join_txt_normal.gif" alt="개인 구매회원">
+                  <a href="../member/signup.do?type=normal">
+                    <img src="../img/member_join_btn1.gif" alt="회원가입">
+                  </a>
+                </div>
+              </div>
+              <div class="seller">
+                <img src="../img/member_join_tit_seller.gif" alt="판매회원 가입">
+                <div class="txt">
+                  <img src="../img/member_join_txt_seller.gif" alt="개인 구매회원">
+                  <a href="../member/signup.do?type=seller">
+                    <img src="../img/member_join_btn2.gif" alt="회원가입">
+                  </a>
+                </div>
               </div>
             </div>
-            <img src="../img/mu_join3.png" class="banner" alt="신규가입 혜택">
-            <img src="../img/mu_join4.png" class="banner" alt="카카오페이 결제 혜택">
+            <img th:src="@{/img/mu_join3.png}" class="banner" alt="신규가입 혜택">
+            <img th:src="@{/img/mu_join4.png}" class="banner" alt="카카오페이 결제 혜택">
           </section>
         </div>
       </main>

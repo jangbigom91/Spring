@@ -2,6 +2,8 @@ package kr.co.mumarket.vo;
 
 
 
+import javax.persistence.Transient;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,5 +23,13 @@ public class ProductCartVo {
 	private int delivery;
 	private int total;
 	private String rdate;
+	
+	// 추가필드
+	@Transient
+	private String thumb1;
+	@Transient
+	private int cate1;
+	@Transient
+	private int cate2;
 	
 }
