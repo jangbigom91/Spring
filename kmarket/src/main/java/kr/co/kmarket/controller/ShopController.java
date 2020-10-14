@@ -91,6 +91,13 @@ public class ShopController {
 		return new ResultVo(result);
 	}
 	
+	@ResponseBody
+	@PostMapping("/shop/cartDel")
+	public int cartDel(String uid, int[] codes) {
+
+		return service.deleteCart(uid, codes);
+	}
+	
 	@GetMapping("/shop/order")
 	public String order() {
 		return "/shop/order";

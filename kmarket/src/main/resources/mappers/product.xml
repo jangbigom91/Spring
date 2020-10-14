@@ -28,7 +28,6 @@
 			#{code}
 		</foreach>
 	</delete>
-	
 	<!-- 
 	<insert id="insertUser">
 		INSERT INTO `USER3` VALUES (#{uid}, #{name}, #{hp}, #{age});		

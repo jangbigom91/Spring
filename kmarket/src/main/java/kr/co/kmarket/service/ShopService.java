@@ -37,6 +37,10 @@ public class ShopService {
 		return dao.selectCart(uid);
 	}
 	
+	public int deleteCart(String uid, int[] codes) {
+		 return dao.deleteCart(uid, codes);
+	}
+	
 	public void setTitles(HttpSession sess, int cate1, int cate2) {
 		List<CategoriesVo> categories = (List<CategoriesVo>) sess.getAttribute("cate1List");
 		String tit1 = categories.get(cate1-1).getTitle();
@@ -74,4 +78,5 @@ public class ShopService {
 		
 		return new CartTotalInfoVo(count, price, sale, delivery, point, total);
 	}
+	
 }

@@ -4,6 +4,66 @@
 
 <!-- 장바구니 -->
 <section id="cart" layout:fragment="content">
+	
+	<script>
+		$(function(){
+			
+			// 전체체크박스 클릭
+			$('input[name=all]').change(function(){
+				
+				var isChecked = $(this).is(':checked');
+				
+				if(isChecked) {
+					// 전체 체크
+					$('input[name=chk]').prop('checked', true);
+				}else {
+					// 전체 체크해제
+					$('input[name=chk]').prop('checked', false);
+				}
+			});
+			
+			// 선택삭제 버튼 클릭
+			$('input[name=del]').click(function(){
+				
+				var codes = [];		
+				
+				$('input[name=chk]:checked').each(function(i){
+				
+					codes[i] = $(this).val();
+				});				
+				
+				if(codes.length == 0) {
+					alert('최소 1개 이상의 상품을 선택하세요.');
+					return;
+				}
+				
+				// 서버로 상품코드 전송
+				var uid = $('input[name=uid]').val();
+				
+				var url = '/kmarket/shop/cartDel';
+				var param = {'uid': uid,'codes': codes};
+				
+				$.ajax({
+					url: url,
+					type: 'post',
+					data: param,
+					traditional : true, // jquery 배열 전송 시 반드시 추가되는 옵션
+					dataType: 'text',
+					success: function(data){
+						location.replace('/kmarket/shop/cart'); // 또는 location.href = '/kmarket/shop/cart';
+					}
+				});
+			});// 선택삭제 버튼 끝
+
+			
+			// 주문하기 버튼
+			$('input[name=order]').click(function(){
+				//
+			});
+			
+		});
+	
+	</script>
   
   <!-- 제목, 페이지 네비게이션 -->
   <nav>
@@ -15,6 +75,7 @@
   
   <section>
     <form action="#">
+  	  <input type="hidden" name="uid" th:value="${session.member.uid}" />
       <table>
         <thead>
           <tr>
@@ -33,7 +94,7 @@
             <td colspan="7">장바구니에 상품이 없습니다.</td>
           </tr>
           <tr th:each="item:${items}">
-            <td><input type="checkbox" name=""></td>
+            <td><input type="checkbox" name="chk" th:value="${item.code}"></td>
             <td>
               <article>
                 <a href="#">
@@ -87,7 +148,7 @@
         <td>[[${#numbers.formatInteger(totalInfo.total, 3, 'COMMA')}]]</td>
       </tr>
     </table>
-    <input type="button" name="" value="주문하기">
+    <input type="button" name="order" value="주문하기">
 
   </div>
 </section>
