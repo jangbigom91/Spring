@@ -445,6 +445,11 @@ main > section > .slider > .bx-wrapper {
     background: #fff;
 }
 
+main > section > .hit {}
+main > section > .recommend {}
+main > section > .new {}
+main > section > .discount {}
+
 /* 푸터영역 */
 footer {
     width: 100%;
