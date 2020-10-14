@@ -4,7 +4,7 @@
     <div class="top">
         <div>
             <a th:if="${session.member eq null}" th:href="@{/member/login}"><i class="far fa-user"></i>&nbsp;LOGIN</a>
-            <a th:if="${session.member eq null}" th:href="@{/member/register}">SIGN UP</a>
+            <a th:if="${session.member eq null}" th:href="@{/member/join}">SIGN UP</a>
             <a th:if="${session.member}" th:href="@{/member/logout}">로그아웃</a>
             <a th:if="${session.member}" href="#">MYPAGE</a>
             <a th:if="${session.type == 2}" th:href="@{/admin/}">상품관리</a>

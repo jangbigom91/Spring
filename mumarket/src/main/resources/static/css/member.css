@@ -153,7 +153,7 @@
     float: left;
     margin: 0 10px;
   }
-  #member-login > .login > form > button[type=button] {
+  #member-login > .login > form > input[type=submit] {
     float: left;
     width: 97px;
     height: 71px;
@@ -250,6 +250,8 @@
 #member-join > .join > .type > div > .txt > a {
   float: right;
 }
+
+
 /* member-register */
 #member-register > .register {
   width: 900px;
@@ -393,7 +395,7 @@
     float: right;
     width: 100px;
     height: 33px;
-    margin-right: 330px;
+    margin-right: 300px;
     margin-top: 5px;
 }
   
@@ -474,3 +476,107 @@
     font-family: "Noto Sans KR", -apple-system, "Helvetica Neue", Helvetica, sans-serif;
     cursor: pointer;
   }   
+  
+  
+  #member-register > .register {
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 30px;
+    box-sizing: border-box;
+  }
+  
+  #member-register > .register > h1 {
+    padding-left: 10px;
+    margin-bottom: 24px;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', dotum, sans-serif;
+    border-bottom: 2px solid #000;
+    margin-top: 30px;
+  }
+  
+  #member-register > .register table {
+    position: relative;
+    width: 100%;
+    table-layout: fixed;
+    border-top: 1px solid #b6bdc7;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  #member-register > .register table * {
+    font-family: "Noto Sans KR", -apple-system, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  #member-register > .register table caption {
+    text-align: left;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+  
+  #member-register > .register table th {
+    width: 200px;
+    padding: 20px 20px;
+    vertical-align: top;
+    background: #f4f6f9;
+    font-weight: 500;
+    text-align: left;
+    line-height: 1.4;
+    border-bottom: 1px solid #dfe5ed;
+    word-break: break-word;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  #member-register > .register table td {
+    position: relative;
+    vertical-align: middle;
+    padding: 10px 20px;
+    text-align: left;
+    line-height: 1.4;
+    border-bottom: 1px solid #dfe5ed;
+    word-break: break-word;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  #member-register > .register table input {
+    padding: 0 8px;
+    height: 31px;
+    font-size: 14px;
+    border: 1px solid #dfe5ed;
+    vertical-align: middle;
+  }
+  #member-register > .register table label {
+    display: inline-block;
+    width: 60px;
+    font-size: 17px;
+  }
+  
+  #member-register > .register table .addr input {
+    margin-top: 6px;
+  }
+  #member-register > .register table .addr th {
+    padding-left: 30px;
+  }
+  
+  #member-register > .register table .essential {
+    color: #ef3f43;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
+  #member-register > .register form input[type=submit] {
+    display: block;
+    background: #ef3f43;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 72px;
+    margin: 40px auto;
+    border: 0;
+    outline: 0;
+    border-radius: 2px;
+    font-family: "Noto Sans KR", -apple-system, "Helvetica Neue", Helvetica, sans-serif;
+    cursor: pointer;
+  }
+  

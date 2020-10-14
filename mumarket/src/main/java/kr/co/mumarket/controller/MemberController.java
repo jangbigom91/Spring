@@ -24,7 +24,6 @@ public class MemberController {
 	private TermsRepo termsRepo;
 	@Autowired
 	private MemberRepo memberRepo;
-	
 	@Autowired
 	private MemberService service;
 	
@@ -95,8 +94,8 @@ public class MemberController {
 	@PostMapping("/member/register-seller")
 	public String registerSeller(MemberVo vo, HttpServletRequest req) {
 		
-		vo.setIp(req.getRemoteAddr());
-		vo.setRdate(LocalDateTime.now().toString());
+		vo.setIp(req.getRemoteAddr()); // SQL 쿼리문에서 기본값이 없기때문에 따로 설정
+		vo.setRdate(LocalDateTime.now().toString()); // SQL 쿼리문에서  기본값이 없기때문에 따로 설정
 		
 		memberRepo.save(vo);
 		
