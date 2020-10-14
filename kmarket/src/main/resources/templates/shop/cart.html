@@ -25,23 +25,21 @@
 			// 선택삭제 버튼 클릭
 			$('input[name=del]').click(function(){
 				
-				var codes = [];		
+				var seqs = [];		
 				
 				$('input[name=chk]:checked').each(function(i){
 				
-					codes[i] = $(this).val();
+					seqs[i] = $(this).val();
 				});				
 				
-				if(codes.length == 0) {
+				if(seqs.length == 0) {
 					alert('최소 1개 이상의 상품을 선택하세요.');
 					return;
 				}
 				
-				// 서버로 상품코드 전송
-				var uid = $('input[name=uid]').val();
-				
+				// 서버로 상품 pk값 전송
 				var url = '/kmarket/shop/cartDel';
-				var param = {'uid': uid,'codes': codes};
+				var param = {'seqs': seqs};
 				
 				$.ajax({
 					url: url,
@@ -58,7 +56,22 @@
 			
 			// 주문하기 버튼
 			$('input[name=order]').click(function(){
-				//
+				var seqs = [];		
+				
+				$('input[name=chk]:checked').each(function(i){
+				
+					seqs[i] = $(this).val();
+				});				
+				
+				if(seqs.length == 0) {
+					alert('주문할 상품을 선택하세요.');
+					return;
+				}
+				
+				var seqs = {'seqs': seqs};
+				var params = $.param(seqs, true);
+				
+				location.href = '/kmarket/shop/order?'+params;
 			});
 			
 		});
@@ -94,7 +107,7 @@
             <td colspan="7">장바구니에 상품이 없습니다.</td>
           </tr>
           <tr th:each="item:${items}">
-            <td><input type="checkbox" name="chk" th:value="${item.code}"></td>
+            <td><input type="checkbox" name="chk" th:value="${item.seq}"></td>
             <td>
               <article>
                 <a href="#">
