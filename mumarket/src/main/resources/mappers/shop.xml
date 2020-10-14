@@ -43,4 +43,26 @@
 		ON a.`code` = b.`code`
 		WHERE `uid`=#{uid}; 
 	</select>
+	
+	<delete id="deleteCart" parameterType="int">
+		DELETE FROM `mm_products_cart`
+		WHERE
+	 	`seq` IN
+		<foreach collection="seqs" item="seq" open="(" separator="," close=")">
+			#{seq}
+		</foreach>
+	</delete>
+	
+	<!-- /shop/order -->
+	<select id="selectOrder" resultType="kr.co.mumarket.vo.ProductCartVo">
+		SELECT a.*, b.`cate1`, b.`cate2`, b.`thumb1` 
+		FROM `mm_products_cart` AS a
+		JOIN `mm_products` AS b
+		ON a.`code` = b.`code`
+		WHERE
+		`seq` IN
+		<foreach collection="seqs" item="seq" open="(" separator="," close=")">
+			#{seq}	
+		</foreach>
+	</select>
 </mapper>

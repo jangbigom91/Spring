@@ -18,4 +18,8 @@ public interface ShopDao {
 	
 	public List<ProductCartVo> selectCart(String uid);
 	
+	public int deleteCart(int[] seqs);
+
+	public List<ProductCartVo> selectOrder(int[] seqs);
+	
 }
