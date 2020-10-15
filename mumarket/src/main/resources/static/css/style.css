@@ -1726,17 +1726,16 @@ main > #order {
 }
 
 #order .delivery {}
-#order .delivery > div > label {
-  display: block;
-  padding: 4px 0;
+#order .delivery > table {
+  margin-top: 10px;
 }
-#order .delivery > .user {}
-#order .delivery > .user span {
-  margin-left: 10px;
-  color: #888;
+#order .delivery > table tr > td:nth-child(1) {  
+  padding: 6px;
 }
-#order .delivery > .address {}
-#order .delivery > .address input[type=button] {
+
+#order .delivery > table input[name=addr1] {width: 400px;} 
+#order .delivery > table input[name=addr2] {width: 400px;}
+#order .delivery > table input[type=button] {
   padding: 4px 6px;
   border: 1px solid #ccc;
   background-color: #F0F4F9;
@@ -1744,7 +1743,7 @@ main > #order {
   color: #3373C9;
   outline: none;
 }
-#order .delivery > .address input.addr {width: 400px;}
+
 
 #order .discount {}
 #order .discount > div {overflow: hidden;}
