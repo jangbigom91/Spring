@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.kmarket.service.ShopService;
-import kr.co.kmarket.vo.CartTotalInfoVo;
+import kr.co.kmarket.vo.OrderTotalInfoVo;
 import kr.co.kmarket.vo.CategoriesVo;
 import kr.co.kmarket.vo.MemberVo;
 import kr.co.kmarket.vo.ProductCartVo;
@@ -73,8 +73,8 @@ public class ShopController {
 			model.addAttribute("items", items);
 			
 			// 전체합계에 출력할 데이터
-			CartTotalInfoVo totalInfo = service.cartTotalInfo(items);
-			model.addAttribute("totalInfo", totalInfo);
+			//CartTotalInfoVo totalInfo = service.cartTotalInfo(items);
+			//model.addAttribute("totalInfo", totalInfo);
 
 			return "/shop/cart";
 		
@@ -104,8 +104,22 @@ public class ShopController {
 		List<ProductCartVo> items = service.selectOrder(seqs);
 		model.addAttribute("items", items);
 		
+		OrderTotalInfoVo  totalInfo = service.orderTotalInfo(items);
+		model.addAttribute("totalInfo", totalInfo);
+		
 		return "/shop/order";
 	}
+	
+	@PostMapping("/shop/order")
+	public String order(String orderer, String hp) {
+		
+		System.out.println("orderer : "+orderer);
+		System.out.println("hp : "+hp);
+		
+		
+		return "redirect:/shop/order-complete";
+	}
+	
 	
 	@GetMapping("/shop/order-complete")
 	public String orderComplete() {
