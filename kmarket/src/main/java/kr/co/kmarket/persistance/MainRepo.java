@@ -1,4 +1,4 @@
-package kr.co.kmarket.persistence;
+package kr.co.kmarket.persistance;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
