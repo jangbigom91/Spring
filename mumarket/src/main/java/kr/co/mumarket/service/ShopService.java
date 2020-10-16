@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.mumarket.dao.ShopDao;
-import kr.co.mumarket.vo.CartTotalInfoVo;
+import kr.co.mumarket.vo.OrderTotalInfoVo;
 import kr.co.mumarket.vo.CategoriesVo;
-import kr.co.mumarket.vo.ProductCartVo;
+import kr.co.mumarket.vo.ProductsCartVo;
 import kr.co.mumarket.vo.ProductsVo;
 
 @Service
@@ -27,11 +27,11 @@ public class ShopService {
 		return dao.selectProduct(code);
 	}
 	
-	public int insertCart(ProductCartVo vo) {
+	public int insertCart(ProductsCartVo vo) {
 		return dao.insertCart(vo);
 	}
 	
-	public List<ProductCartVo> selectCart(String uid) {
+	public List<ProductsCartVo> selectCart(String uid) {
 		return dao.selectCart(uid);
 	}
 	
@@ -39,7 +39,7 @@ public class ShopService {
 		 return dao.deleteCart(seqs);
 	}
 
-	public List<ProductCartVo> selectOrder(int[] seqs) {
+	public List<ProductsCartVo> selectOrder(int[] seqs) {
 		return dao.selectOrder(seqs);
 	}
 	
@@ -61,7 +61,7 @@ public class ShopService {
 		return tits;
 	}
 	
-	public CartTotalInfoVo cartTotalInfo(List<ProductCartVo> items) {
+	public OrderTotalInfoVo orderTotalInfo(List<ProductsCartVo> items) {
 		
 		int count = items.size();
 		int price = 0;
@@ -70,15 +70,19 @@ public class ShopService {
 		int point = 0;
 		int total = 0;
 		
-		for (ProductCartVo item : items) {
-			price 	 += item.getPrice() * item.getCount();
-			sale  	 += (item.getPrice() * item.getDiscount()/100) * item.getCount();
+		for(ProductsCartVo item : items) {
+			price    += item.getPrice() * item.getCount();
+			sale     += (item.getPrice() * item.getDiscount()/100) * item.getCount();
 			delivery += item.getDelivery();
-			point 	 += item.getPoint();
-			total 	 += item.getTotal();
+			point    += item.getPoint();
+			total    += item.getTotal();
 		}
 		
-		return new CartTotalInfoVo(count, price, sale, delivery, point, total);
+		// 배송비와 전체금액 최종합산
+		total += delivery;
+		
+		return new OrderTotalInfoVo(count, price, sale, delivery, point, total);
+		
 	}
 	
 }

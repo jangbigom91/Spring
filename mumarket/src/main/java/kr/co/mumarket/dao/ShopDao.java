@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import kr.co.mumarket.vo.ProductCartVo;
+import kr.co.mumarket.vo.ProductsCartVo;
 import kr.co.mumarket.vo.ProductsVo;
 
 @Repository
@@ -14,12 +14,12 @@ public interface ShopDao {
 	
 	public ProductsVo selectProduct(int code);
 	
-	public int insertCart(ProductCartVo vo);
+	public int insertCart(ProductsCartVo vo);
 	
-	public List<ProductCartVo> selectCart(String uid);
+	public List<ProductsCartVo> selectCart(String uid);
 	
 	public int deleteCart(int[] seqs);
 
-	public List<ProductCartVo> selectOrder(int[] seqs);
+	public List<ProductsCartVo> selectOrder(int[] seqs);
 	
 }

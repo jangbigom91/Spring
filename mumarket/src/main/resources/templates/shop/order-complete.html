@@ -16,50 +16,40 @@
     <div>
       <h2>고객님의 주문이 정상적으로 완료되었습니다.<i class="far fa-smile"></i></h2>
       <p>
-        즐거운 쇼핑이 되셨습니까? 항상 고객님을 최우선으로 생각하는 맨유마켓이 되겠습니다.
+        	즐거운 쇼핑이 되셨습니까? 항상 고객님을 최우선으로 생각하는 맨유마켓이 되겠습니다.
       </p>
     </div>
+    
     <section>
       <article class="product">
         <h1>상품정보</h1>
         <table border="0">
           <tr>
             <th>상품명</th>
-            <th>상품금액</th>
-            <th>할인금액</th>
-            <th>수량</th>
-            <th>주문금액</th>
+            <th>총수량</th>
+            <th>판매가</th>
+            <th>할인</th>
+            <th>적립포인트</th>
+            <th>배송비</th>
+            <th>소계</th>
           </tr>
-          <tr>
+          <tr class="row" th:each="seq, iter :${ordered.itemSeqs}">
             <td>
               <article>
-                <img src="../img/mu_item4.png" alt="">
+                <img th:src="${ordered.itemThumbs[iter.index]}" alt="thumb">
                 <div>
-                  <h2><a href="#">TH-블락체크 셔츠-그레이2 [면세]</a></h2>
-                  <p>SIZE:M / COLOR:블루 1개</p>
+                  <h2><a href="#">[[${ordered.itemNames[iter.index]}]]</a></h2>
                 </div>
               </article>
             </td>
-            <td>17,000원</td>
-            <td>1,000원</td>
-            <td>1</td>
-            <td>16,000원</td>
+            <td>[[${ordered.itemCounts[iter.index]}]]</td>
+            <td>[[${ordered.itemPrices[iter.index]}]]</td>
+            <td>[[${ordered.itemDiscounts[iter.index]}]]</td>
+            <td>[[${ordered.itemPoints[iter.index]}]]</td>
+            <td>[[${ordered.itemDeliverys[iter.index]}]]</td>
+            <td>[[${ordered.itemTotals[iter.index]}]]</td>
           </tr>
-          <tr>
-            <td>
-              <article>
-                <img src="../img/mu_item5.png" alt="">
-                <div>
-                  <h2><a href="#">TH-블락체크 셔츠-그레이2 [면세]</a></h2>
-                  <p>SIZE:M / COLOR:블루 1개</p>
-                </div>
-              </article>
-            </td>
-            <td>17,000원</td>
-            <td>1,000원</td>
-            <td>1</td>
-            <td>16,000원</td>
-          </tr>
+          
           <tr class="total">
             <td colspan="4"></td>
             <td>

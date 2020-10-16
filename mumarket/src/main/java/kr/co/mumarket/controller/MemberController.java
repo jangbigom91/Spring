@@ -11,8 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import kr.co.mumarket.persistence.MemberRepo;
-import kr.co.mumarket.persistence.TermsRepo;
+import kr.co.mumarket.persistance.MemberRepo;
+import kr.co.mumarket.persistance.TermsRepo;
 import kr.co.mumarket.service.MemberService;
 import kr.co.mumarket.vo.MemberVo;
 import kr.co.mumarket.vo.TermsVo;
