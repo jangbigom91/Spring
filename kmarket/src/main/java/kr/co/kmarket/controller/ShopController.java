@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import kr.co.kmarket.persistance.ProductsCartRepo;
 import kr.co.kmarket.persistance.ProductsOrderRepo;
-import kr.co.kmarket.service.MainService;
 import kr.co.kmarket.service.ShopService;
 import kr.co.kmarket.vo.OrderTotalInfoVo;
-import kr.co.kmarket.vo.CategoriesVo;
 import kr.co.kmarket.vo.MemberVo;
 import kr.co.kmarket.vo.ProductsCartVo;
 import kr.co.kmarket.vo.ProductsOrderVo;
@@ -134,9 +131,6 @@ public class ShopController {
 		ProductsOrderVo vo = productsOrderRepo.findById(seq).get();
 		
 		String products = vo.getProducts();
-		
-		
-		
 		
 		model.addAttribute(vo);
 		

@@ -8,111 +8,112 @@
   <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script th:src="@{/js/zipcode.js}"></script>
   <script th:inline="javascript">
-  	$(function(){
-  		// 주소
-  		$('.btnZip').click(function(){
-  			
-  			zipcode();
-  		});
-  		
-  		// 포인트적용
-  		$('.btnApply').click(function(){
-  			
-  			var currentPoint = [[${session.member.point}]]
-  			var applyPoint = $('input[name=applyPoint]').val();
-  			
-  			if(currentPoint < applyPoint) {
-  				alert('적용 포인트가 현재 포인트 보다 더 큽니다.');
-  				return;
-  			}
-  			
-  			$('.info > table tr:eq(4) > td:eq(1)').text('-'+applyPoint.toLocaleString());
-  			
-  			// 전체 주문금액 다시 계산
-  			var totalTg = $('.info > table tr:eq(5) > td:eq(1)');
-  			var totalPrice = [[${totalInfo.total}]]
-  			var totalPrice = totalPrice - applyPoint;
-  			
-  			totalTg.text(totalPrice.toLocaleString());
-  		});
-  		
-  		// 결제하기 버튼 클릭
-  		$('input[name=btnSubmit]').click(function(){
-  			
-  			var orderer = $('input[name=orderer]');
-  			var hp 		= $('input[name=hp]');
-  			var zip 	= $('input[name=zip]');
-  			var addr1 	= $('input[name=addr1]');
-  			var addr2 	= $('input[name=addr2]');
-  			var payment = $('input[name=payment]'); 
-  			
-  			if(orderer.val() == ''){
-  				alert('주문자를 입력 해주세요.');
-  				orderer.focus();
-  				return;
-  			}
-  			
-  			if(hp.val() == ''){
-  				alert('휴대폰을 입력 해주세요.');
-  				hp.focus();
-  				return;
-  			}
-  			
-  			if(zip.val() == ''){
-  				alert('우편번호를 입력 해주세요.');
-  				zip.focus();
-  				return;
-  			}
-  			
-  			if(addr1.val() == ''){
-  				alert('기본주소를 입력 해주세요.');
-  				addr1.focus();
-  				return;
-  			}
-  			
-  			if(addr2.val() == ''){
-  				alert('상세주소를 입력 해주세요.');
-  				addr2.focus();
-  				return;
-  			}
-  			
-  			if(payment.is(':checked') == false){
-  				alert('결제방법을 선택 해주세요.');
-  				return;
-  			}
-  			
-  		// 상품정보 정리,취합
-  			var products = '';
-  			
-  			$('.row').each(function(){
-  				var code     = $(this).find('.code').val();
-  				var count    = $(this).find('.count').val();
-  				var price    = $(this).find('.price').val();
-  				var discount = $(this).find('.discount').val();
-  				var point    = $(this).find('.point').val();
-  				var delivery = $(this).find('.delivery').val();
-  				var total    = $(this).find('.total').val();
-  				  				
-  				products += String.format('{0},{1},{2},{3},{4},{5},{6}|', code, count, price, discount, point, delivery, total);
-  			});
-  			
-  			// 폼전송에 사용하기 위해 입력필드에 입력
-  			$('input[name=products]').val(products);
-  			
-  			// 최종 전송하기
-  			$('#orderForm').submit();
-  		});
-  	});
+  $(function(){
+		$('.btnZip').click(function(){
+			zipcode();
+		});
+		
+		$('.btnApply').click(function(){
+			
+			var currentPoint = [[${session.member.point}]]
+			var txtPoint = $('input[name=txtPoint]').val();
+			
+			if(currentPoint < txtPoint){
+				alert('적용 포인트가 현재 포인트 보다 더 큽니다.');
+				return;
+			}
+			
+			$('.info > table tr:eq(4) > td:eq(1)').text('-'+txtPoint.toLocaleString());
+
+			// 전체 주문금액 다시 계산
+			var totalTg = $('.info > table tr:eq(5) > td:eq(1)');
+			var totalPrice = [[${totalInfo.total}]]
+			var totalPrice = totalPrice - txtPoint;
+			
+			totalTg.text(totalPrice.toLocaleString());
+			
+			// 폼전송에 사용하기 위해 입력필드에 입력
+			$('input[name=applyPoint]').val(-txtPoint);
+			$('input[name=total]').val(totalPrice);
+		});
+		
+		// 결제하기 버튼 클릭
+		$('input[name=btnSubmit]').click(function(){
+			
+			var orderer = $('input[name=orderer]');
+			var hp      = $('input[name=hp]');
+			var zip     = $('input[name=zip]');
+			var addr1   = $('input[name=addr1]');
+			var addr2   = $('input[name=addr2]');
+			var payment = $('input[name=payment]'); 
+			
+			if(orderer.val() == ''){
+				alert('주문자를 입력 해주세요.');
+				orderer.focus();
+				return;
+			}
+			
+			if(hp.val() == ''){
+				alert('휴대폰을 입력 해주세요.');
+				hp.focus();
+				return;
+			}
+			
+			if(zip.val() == ''){
+				alert('우편번호를 입력 해주세요.');
+				zip.focus();
+				return;
+			}
+			
+			if(addr1.val() == ''){
+				alert('기본주소를 입력 해주세요.');
+				addr1.focus();
+				return;
+			}
+			
+			if(addr2.val() == ''){
+				alert('상세주소를 입력 해주세요.');
+				addr2.focus();
+				return;
+			}
+			
+			if(payment.is(':checked') == false){
+				alert('결제방법을 선택 해주세요.');
+				return;
+			}
+			
+			// 상품정보 정리,취합
+			var products = '';
+			
+			$('.row').each(function(){
+				var code     = $(this).find('.code').val();
+				var count    = $(this).find('.count').val();
+				var price    = $(this).find('.price').val();
+				var discount = $(this).find('.discount').val();
+				var point    = $(this).find('.point').val();
+				var delivery = $(this).find('.delivery').val();
+				var total    = $(this).find('.total').val();
+				  				
+				products += String.format('{0},{1},{2},{3},{4},{5},{6}|', code, count, price, discount, point, delivery, total);
+			});
+			
+			// 폼전송에 사용하기 위해 입력필드에 입력
+			$('input[name=products]').val(products);
+			
+			// 최종 전송하기
+			$('#orderForm').submit();
+		});
+	});
   	
-  	// 자바스크립트 Format String 함수 
-  	// 출처 : https://bemeal2.tistory.com/275
-  	String.format = function() {
-  		let args = arguments; 
-  		return args[0].replace(/{(\d+)}/g, function(match, num) { 
-  			num = Number(num) + 1; 
-  			return typeof(args[num]) != undefined ? args[num] : match; 
-  		}); 
-  	}
+//자바스크립트 Format String 함수 
+	// 출처 : https://bemeal2.tistory.com/275
+	String.format = function() {
+		let args = arguments; 
+		return args[0].replace(/{(\d+)}/g, function(match, num) { 
+			num = Number(num) + 1; 
+			return typeof(args[num]) != undefined ? args[num] : match; 
+		}); 
+	}
   </script>
               
   <!-- 제목, 페이지 네비게이션 -->
