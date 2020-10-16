@@ -117,6 +117,7 @@ public class ShopController {
 		vo.setRdate(LocalDateTime.now().toString());	
 		
 		// 주문 테이블에 주문상품 입력
+		// ProductsOrderVo에 @GeneratedValue 붙여야지 ID값인 seq값을 얻을 수 있다.
 		ProductsOrderVo ordered = productsOrderRepo.save(vo);
 		
 		// 주문한 상품은 장바구니에서 삭제
