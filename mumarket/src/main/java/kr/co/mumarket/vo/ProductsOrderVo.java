@@ -1,8 +1,10 @@
 package kr.co.mumarket.vo;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +16,7 @@ import lombok.Setter;
 public class ProductsOrderVo {
 	
 	@Id
+	@GeneratedValue
 	private int seq;
 	private String uid;
 	private String products;
@@ -32,4 +35,7 @@ public class ProductsOrderVo {
 	private String addr1;
 	private String addr2;
 	private String rdate;
+	
+	@Transient
+	private int cate1;
 }

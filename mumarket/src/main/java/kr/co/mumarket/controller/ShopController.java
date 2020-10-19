@@ -38,6 +38,7 @@ public class ShopController {
 	public String list(int cate1, int cate2, int sort, Model model, HttpSession sess) {
 		
 		List<ProductsVo> items = service.selectProducts(cate1, cate2, sort);
+		service.setTitles(sess, cate1, cate2);
 		String[] tits = service.getTitles(sess);
 		
 		model.addAttribute("tit1", tits[0]);
@@ -53,6 +54,7 @@ public class ShopController {
 	public String view(int code, Model model, HttpSession sess) {
 		
 		MemberVo member = (MemberVo) sess.getAttribute("member");
+		
 		ProductsVo vo = service.selectProduct(code);
 		String[] tits = service.getTitles(sess);
 		
@@ -74,14 +76,13 @@ public class ShopController {
 			model.addAttribute("items", items);
 			
 			// 전체합계에 출력할 데이터
-			//OrderTotalInfoVo totalInfo = service.cartTotalInfo(items);
+			//CartTotalInfoVo totalInfo = service.cartTotalInfo(items);
 			//model.addAttribute("totalInfo", totalInfo);
-
-			return "/shop/cart";
-		
+			
+			return "/shop/cart";			
 		}else {
 			return "redirect:/member/login?success=cart";
-		}
+		}		
 	}
 	
 	@ResponseBody
@@ -116,6 +117,7 @@ public class ShopController {
 		vo.setRdate(LocalDateTime.now().toString());	
 		
 		// 주문 테이블에 주문상품 입력
+		// ProductsOrderVo에 @GeneratedValue 붙여야지 ID값인 seq값을 얻을 수 있다.
 		ProductsOrderVo ordered = productsOrderRepo.save(vo);
 		
 		// 주문한 상품은 장바구니에서 삭제
