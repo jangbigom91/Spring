@@ -6,7 +6,7 @@
             <a th:if="${session.member eq null}" th:href="@{/member/login}"><i class="far fa-user"></i>&nbsp;LOGIN</a>
             <a th:if="${session.member eq null}" th:href="@{/member/join}">SIGN UP</a>
             <a th:if="${session.member}" th:href="@{/member/logout}">로그아웃</a>
-            <a th:if="${session.member}" href="#">MYPAGE</a>
+            <a th:if="${session.member}" th:href="@{/sub/delivery-check}">MYPAGE</a>
             <a th:if="${session.type == 2}" th:href="@{/admin/}">상품관리</a>
            <a th:href="@{/shop/cart}"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;장바구니</a>
         </div>
