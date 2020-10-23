@@ -11,8 +11,46 @@
     <link rel="stylesheet" href="../css/member.css"/>
     <style>
 
-
     </style>
+    <script>
+	$(function(){			
+		$('input.agree').click(function(){
+			//체크여부 확인 및 페이지 이동
+			var chkbox1 = $('input[name=agree1]').is(':checked');
+			var chkbox2 = $('input[name=agree2]').is(':checked');
+			
+			var type = [[${type}]];
+			
+			if(type == 'normal'){
+				if(chkbox1 != true ){
+					alert('맨유마켓 이용약관에 동의 하셔야 합니다.');
+					return false;
+				}else if(chkbox2 != true){
+					alert('전자금융거래약관에 동의 하셔야 합니다.');
+					return false;
+				}else{
+				location.href='/mumarket/member/register';	
+				}
+			}else{
+				if(chkbox1 != true ){
+					alert('맨유마켓 이용약관에 동의 하셔야 합니다.');
+					return false;
+				}else if(chkbox2 != true){
+					alert('전자금융거래 이용약관에 동의 하셔야 합니다.');
+					return false;
+				}else if(chkbox3 != true){
+					alert('개인정보 수집약관에 동의 하셔야 합니다.');
+					return false;
+				}else{
+					location.href='/mumarket/member/register-seller';
+				}
+					
+			}
+			
+		});
+		
+	});
+    </script>
 </head>
 <body>
     <div id="member-wrapper">
@@ -24,7 +62,7 @@
 				<section>
 					<h3>
 						<span class="essential">(필수)</span>
-						맨유스토어 이용약관
+						맨유마켓 이용약관
 					</h3>
 					<textarea class="terms" readonly="readonly">
 제1조(목적)
@@ -57,7 +95,7 @@
 					</label>
 					<h3>
 						<span class="essential">(필수)</span>
-						개인정보 수집 및 이용
+						전자금융거래약관
 					</h3>
 					<textarea class="terms" readonly="readonly">
 1. 
