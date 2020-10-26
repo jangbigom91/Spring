@@ -17,6 +17,7 @@ public class TermsVo {
 	private int seq;
 	private String terms;
 	private String privacy;
+	private String location;
 	private String finance;
-	private String reception;
+	private String tax;
 }
