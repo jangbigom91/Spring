@@ -430,15 +430,10 @@
     margin-right: 5px;
   }
   
-  #member-signup > .signup h3 > span.privacy {
-    color: blue;
-    margin-right: 5px;
-  }
   #member-signup h3 > span.optional {
     color: blue;
     margin-right: 5px;
   }
-  
   
   #member-signup textarea {
     width: 100%;
@@ -473,7 +468,6 @@
     font-family: "Noto Sans KR", -apple-system, "Helvetica Neue", Helvetica, sans-serif;
     cursor: pointer;
   }   
-  
   
   #member-register > .register {
     width: 900px;
