@@ -101,4 +101,14 @@ public class MemberController {
 		
 		return "redirect:/member/login";
 	}
+	
+	@GetMapping("/member/findUid")
+	public String findUid() {
+		return "/member/findUid";
+	}
+	
+	@GetMapping("/member/findPass")
+	public String findPass() {
+		return "/member/findPass";
+	}
 }

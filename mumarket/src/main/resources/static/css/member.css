@@ -400,42 +400,39 @@
 }
   
   /* member-signup */
-  #member-signup {
-    width: 900px;
-    margin: 0 auto;
-    padding-top: 30px;
-    box-sizing: border-box;
-  }
+  #member-signup > .signup {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+#member-signup > .signup > h1 {
+  padding-left: 10px;
+  margin-bottom: 24px;
+  font-size: 26px;
+  font-weight: bold;
+  font-family: 'Noto Sans KR', dotum, sans-serif;
+  border-bottom: 2px solid #000;
+  margin-top: 30px;
+}
   
-  #member-signup > h1 {
-    padding-left: 10px;
-    margin-bottom: 24px;
-    font-size: 26px;
-    font-weight: bold;
-    font-family: 'Noto Sans KR', dotum, sans-serif;
-    border-bottom: 2px solid #000;
-    margin-top: 30px;
-  }
+  #member-signup > .signup h3 {
+  font-size: 14px;
+  margin-top: 26px;
+  margin-bottom: 6px;
+}
+#member-signup > .signup h3 > span.essential {
+  color: #ef3f43;
+  margin-right: 5px;
+}
   
-  #member-signup > .signup * {
-    font-family: 'Noto Sans KR', dotum, sans-serif;
-  }
-  #member-signup h3 {
-    font-size: 14px;
-    margin-top: 26px;
-    margin-bottom: 6px;
-  }
-  #member-signup h3 > span.essential {
-    color: #ef3f43;
-    margin-right: 5px;
-  }
-  
-  #member-signup h3 > span.optional {
+  #member-signup > .signup h3 > span.optional {
     color: blue;
     margin-right: 5px;
   }
   
-  #member-signup textarea {
+  #member-signup > .signup textarea {
     width: 100%;
     height: 160px;
     margin-bottom: 10px;
@@ -444,18 +441,18 @@
     font-weight: bold;
     resize: none;
   }
-  #member-signup label {
+  #member-signup > .signup label {
     float: right;
     font-size: 14px;
   }
-  #member-signup input[type=checkbox] {
+  #member-signup > .signup input[type=checkbox] {
     width: 16px;
     height: 16px;
     margin-right: 6px;
     vertical-align: bottom;
   }
   
-  #member-signup input.agree {
+  #member-signup > .signup input.agree {
     display: block;
     background: #ef3f43;
     color: #fff;
